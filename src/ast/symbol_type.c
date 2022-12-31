@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-SymbolType* createSymbolType() {
+SymbolType* createSymbolType(TypeDefinition* type_definition,
+		const char* symbol) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createSymbolType\\n");
@@ -14,6 +15,8 @@ SymbolType* createSymbolType() {
 
     SymbolType* ptr = _alloc_ds(SymbolType);
     initAst(&ptr->ast, NULL, AST_SYMBOL_TYPE);
+    ptr->type_definition = type_definition;
+    ptr->symbol = symbol;
 
     return ptr;
 }

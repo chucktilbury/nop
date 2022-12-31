@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-ArrayInitializer* createArrayInitializer() {
+ArrayInitializer* createArrayInitializer(ExpressionList* expression_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createArrayInitializer\\n");
@@ -14,6 +14,7 @@ ArrayInitializer* createArrayInitializer() {
 
     ArrayInitializer* ptr = _alloc_ds(ArrayInitializer);
     initAst(&ptr->ast, NULL, AST_ARRAY_INITIALIZER);
+    ptr->expression_list = expression_list;
 
     return ptr;
 }

@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CLASS_NAME_PARENT,
+    CLASS_NAME_PARENT_OK,
+    CLASS_NAME_PARENT_ERROR,
 } ClassNameParentType;
 
-typedef struct {
+struct _class_name_parent_ {
     Ast ast;
     ClassNameParentType type;
-} ClassNameParent;
+    CompoundNameInParensRule* compound_name_in_parens_rule;
+    EmptyParensRule* empty_parens_rule;
+};
 
-ClassNameParent* createClassNameParent();
+ClassNameParent* createClassNameParent(CompoundNameInParensRule*, EmptyParensRule*);
 void destroyClassNameParent(ClassNameParent*);
 
 #ifdef ENABLE_DUMP

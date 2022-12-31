@@ -92,8 +92,6 @@ int yycolumn = 1;
 "raise"     { return RAISE; }
 "create"    { return CTOR; }
 "destroy"   { return DTOR; }
-"trace"     { return TRACE; }
-"print"     { return PRINT; }
 
 "public"    { nop_lval.scope = PUBLIC; return PUBLIC; }
 "private"   { nop_lval.scope = PRIVATE; return PRIVATE; }
@@ -112,6 +110,9 @@ int yycolumn = 1;
 "boolean"   { nop_lval.type = BOOLEAN; return BOOLEAN; }
 "list"      { nop_lval.type = LIST; return LIST; }
 "dict"      { nop_lval.type = DICT; return DICT; }
+"trace"     { nop_lval.type = TRACE; return TRACE; }
+"print"     { nop_lval.type = PRINT; return PRINT; }
+"type"      { nop_lval.type = TYPE; return TYPE; }
 
 "<=" { return LORE; }
 ">=" { return GORE; }

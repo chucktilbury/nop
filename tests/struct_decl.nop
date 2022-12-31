@@ -22,7 +22,6 @@ namespace ns1 {
         struct yep {
             number value
             strg a_string
-
         }
     }
 }

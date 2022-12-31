@@ -8,15 +8,20 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_FUNC_DEFINITION,
+    FUNC_DEFINITION_OK,
+    FUNC_DEFINITION_ERROR,
 } FuncDefinitionType;
 
-typedef struct {
+struct _func_definition_ {
     Ast ast;
     FuncDefinitionType type;
-} FuncDefinition;
+    TypeDefinition* type_definition;
+    CompoundName* compound_name;
+    FuncDefParameterList* func_def_parameter_list;
+    FuncBody* func_body;
+};
 
-FuncDefinition* createFuncDefinition();
+FuncDefinition* createFuncDefinition(TypeDefinition*, CompoundName*, FuncDefParameterList*, FuncBody*);
 void destroyFuncDefinition(FuncDefinition*);
 
 #ifdef ENABLE_DUMP

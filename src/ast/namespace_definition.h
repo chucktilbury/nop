@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_NAMESPACE_DEFINITION,
+    NAMESPACE_DEFINITION_OK,
+    NAMESPACE_DEFINITION_ERROR,
 } NamespaceDefinitionType;
 
-typedef struct {
+struct _namespace_definition_ {
     Ast ast;
     NamespaceDefinitionType type;
-} NamespaceDefinition;
+    const char* symbol;
+    ModuleList* module_list;
+};
 
-NamespaceDefinition* createNamespaceDefinition();
+NamespaceDefinition* createNamespaceDefinition(const char*, ModuleList*);
 void destroyNamespaceDefinition(NamespaceDefinition*);
 
 #ifdef ENABLE_DUMP

@@ -8,15 +8,17 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CAST_SPECIFIER,
+    CAST_SPECIFIER_OK,
+    CAST_SPECIFIER_ERROR,
 } CastSpecifierType;
 
-typedef struct {
+struct _cast_specifier_ {
     Ast ast;
     CastSpecifierType type;
-} CastSpecifier;
+    TypeDefinition* type_definition;
+};
 
-CastSpecifier* createCastSpecifier();
+CastSpecifier* createCastSpecifier(TypeDefinition*);
 void destroyCastSpecifier(CastSpecifier*);
 
 #ifdef ENABLE_DUMP

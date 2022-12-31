@@ -8,15 +8,17 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_COMPOUND_NAME_IN_PARENS_RULE,
+    COMPOUND_NAME_IN_PARENS_RULE_OK,
+    COMPOUND_NAME_IN_PARENS_RULE_ERROR,
 } CompoundNameInParensRuleType;
 
-typedef struct {
+struct _compound_name_in_parens_rule_ {
     Ast ast;
     CompoundNameInParensRuleType type;
-} CompoundNameInParensRule;
+    CompoundName* compound_name;
+};
 
-CompoundNameInParensRule* createCompoundNameInParensRule();
+CompoundNameInParensRule* createCompoundNameInParensRule(CompoundName*);
 void destroyCompoundNameInParensRule(CompoundNameInParensRule*);
 
 #ifdef ENABLE_DUMP

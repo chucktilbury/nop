@@ -8,15 +8,17 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_FUNC_BODY,
+    FUNC_BODY_OK,
+    FUNC_BODY_ERROR,
 } FuncBodyType;
 
-typedef struct {
+struct _func_body_ {
     Ast ast;
     FuncBodyType type;
-} FuncBody;
+    FuncBodyStatementList* func_body_statement_list;
+};
 
-FuncBody* createFuncBody();
+FuncBody* createFuncBody(FuncBodyStatementList*);
 void destroyFuncBody(FuncBody*);
 
 #ifdef ENABLE_DUMP

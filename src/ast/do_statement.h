@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_DO_STATEMENT,
+    DO_STATEMENT_OK,
+    DO_STATEMENT_ERROR,
 } DoStatementType;
 
-typedef struct {
+struct _do_statement_ {
     Ast ast;
     DoStatementType type;
-} DoStatement;
+    LoopBody* loop_body;
+    ExpressionInParensRule* expression_in_parens_rule;
+};
 
-DoStatement* createDoStatement();
+DoStatement* createDoStatement(LoopBody*, ExpressionInParensRule*);
 void destroyDoStatement(DoStatement*);
 
 #ifdef ENABLE_DUMP

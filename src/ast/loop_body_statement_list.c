@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-LoopBodyStatementList* createLoopBodyStatementList() {
+LoopBodyStatementList* createLoopBodyStatementList(LoopBodyStatement* loop_body_statement,
+		LoopBodyStatementList* loop_body_statement_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createLoopBodyStatementList\\n");
@@ -14,6 +15,8 @@ LoopBodyStatementList* createLoopBodyStatementList() {
 
     LoopBodyStatementList* ptr = _alloc_ds(LoopBodyStatementList);
     initAst(&ptr->ast, NULL, AST_LOOP_BODY_STATEMENT_LIST);
+    ptr->loop_body_statement = loop_body_statement;
+    ptr->loop_body_statement_list = loop_body_statement_list;
 
     return ptr;
 }

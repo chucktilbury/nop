@@ -8,15 +8,19 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_DICT_INIT_ELEMENT,
+    DICT_INIT_ELEMENT_OK,
+    DICT_INIT_ELEMENT_ERROR,
 } DictInitElementType;
 
-typedef struct {
+struct _dict_init_element_ {
     Ast ast;
     DictInitElementType type;
-} DictInitElement;
+    const char* strg;
+    DictInitItem* dict_init_item;
+    CompoundName* compound_name;
+};
 
-DictInitElement* createDictInitElement();
+DictInitElement* createDictInitElement(const char*, DictInitItem*, CompoundName*);
 void destroyDictInitElement(DictInitElement*);
 
 #ifdef ENABLE_DUMP

@@ -8,15 +8,17 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_MODULE,
+    MODULE_OK,
+    MODULE_ERROR,
 } ModuleType;
 
-typedef struct {
+struct _module_ {
     Ast ast;
     ModuleType type;
-} Module;
+    ModuleList* module_list;
+};
 
-Module* createModule();
+Module* createModule(ModuleList*);
 void destroyModule(Module*);
 
 #ifdef ENABLE_DUMP

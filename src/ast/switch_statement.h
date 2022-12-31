@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_SWITCH_STATEMENT,
+    SWITCH_STATEMENT_OK,
+    SWITCH_STATEMENT_ERROR,
 } SwitchStatementType;
 
-typedef struct {
+struct _switch_statement_ {
     Ast ast;
     SwitchStatementType type;
-} SwitchStatement;
+    CompoundNameInParensRule* compound_name_in_parens_rule;
+    CaseClauseList* case_clause_list;
+};
 
-SwitchStatement* createSwitchStatement();
+SwitchStatement* createSwitchStatement(CompoundNameInParensRule*, CaseClauseList*);
 void destroySwitchStatement(SwitchStatement*);
 
 #ifdef ENABLE_DUMP

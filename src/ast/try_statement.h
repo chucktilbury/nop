@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_TRY_STATEMENT,
+    TRY_STATEMENT_OK,
+    TRY_STATEMENT_ERROR,
 } TryStatementType;
 
-typedef struct {
+struct _try_statement_ {
     Ast ast;
     TryStatementType type;
-} TryStatement;
+    FuncBodyStatementList* func_body_statement_list;
+    ExceptClauseList* except_clause_list;
+};
 
-TryStatement* createTryStatement();
+TryStatement* createTryStatement(FuncBodyStatementList*, ExceptClauseList*);
 void destroyTryStatement(TryStatement*);
 
 #ifdef ENABLE_DUMP

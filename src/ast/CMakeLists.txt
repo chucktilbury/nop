@@ -3,6 +3,7 @@ project(ast)
 add_library(${PROJECT_NAME} STATIC
     ast.c
 
+    # file names for CMakeLists.txt
     module.c
     module_list.c
     compound_name.c
@@ -17,6 +18,7 @@ add_library(${PROJECT_NAME} STATIC
     expression.c
     expression_list.c
     expression_in_parens_rule.c
+    expression_list_in_parens.c
     func_reference.c
     namespace_definition.c
     class_name_parent.c
@@ -31,7 +33,6 @@ add_library(${PROJECT_NAME} STATIC
     struct_declaration.c
     struct_body.c
     method_declaration.c
-    func_declaration.c
     parameter_def_list.c
     parameter_decl_element.c
     parameter_decl_list.c
@@ -42,10 +43,13 @@ add_library(${PROJECT_NAME} STATIC
     dict_initializer.c
     initialzer.c
     data_definition.c
-    func_definition_parameter_list.c
+    func_def_parameter_list.c
     func_body_statement_list.c
     func_body.c
     func_definition.c
+    break_statement.c
+    continue_statement.c
+    yield_statement.c
     loop_body_statement.c
     loop_body_statement_list.c
     loop_body.c
@@ -71,8 +75,13 @@ add_library(${PROJECT_NAME} STATIC
     array_parameter_list.c
     class_definition_item.c
     module_item.c
+    trace_statement.c
+    return_statement.c
+    print_statement.c
+    exit_statement.c
+    raise_statement.c
+    type_statement.c
     func_body_statement.c
-
 )
 
 target_include_directories(${PROJECT_NAME}

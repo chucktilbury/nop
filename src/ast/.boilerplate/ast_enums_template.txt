@@ -9,9 +9,7 @@
  * Enums for the different types of AST object.
  */
 typedef enum {
-{% for item in lines %}
-    AST_{{ item['enum'] }},
-{%- endfor %}
+{{ items -}}
 } AstType;
 
 #endif /* _AST_ENUMS_H_ */

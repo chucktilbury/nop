@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ConstantExpression* createConstantExpression() {
+ConstantExpression* createConstantExpression(double num,
+		const char* strg) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createConstantExpression\\n");
@@ -14,6 +15,8 @@ ConstantExpression* createConstantExpression() {
 
     ConstantExpression* ptr = _alloc_ds(ConstantExpression);
     initAst(&ptr->ast, NULL, AST_CONSTANT_EXPRESSION);
+    ptr->num = num;
+    ptr->strg = strg;
 
     return ptr;
 }

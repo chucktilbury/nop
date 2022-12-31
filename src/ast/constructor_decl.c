@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-ConstructorDecl* createConstructorDecl() {
+ConstructorDecl* createConstructorDecl(FuncDeclParameterList* func_decl_parameter_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createConstructorDecl\\n");
@@ -14,6 +14,7 @@ ConstructorDecl* createConstructorDecl() {
 
     ConstructorDecl* ptr = _alloc_ds(ConstructorDecl);
     initAst(&ptr->ast, NULL, AST_CONSTRUCTOR_DECL);
+    ptr->func_decl_parameter_list = func_decl_parameter_list;
 
     return ptr;
 }

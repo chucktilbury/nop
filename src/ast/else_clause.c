@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ElseClause* createElseClause() {
+ElseClause* createElseClause(Expression* expression,
+		FuncBody* func_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createElseClause\\n");
@@ -14,6 +15,8 @@ ElseClause* createElseClause() {
 
     ElseClause* ptr = _alloc_ds(ElseClause);
     initAst(&ptr->ast, NULL, AST_ELSE_CLAUSE);
+    ptr->expression = expression;
+    ptr->func_body = func_body;
 
     return ptr;
 }

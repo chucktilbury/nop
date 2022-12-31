@@ -8,15 +8,19 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_INITIALZER,
+    INITIALZER_OK,
+    INITIALZER_ERROR,
 } InitialzerType;
 
-typedef struct {
+struct _initialzer_ {
     Ast ast;
     InitialzerType type;
-} Initialzer;
+    Expression* expression;
+    ArrayInitializer* array_initializer;
+    DictInitializer* dict_initializer;
+};
 
-Initialzer* createInitialzer();
+Initialzer* createInitialzer(Expression*, ArrayInitializer*, DictInitializer*);
 void destroyInitialzer(Initialzer*);
 
 #ifdef ENABLE_DUMP

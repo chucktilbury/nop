@@ -6,7 +6,9 @@
 #include "memory.h"
 #include "ast.h"
 
-DictInitElement* createDictInitElement() {
+DictInitElement* createDictInitElement(const char* strg,
+		DictInitItem* dict_init_item,
+		CompoundName* compound_name) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createDictInitElement\\n");
@@ -14,6 +16,9 @@ DictInitElement* createDictInitElement() {
 
     DictInitElement* ptr = _alloc_ds(DictInitElement);
     initAst(&ptr->ast, NULL, AST_DICT_INIT_ELEMENT);
+    ptr->strg = strg;
+    ptr->dict_init_item = dict_init_item;
+    ptr->compound_name = compound_name;
 
     return ptr;
 }

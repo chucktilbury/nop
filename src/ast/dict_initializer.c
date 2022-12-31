@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-DictInitializer* createDictInitializer() {
+DictInitializer* createDictInitializer(DictInitList* dict_init_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createDictInitializer\\n");
@@ -14,6 +14,7 @@ DictInitializer* createDictInitializer() {
 
     DictInitializer* ptr = _alloc_ds(DictInitializer);
     initAst(&ptr->ast, NULL, AST_DICT_INITIALIZER);
+    ptr->dict_init_list = dict_init_list;
 
     return ptr;
 }

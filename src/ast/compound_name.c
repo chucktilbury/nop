@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-CompoundName* createCompoundName() {
+CompoundName* createCompoundName(const char* symbol,
+		CompoundName* compound_name) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createCompoundName\\n");
@@ -14,6 +15,8 @@ CompoundName* createCompoundName() {
 
     CompoundName* ptr = _alloc_ds(CompoundName);
     initAst(&ptr->ast, NULL, AST_COMPOUND_NAME);
+    ptr->symbol = symbol;
+    ptr->compound_name = compound_name;
 
     return ptr;
 }

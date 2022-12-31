@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_ELSE_CLAUSE_FINAL,
+    ELSE_CLAUSE_FINAL_OK,
+    ELSE_CLAUSE_FINAL_ERROR,
 } ElseClauseFinalType;
 
-typedef struct {
+struct _else_clause_final_ {
     Ast ast;
     ElseClauseFinalType type;
-} ElseClauseFinal;
+    EmptyParensRule* empty_parens_rule;
+    FuncBody* func_body;
+};
 
-ElseClauseFinal* createElseClauseFinal();
+ElseClauseFinal* createElseClauseFinal(EmptyParensRule*, FuncBody*);
 void destroyElseClauseFinal(ElseClauseFinal*);
 
 #ifdef ENABLE_DUMP

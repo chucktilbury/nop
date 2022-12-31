@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ElseClauseFinal* createElseClauseFinal() {
+ElseClauseFinal* createElseClauseFinal(EmptyParensRule* empty_parens_rule,
+		FuncBody* func_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createElseClauseFinal\\n");
@@ -14,6 +15,8 @@ ElseClauseFinal* createElseClauseFinal() {
 
     ElseClauseFinal* ptr = _alloc_ds(ElseClauseFinal);
     initAst(&ptr->ast, NULL, AST_ELSE_CLAUSE_FINAL);
+    ptr->empty_parens_rule = empty_parens_rule;
+    ptr->func_body = func_body;
 
     return ptr;
 }

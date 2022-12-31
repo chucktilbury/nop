@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_EXPRESSION_IN_PARENS_RULE,
+    EXPRESSION_IN_PARENS_RULE_OK,
+    EXPRESSION_IN_PARENS_RULE_ERROR,
 } ExpressionInParensRuleType;
 
-typedef struct {
+struct _expression_in_parens_rule_ {
     Ast ast;
     ExpressionInParensRuleType type;
-} ExpressionInParensRule;
+    Expression* expression;
+    EmptyParensRule* empty_parens_rule;
+};
 
-ExpressionInParensRule* createExpressionInParensRule();
+ExpressionInParensRule* createExpressionInParensRule(Expression*, EmptyParensRule*);
 void destroyExpressionInParensRule(ExpressionInParensRule*);
 
 #ifdef ENABLE_DUMP

@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_COMPOUND_NAME,
+    COMPOUND_NAME_OK,
+    COMPOUND_NAME_ERROR,
 } CompoundNameType;
 
-typedef struct {
+struct _compound_name_ {
     Ast ast;
     CompoundNameType type;
-} CompoundName;
+    const char* symbol;
+    CompoundName* compound_name;
+};
 
-CompoundName* createCompoundName();
+CompoundName* createCompoundName(const char*, CompoundName*);
 void destroyCompoundName(CompoundName*);
 
 #ifdef ENABLE_DUMP

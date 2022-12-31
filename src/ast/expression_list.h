@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_EXPRESSION_LIST,
+    EXPRESSION_LIST_OK,
+    EXPRESSION_LIST_ERROR,
 } ExpressionListType;
 
-typedef struct {
+struct _expression_list_ {
     Ast ast;
     ExpressionListType type;
-} ExpressionList;
+    Expression* expression;
+    ExpressionList* expression_list;
+};
 
-ExpressionList* createExpressionList();
+ExpressionList* createExpressionList(Expression*, ExpressionList*);
 void destroyExpressionList(ExpressionList*);
 
 #ifdef ENABLE_DUMP

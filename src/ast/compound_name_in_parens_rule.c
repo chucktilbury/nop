@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-CompoundNameInParensRule* createCompoundNameInParensRule() {
+CompoundNameInParensRule* createCompoundNameInParensRule(CompoundName* compound_name) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createCompoundNameInParensRule\\n");
@@ -14,6 +14,7 @@ CompoundNameInParensRule* createCompoundNameInParensRule() {
 
     CompoundNameInParensRule* ptr = _alloc_ds(CompoundNameInParensRule);
     initAst(&ptr->ast, NULL, AST_COMPOUND_NAME_IN_PARENS_RULE);
+    ptr->compound_name = compound_name;
 
     return ptr;
 }

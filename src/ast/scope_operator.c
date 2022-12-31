@@ -6,7 +6,9 @@
 #include "memory.h"
 #include "ast.h"
 
-ScopeOperator* createScopeOperator() {
+ScopeOperator* createScopeOperator(int private,
+		int public,
+		int protected) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createScopeOperator\\n");
@@ -14,6 +16,9 @@ ScopeOperator* createScopeOperator() {
 
     ScopeOperator* ptr = _alloc_ds(ScopeOperator);
     initAst(&ptr->ast, NULL, AST_SCOPE_OPERATOR);
+    ptr->private = private;
+    ptr->public = public;
+    ptr->protected = protected;
 
     return ptr;
 }

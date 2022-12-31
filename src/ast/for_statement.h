@@ -8,15 +8,20 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_FOR_STATEMENT,
+    FOR_STATEMENT_OK,
+    FOR_STATEMENT_ERROR,
 } ForStatementType;
 
-typedef struct {
+struct _for_statement_ {
     Ast ast;
     ForStatementType type;
-} ForStatement;
+    CompoundName* compound_name;
+    Expression* expression;
+    LoopBody* loop_body;
+    EmptyParensRule* empty_parens_rule;
+};
 
-ForStatement* createForStatement();
+ForStatement* createForStatement(CompoundName*, Expression*, LoopBody*, EmptyParensRule*);
 void destroyForStatement(ForStatement*);
 
 #ifdef ENABLE_DUMP

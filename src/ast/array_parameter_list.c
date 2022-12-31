@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ArrayParameterList* createArrayParameterList() {
+ArrayParameterList* createArrayParameterList(ArrayParameter* array_parameter,
+		ArrayParameterList* array_parameter_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createArrayParameterList\\n");
@@ -14,6 +15,8 @@ ArrayParameterList* createArrayParameterList() {
 
     ArrayParameterList* ptr = _alloc_ds(ArrayParameterList);
     initAst(&ptr->ast, NULL, AST_ARRAY_PARAMETER_LIST);
+    ptr->array_parameter = array_parameter;
+    ptr->array_parameter_list = array_parameter_list;
 
     return ptr;
 }

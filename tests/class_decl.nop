@@ -1,0 +1,38 @@
+/*
+ * High level verification that class syntax is accepted.
+ */
+
+class first_one {}
+
+class second_one() {}
+
+class third_one(first_one) {}
+
+class forth_one(first_one.second_one) {}
+
+/*
+    Classes can accept:
+        : symbol_declaration {}
+        | method_declaration {}
+        | struct_declaration {}
+        | scope_operator {}
+        | constructor_decl {}
+        | destructor_decl {}
+ */
+Class qwerty {
+    Num number_symbol
+    String aStringMethodDeclaration(num, this.is.a.compound.name)
+
+    private
+    sTrUcT keywords_are_not_case_sensitive {
+        num one
+        string two
+        dict three
+        list four
+    }
+
+    public
+
+    create(num, num, num)
+    destroy
+}

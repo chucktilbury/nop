@@ -8,15 +8,22 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CLASS_DEFINITION_ITEM,
+    CLASS_DEFINITION_ITEM_OK,
+    CLASS_DEFINITION_ITEM_ERROR,
 } ClassDefinitionItemType;
 
-typedef struct {
+struct _class_definition_item_ {
     Ast ast;
     ClassDefinitionItemType type;
-} ClassDefinitionItem;
+    SymbolDeclaration* symbol_declaration;
+    MethodDeclaration* method_declaration;
+    StructDeclaration* struct_declaration;
+    ScopeOperator* scope_operator;
+    ConstructorDecl* constructor_decl;
+    DestructorDecl* destructor_decl;
+};
 
-ClassDefinitionItem* createClassDefinitionItem();
+ClassDefinitionItem* createClassDefinitionItem(SymbolDeclaration*, MethodDeclaration*, StructDeclaration*, ScopeOperator*, ConstructorDecl*, DestructorDecl*);
 void destroyClassDefinitionItem(ClassDefinitionItem*);
 
 #ifdef ENABLE_DUMP

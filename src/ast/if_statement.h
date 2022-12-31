@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_IF_STATEMENT,
+    IF_STATEMENT_OK,
+    IF_STATEMENT_ERROR,
 } IfStatementType;
 
-typedef struct {
+struct _if_statement_ {
     Ast ast;
     IfStatementType type;
-} IfStatement;
+    IfClause* if_clause;
+    ElseClauseList* else_clause_list;
+};
 
-IfStatement* createIfStatement();
+IfStatement* createIfStatement(IfClause*, ElseClauseList*);
 void destroyIfStatement(IfStatement*);
 
 #ifdef ENABLE_DUMP

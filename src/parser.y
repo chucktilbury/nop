@@ -27,76 +27,85 @@ extern const char* file_name;
 
     /* These union objects are generated from boilerplate. */
     /* #include "ast/parser_union.h" */
-    Module* _module_;
-    ModuleList* _module_list_;
-    CompoundName* _compound_name_;
-    ScopeOperator* _scope_operator_;
-    TypeDefinition* _type_definition_;
-    ConstantExpression* _constant_expression_;
-    SymbolType* _symbol_type_;
-    CastSpecifier* _cast_specifier_;
-    CompoundNameInParensRule* _compound_name_in_parens_rule_;
-    ArrayReference* _array_reference_;
-    ExpressionFactor* _expression_factor_;
-    Expression* _expression_;
-    ExpressionList* _expression_list_;
-    ExpressionInParensRule* _expression_in_parens_rule_;
-    FuncReference* _func_reference_;
-    NamespaceDefinition* _namespace_definition_;
-    ClassNameParent* _class_name_parent_;
-    ClassName* _class_name_;
-    ClassDefinition* _class_definition_;
-    ClassDefinitionList* _class_definition_list_;
-    EmptyParensRule* _empty_parens_rule_;
-    FuncDeclParameterList* _func_decl_parameter_list_;
-    ConstructorDecl* _constructor_decl_;
-    DestructorDecl* _destructor_decl_;
-    SymbolDeclaration* _symbol_declaration_;
-    StructDeclaration* _struct_declaration_;
-    StructBody* _struct_body_;
-    MethodDeclaration* _method_declaration_;
-    FuncDeclaration* _func_declaration_;
-    ParameterDefList* _parameter_def_list_;
-    ParameterDeclElement* _parameter_decl_element_;
-    ParameterDeclList* _parameter_decl_list_;
-    ArrayInitializer* _array_initializer_;
-    DictInitItem* _dict_init_item_;
-    DictInitElement* _dict_init_element_;
-    DictInitList* _dict_init_list_;
-    DictInitializer* _dict_initializer_;
-    Initialzer* _initialzer_;
-    DataDefinition* _data_definition_;
-    FuncDefinitionParameterList* _func_definition_parameter_list_;
-    FuncBodyStatementList* _func_body_statement_list_;
-    FuncBody* _func_body_;
-    FuncDefinition* _func_definition_;
-    LoopBodyStatement* _loop_body_statement_;
-    LoopBodyStatementList* _loop_body_statement_list_;
-    LoopBody* _loop_body_;
-    ExceptClause* _except_clause_;
-    ExceptClauseIntermediateList* _except_clause_intermediate_list_;
-    ExceptClauseFinal* _except_clause_final_;
-    ExceptClauseList* _except_clause_list_;
-    TryStatement* _try_statement_;
-    ElseClause* _else_clause_;
-    ElseClauseIntermediateList* _else_clause_intermediate_list_;
-    ElseClauseFinal* _else_clause_final_;
-    ElseClauseList* _else_clause_list_;
-    IfClause* _if_clause_;
-    IfStatement* _if_statement_;
-    ForStatement* _for_statement_;
-    WhileStatement* _while_statement_;
-    CaseClause* _case_clause_;
-    CaseClauseIntermediateList* _case_clause_intermediate_list_;
-    CaseClauseList* _case_clause_list_;
-    SwitchStatement* _switch_statement_;
-    DoStatement* _do_statement_;
-    ArrayParameter* _array_parameter_;
-    ArrayParameterList* _array_parameter_list_;
-    ClassDefinitionItem* _class_definition_item_;
-    ModuleItem* _module_item_;
-    FuncBodyStatement* _func_body_statement_;
-
+    /* non-terminal types for %%union{} */
+    Module* _mod_;
+    ModuleList* _modlis_;
+    CompoundName* _comnam_;
+    ScopeOperator* _scoope_;
+    TypeDefinition* _typdef_;
+    ConstantExpression* _conexp_;
+    SymbolType* _symtyp_;
+    CastSpecifier* _casspe_;
+    CompoundNameInParensRule* _comnaminparrul_;
+    ArrayReference* _arrref_;
+    ExpressionFactor* _expfac_;
+    Expression* _exp_;
+    ExpressionList* _explis_;
+    ExpressionInParensRule* _expinparrul_;
+    ExpressionListInParens* _explisinpar_;
+    FuncReference* _funref_;
+    NamespaceDefinition* _namdef_;
+    ClassNameParent* _clanampar_;
+    ClassName* _clanam_;
+    ClassDefinition* _cladef_;
+    ClassDefinitionList* _cladeflis_;
+    EmptyParensRule* _empparrul_;
+    FuncDeclParameterList* _fundecparlis_;
+    ConstructorDecl* _condec_;
+    DestructorDecl* _desdec_;
+    SymbolDeclaration* _symdec_;
+    StructDeclaration* _strdec_;
+    StructBody* _strbod_;
+    MethodDeclaration* _metdec_;
+    ParameterDefList* _pardeflis_;
+    ParameterDeclElement* _pardecele_;
+    ParameterDeclList* _pardeclis_;
+    ArrayInitializer* _arrini_;
+    DictInitItem* _diciniite_;
+    DictInitElement* _diciniele_;
+    DictInitList* _dicinilis_;
+    DictInitializer* _dicini_;
+    Initialzer* _ini_;
+    DataDefinition* _datdef_;
+    FuncDefParameterList* _fundefparlis_;
+    FuncBodyStatementList* _funbodstalis_;
+    FuncBody* _funbod_;
+    FuncDefinition* _fundef_;
+    BreakStatement* _bresta_;
+    ContinueStatement* _consta_;
+    YieldStatement* _yiesta_;
+    LoopBodyStatement* _loobodsta_;
+    LoopBodyStatementList* _loobodstalis_;
+    LoopBody* _loobod_;
+    ExceptClause* _exccla_;
+    ExceptClauseIntermediateList* _excclaintlis_;
+    ExceptClauseFinal* _excclafin_;
+    ExceptClauseList* _excclalis_;
+    TryStatement* _trysta_;
+    ElseClause* _elscla_;
+    ElseClauseIntermediateList* _elsclaintlis_;
+    ElseClauseFinal* _elsclafin_;
+    ElseClauseList* _elsclalis_;
+    IfClause* _ifcla_;
+    IfStatement* _ifsta_;
+    ForStatement* _forsta_;
+    WhileStatement* _whista_;
+    CaseClause* _cascla_;
+    CaseClauseIntermediateList* _casclaintlis_;
+    CaseClauseList* _casclalis_;
+    SwitchStatement* _swista_;
+    DoStatement* _dosta_;
+    ArrayParameter* _arrpar_;
+    ArrayParameterList* _arrparlis_;
+    ClassDefinitionItem* _cladefite_;
+    ModuleItem* _modite_;
+    TraceStatement* _trasta_;
+    ReturnStatement* _retsta_;
+    PrintStatement* _prista_;
+    ExitStatement* _exista_;
+    RaiseStatement* _raista_;
+    TypeStatement* _typsta_;
+    FuncBodyStatement* _funbodsta_;
 };
 
 %token BREAK CASE CONTINUE CONST DEFAULT
@@ -105,9 +114,8 @@ extern const char* file_name;
 %token TRUE FALSE IN YIELD EXIT
 %token EQU NEQU LORE GORE OR AND
 %token TRY EXCEPT RAISE CTOR DTOR
-%token PRINT TRACE
 
-%token<type> NUMBER NOTHING STRING LIST DICT BOOLEAN
+%token<type> NUMBER NOTHING STRING LIST DICT BOOLEAN PRINT TRACE TYPE
 %token<scope> PUBLIC PRIVATE PROTECTED
 %token<symbol> SYMBOL
 %token<num> NUM
@@ -115,76 +123,85 @@ extern const char* file_name;
 
     /* token list automatically generated by boilerplate */
     /* #include "ast/parser_types.h" */
-%type<_module_> module
-%type<_module_list_> module_list
-%type<_compound_name_> compound_name
-%type<_scope_operator_> scope_operator
-%type<_type_definition_> type_definition
-%type<_constant_expression_> constant_expression
-%type<_symbol_type_> symbol_type
-%type<_cast_specifier_> cast_specifier
-%type<_compound_name_in_parens_rule_> compound_name_in_parens_rule
-%type<_array_reference_> array_reference
-%type<_expression_factor_> expression_factor
-%type<_expression_> expression
-%type<_expression_list_> expression_list
-%type<_expression_in_parens_rule_> expression_in_parens_rule
-%type<_func_reference_> func_reference
-%type<_namespace_definition_> namespace_definition
-%type<_class_name_parent_> class_name_parent
-%type<_class_name_> class_name
-%type<_class_definition_> class_definition
-%type<_class_definition_list_> class_definition_list
-%type<_empty_parens_rule_> empty_parens_rule
-%type<_func_decl_parameter_list_> func_decl_parameter_list
-%type<_constructor_decl_> constructor_decl
-%type<_destructor_decl_> destructor_decl
-%type<_symbol_declaration_> symbol_declaration
-%type<_struct_declaration_> struct_declaration
-%type<_struct_body_> struct_body
-%type<_method_declaration_> method_declaration
-%type<_func_declaration_> func_declaration
-%type<_parameter_def_list_> parameter_def_list
-%type<_parameter_decl_element_> parameter_decl_element
-%type<_parameter_decl_list_> parameter_decl_list
-%type<_array_initializer_> array_initializer
-%type<_dict_init_item_> dict_init_item
-%type<_dict_init_element_> dict_init_element
-%type<_dict_init_list_> dict_init_list
-%type<_dict_initializer_> dict_initializer
-%type<_initialzer_> initialzer
-%type<_data_definition_> data_definition
-%type<_func_definition_parameter_list_> func_definition_parameter_list
-%type<_func_body_statement_list_> func_body_statement_list
-%type<_func_body_> func_body
-%type<_func_definition_> func_definition
-%type<_loop_body_statement_> loop_body_statement
-%type<_loop_body_statement_list_> loop_body_statement_list
-%type<_loop_body_> loop_body
-%type<_except_clause_> except_clause
-%type<_except_clause_intermediate_list_> except_clause_intermediate_list
-%type<_except_clause_final_> except_clause_final
-%type<_except_clause_list_> except_clause_list
-%type<_try_statement_> try_statement
-%type<_else_clause_> else_clause
-%type<_else_clause_intermediate_list_> else_clause_intermediate_list
-%type<_else_clause_final_> else_clause_final
-%type<_else_clause_list_> else_clause_list
-%type<_if_clause_> if_clause
-%type<_if_statement_> if_statement
-%type<_for_statement_> for_statement
-%type<_while_statement_> while_statement
-%type<_case_clause_> case_clause
-%type<_case_clause_intermediate_list_> case_clause_intermediate_list
-%type<_case_clause_list_> case_clause_list
-%type<_switch_statement_> switch_statement
-%type<_do_statement_> do_statement
-%type<_array_parameter_> array_parameter
-%type<_array_parameter_list_> array_parameter_list
-%type<_class_definition_item_> class_definition_item
-%type<_module_item_> module_item
-%type<_func_body_statement_> func_body_statement
-
+    /* non-terminal definitions */
+%type<_mod_> module
+%type<_modlis_> module_list
+%type<_comnam_> compound_name
+%type<_scoope_> scope_operator
+%type<_typdef_> type_definition
+%type<_conexp_> constant_expression
+%type<_symtyp_> symbol_type
+%type<_casspe_> cast_specifier
+%type<_comnaminparrul_> compound_name_in_parens_rule
+%type<_arrref_> array_reference
+%type<_expfac_> expression_factor
+%type<_exp_> expression
+%type<_explis_> expression_list
+%type<_expinparrul_> expression_in_parens_rule
+%type<_explisinpar_> expression_list_in_parens
+%type<_funref_> func_reference
+%type<_namdef_> namespace_definition
+%type<_clanampar_> class_name_parent
+%type<_clanam_> class_name
+%type<_cladef_> class_definition
+%type<_cladeflis_> class_definition_list
+%type<_empparrul_> empty_parens_rule
+%type<_fundecparlis_> func_decl_parameter_list
+%type<_condec_> constructor_decl
+%type<_desdec_> destructor_decl
+%type<_symdec_> symbol_declaration
+%type<_strdec_> struct_declaration
+%type<_strbod_> struct_body
+%type<_metdec_> method_declaration
+%type<_pardeflis_> parameter_def_list
+%type<_pardecele_> parameter_decl_element
+%type<_pardeclis_> parameter_decl_list
+%type<_arrini_> array_initializer
+%type<_diciniite_> dict_init_item
+%type<_diciniele_> dict_init_element
+%type<_dicinilis_> dict_init_list
+%type<_dicini_> dict_initializer
+%type<_ini_> initialzer
+%type<_datdef_> data_definition
+%type<_fundefparlis_> func_def_parameter_list
+%type<_funbodstalis_> func_body_statement_list
+%type<_funbod_> func_body
+%type<_fundef_> func_definition
+%type<_bresta_> break_statement
+%type<_consta_> continue_statement
+%type<_yiesta_> yield_statement
+%type<_loobodsta_> loop_body_statement
+%type<_loobodstalis_> loop_body_statement_list
+%type<_loobod_> loop_body
+%type<_exccla_> except_clause
+%type<_excclaintlis_> except_clause_intermediate_list
+%type<_excclafin_> except_clause_final
+%type<_excclalis_> except_clause_list
+%type<_trysta_> try_statement
+%type<_elscla_> else_clause
+%type<_elsclaintlis_> else_clause_intermediate_list
+%type<_elsclafin_> else_clause_final
+%type<_elsclalis_> else_clause_list
+%type<_ifcla_> if_clause
+%type<_ifsta_> if_statement
+%type<_forsta_> for_statement
+%type<_whista_> while_statement
+%type<_cascla_> case_clause
+%type<_casclaintlis_> case_clause_intermediate_list
+%type<_casclalis_> case_clause_list
+%type<_swista_> switch_statement
+%type<_dosta_> do_statement
+%type<_arrpar_> array_parameter
+%type<_arrparlis_> array_parameter_list
+%type<_cladefite_> class_definition_item
+%type<_modite_> module_item
+%type<_trasta_> trace_statement
+%type<_retsta_> return_statement
+%type<_prista_> print_statement
+%type<_exista_> exit_statement
+%type<_raista_> raise_statement
+%type<_typsta_> type_statement
+%type<_funbodsta_> func_body_statement
 
 %define parse.error verbose
 %locations
@@ -256,9 +273,9 @@ array_reference
 
 expression_factor
     : constant_expression {}
-    | func_reference {}
     | compound_name {}
     | array_reference {}
+    | func_reference {}
     ;
 
 expression
@@ -292,9 +309,13 @@ expression_in_parens_rule
     | empty_parens_rule {}
     ;
 
+expression_list_in_parens
+    : '(' expression_list ')' {}
+    | empty_parens_rule {}
+    ;
+
 func_reference
-    : compound_name '(' expression_list ')' {}
-    | compound_name '(' ')' {}
+    : compound_name expression_list_in_parens {}
     ;
 
 namespace_definition
@@ -305,6 +326,7 @@ namespace_definition
 class_name_parent
     : /* EMPTY */ {}
     | compound_name_in_parens_rule {}
+    | empty_parens_rule {}
     ;
 
 class_name
@@ -357,10 +379,6 @@ method_declaration
     : type_definition SYMBOL func_decl_parameter_list {}
     ;
 
-func_declaration
-    : type_definition compound_name func_decl_parameter_list {}
-    ;
-
 parameter_def_list
     : symbol_declaration {}
     | parameter_def_list ',' symbol_declaration {}
@@ -411,9 +429,9 @@ data_definition
     | symbol_declaration '=' initialzer {}
     ;
 
-func_definition_parameter_list
+func_def_parameter_list
     : '(' parameter_def_list ')' {}
-    | empty_parens_rule {} {}
+    | '(' ')' {}
     ;
 
 func_body_statement_list
@@ -427,16 +445,28 @@ func_body
     ;
 
 func_definition
-    : type_definition compound_name func_definition_parameter_list func_body {}
-    | compound_name '.' CTOR func_definition_parameter_list func_body {}
+    : type_definition compound_name func_def_parameter_list func_body {}
+    | compound_name '.' CTOR func_def_parameter_list func_body {}
     | compound_name '.' DTOR func_body {}
+    ;
+
+break_statement
+    : BREAK {}
+    ;
+
+continue_statement
+    : CONTINUE {}
+    ;
+
+yield_statement
+    : YIELD {}
     ;
 
 loop_body_statement
     : func_body_statement {}
-    | BREAK {}
-    | CONTINUE {}
-    | YIELD {}
+    | break_statement {}
+    | continue_statement {}
+    | yield_statement {}
     ;
 
 loop_body_statement_list
@@ -505,7 +535,7 @@ if_statement
     ;
 
 for_statement
-    : FOR '(' SYMBOL IN compound_name ')' loop_body {}
+    : FOR '(' compound_name IN expression ')' loop_body {}
     | FOR empty_parens_rule loop_body {}
     | FOR loop_body {}
     ;
@@ -562,11 +592,39 @@ module_item
     : class_definition {}
     | data_definition {}
     | func_definition {}
-    | func_declaration {}
     | namespace_definition {}
     | struct_declaration {}
     | scope_operator {}
     | IMPORT STRG { openFile($2); }
+    ;
+
+trace_statement
+    : TRACE {}
+    | TRACE '(' STRG ')' {}
+    ;
+
+return_statement
+    : RETURN {}
+    | RETURN expression_in_parens_rule {}
+    ;
+
+print_statement
+    : PRINT {}
+    | PRINT expression_in_parens_rule {}
+    ;
+
+exit_statement
+    : EXIT {}
+    | EXIT '(' expression ')' {}
+    ;
+
+raise_statement
+    : RAISE {}
+    | RAISE '(' expression ')' {}
+    ;
+
+type_statement
+    : TYPE '(' expression ')' {}
     ;
 
 func_body_statement
@@ -579,12 +637,12 @@ func_body_statement
     | do_statement {}
     | try_statement {}
     | func_reference {}
-    | TRACE {}
-    | RETURN {}
-    | RETURN expression_in_parens_rule {}
-    | PRINT expression_in_parens_rule {}
-    | EXIT '(' expression ')' {}
-    | RAISE '(' expression ')' {}
+    | trace_statement {}
+    | return_statement {}
+    | print_statement {}
+    | exit_statement {}
+    | raise_statement {}
+    | type_statement {}
     ;
 
 %%

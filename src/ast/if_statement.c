@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-IfStatement* createIfStatement() {
+IfStatement* createIfStatement(IfClause* if_clause,
+		ElseClauseList* else_clause_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createIfStatement\\n");
@@ -14,6 +15,8 @@ IfStatement* createIfStatement() {
 
     IfStatement* ptr = _alloc_ds(IfStatement);
     initAst(&ptr->ast, NULL, AST_IF_STATEMENT);
+    ptr->if_clause = if_clause;
+    ptr->else_clause_list = else_clause_list;
 
     return ptr;
 }

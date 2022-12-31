@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_FUNC_BODY_STATEMENT_LIST,
+    FUNC_BODY_STATEMENT_LIST_OK,
+    FUNC_BODY_STATEMENT_LIST_ERROR,
 } FuncBodyStatementListType;
 
-typedef struct {
+struct _func_body_statement_list_ {
     Ast ast;
     FuncBodyStatementListType type;
-} FuncBodyStatementList;
+    FuncBodyStatement* func_body_statement;
+    FuncBodyStatementList* func_body_statement_list;
+};
 
-FuncBodyStatementList* createFuncBodyStatementList();
+FuncBodyStatementList* createFuncBodyStatementList(FuncBodyStatement*, FuncBodyStatementList*);
 void destroyFuncBodyStatementList(FuncBodyStatementList*);
 
 #ifdef ENABLE_DUMP

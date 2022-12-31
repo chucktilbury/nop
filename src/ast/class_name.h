@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CLASS_NAME,
+    CLASS_NAME_OK,
+    CLASS_NAME_ERROR,
 } ClassNameType;
 
-typedef struct {
+struct _class_name_ {
     Ast ast;
     ClassNameType type;
-} ClassName;
+    const char* symbol;
+    ClassNameParent* class_name_parent;
+};
 
-ClassName* createClassName();
+ClassName* createClassName(const char*, ClassNameParent*);
 void destroyClassName(ClassName*);
 
 #ifdef ENABLE_DUMP

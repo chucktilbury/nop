@@ -6,12 +6,11 @@
 #ifndef _AST_INCLUDES_H_
 #define _AST_INCLUDES_H_
 
+#include "ast.h"
+#include "ast_typedefs.h"
+
 /*
  * Includes.
  */
-{% for item in lines %}
-{{ item['incls'] }}
-{%- endfor %}
-
-
+{{ items }}
 #endif /* _AST_INCLUDES_H_ */

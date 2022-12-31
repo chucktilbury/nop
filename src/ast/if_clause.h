@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_IF_CLAUSE,
+    IF_CLAUSE_OK,
+    IF_CLAUSE_ERROR,
 } IfClauseType;
 
-typedef struct {
+struct _if_clause_ {
     Ast ast;
     IfClauseType type;
-} IfClause;
+    ExpressionInParensRule* expression_in_parens_rule;
+    FuncBody* func_body;
+};
 
-IfClause* createIfClause();
+IfClause* createIfClause(ExpressionInParensRule*, FuncBody*);
 void destroyIfClause(IfClause*);
 
 #ifdef ENABLE_DUMP

@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_DATA_DEFINITION,
+    DATA_DEFINITION_OK,
+    DATA_DEFINITION_ERROR,
 } DataDefinitionType;
 
-typedef struct {
+struct _data_definition_ {
     Ast ast;
     DataDefinitionType type;
-} DataDefinition;
+    SymbolDeclaration* symbol_declaration;
+    Initialzer* initialzer;
+};
 
-DataDefinition* createDataDefinition();
+DataDefinition* createDataDefinition(SymbolDeclaration*, Initialzer*);
 void destroyDataDefinition(DataDefinition*);
 
 #ifdef ENABLE_DUMP

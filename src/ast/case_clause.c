@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-CaseClause* createCaseClause() {
+CaseClause* createCaseClause(ConstantExpression* constant_expression,
+		FuncBody* func_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createCaseClause\\n");
@@ -14,6 +15,8 @@ CaseClause* createCaseClause() {
 
     CaseClause* ptr = _alloc_ds(CaseClause);
     initAst(&ptr->ast, NULL, AST_CASE_CLAUSE);
+    ptr->constant_expression = constant_expression;
+    ptr->func_body = func_body;
 
     return ptr;
 }

@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_ELSE_CLAUSE,
+    ELSE_CLAUSE_OK,
+    ELSE_CLAUSE_ERROR,
 } ElseClauseType;
 
-typedef struct {
+struct _else_clause_ {
     Ast ast;
     ElseClauseType type;
-} ElseClause;
+    Expression* expression;
+    FuncBody* func_body;
+};
 
-ElseClause* createElseClause();
+ElseClause* createElseClause(Expression*, FuncBody*);
 void destroyElseClause(ElseClause*);
 
 #ifdef ENABLE_DUMP

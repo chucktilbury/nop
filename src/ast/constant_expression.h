@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CONSTANT_EXPRESSION,
+    CONSTANT_EXPRESSION_OK,
+    CONSTANT_EXPRESSION_ERROR,
 } ConstantExpressionType;
 
-typedef struct {
+struct _constant_expression_ {
     Ast ast;
     ConstantExpressionType type;
-} ConstantExpression;
+    double num;
+    const char* strg;
+};
 
-ConstantExpression* createConstantExpression();
+ConstantExpression* createConstantExpression(double, const char*);
 void destroyConstantExpression(ConstantExpression*);
 
 #ifdef ENABLE_DUMP

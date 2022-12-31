@@ -8,15 +8,23 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_MODULE_ITEM,
+    MODULE_ITEM_OK,
+    MODULE_ITEM_ERROR,
 } ModuleItemType;
 
-typedef struct {
+struct _module_item_ {
     Ast ast;
     ModuleItemType type;
-} ModuleItem;
+    ClassDefinition* class_definition;
+    DataDefinition* data_definition;
+    FuncDefinition* func_definition;
+    NamespaceDefinition* namespace_definition;
+    StructDeclaration* struct_declaration;
+    ScopeOperator* scope_operator;
+    const char* strg;
+};
 
-ModuleItem* createModuleItem();
+ModuleItem* createModuleItem(ClassDefinition*, DataDefinition*, FuncDefinition*, NamespaceDefinition*, StructDeclaration*, ScopeOperator*, const char*);
 void destroyModuleItem(ModuleItem*);
 
 #ifdef ENABLE_DUMP

@@ -8,15 +8,17 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CONSTRUCTOR_DECL,
+    CONSTRUCTOR_DECL_OK,
+    CONSTRUCTOR_DECL_ERROR,
 } ConstructorDeclType;
 
-typedef struct {
+struct _constructor_decl_ {
     Ast ast;
     ConstructorDeclType type;
-} ConstructorDecl;
+    FuncDeclParameterList* func_decl_parameter_list;
+};
 
-ConstructorDecl* createConstructorDecl();
+ConstructorDecl* createConstructorDecl(FuncDeclParameterList*);
 void destroyConstructorDecl(ConstructorDecl*);
 
 #ifdef ENABLE_DUMP

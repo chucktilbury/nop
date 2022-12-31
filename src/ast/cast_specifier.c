@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-CastSpecifier* createCastSpecifier() {
+CastSpecifier* createCastSpecifier(TypeDefinition* type_definition) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createCastSpecifier\\n");
@@ -14,6 +14,7 @@ CastSpecifier* createCastSpecifier() {
 
     CastSpecifier* ptr = _alloc_ds(CastSpecifier);
     initAst(&ptr->ast, NULL, AST_CAST_SPECIFIER);
+    ptr->type_definition = type_definition;
 
     return ptr;
 }

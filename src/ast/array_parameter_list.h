@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_ARRAY_PARAMETER_LIST,
+    ARRAY_PARAMETER_LIST_OK,
+    ARRAY_PARAMETER_LIST_ERROR,
 } ArrayParameterListType;
 
-typedef struct {
+struct _array_parameter_list_ {
     Ast ast;
     ArrayParameterListType type;
-} ArrayParameterList;
+    ArrayParameter* array_parameter;
+    ArrayParameterList* array_parameter_list;
+};
 
-ArrayParameterList* createArrayParameterList();
+ArrayParameterList* createArrayParameterList(ArrayParameter*, ArrayParameterList*);
 void destroyArrayParameterList(ArrayParameterList*);
 
 #ifdef ENABLE_DUMP

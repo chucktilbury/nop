@@ -8,15 +8,19 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_METHOD_DECLARATION,
+    METHOD_DECLARATION_OK,
+    METHOD_DECLARATION_ERROR,
 } MethodDeclarationType;
 
-typedef struct {
+struct _method_declaration_ {
     Ast ast;
     MethodDeclarationType type;
-} MethodDeclaration;
+    TypeDefinition* type_definition;
+    const char* symbol;
+    FuncDeclParameterList* func_decl_parameter_list;
+};
 
-MethodDeclaration* createMethodDeclaration();
+MethodDeclaration* createMethodDeclaration(TypeDefinition*, const char*, FuncDeclParameterList*);
 void destroyMethodDeclaration(MethodDeclaration*);
 
 #ifdef ENABLE_DUMP

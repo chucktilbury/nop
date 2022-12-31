@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ExceptClauseFinal* createExceptClauseFinal() {
+ExceptClauseFinal* createExceptClauseFinal(EmptyParensRule* empty_parens_rule,
+		FuncBody* func_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createExceptClauseFinal\\n");
@@ -14,6 +15,8 @@ ExceptClauseFinal* createExceptClauseFinal() {
 
     ExceptClauseFinal* ptr = _alloc_ds(ExceptClauseFinal);
     initAst(&ptr->ast, NULL, AST_EXCEPT_CLAUSE_FINAL);
+    ptr->empty_parens_rule = empty_parens_rule;
+    ptr->func_body = func_body;
 
     return ptr;
 }

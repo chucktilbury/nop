@@ -4,7 +4,7 @@
 
 class the_class {
     public
-    dict the_func(num num_param, string str_param)
+    dict the_func(num, string)
     protected
     bool another()
 }

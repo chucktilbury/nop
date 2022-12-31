@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ArrayParameter* createArrayParameter() {
+ArrayParameter* createArrayParameter(ExpressionFactor* expression_factor,
+		ArrayParameter* array_parameter) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createArrayParameter\\n");
@@ -14,6 +15,8 @@ ArrayParameter* createArrayParameter() {
 
     ArrayParameter* ptr = _alloc_ds(ArrayParameter);
     initAst(&ptr->ast, NULL, AST_ARRAY_PARAMETER);
+    ptr->expression_factor = expression_factor;
+    ptr->array_parameter = array_parameter;
 
     return ptr;
 }

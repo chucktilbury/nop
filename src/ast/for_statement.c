@@ -6,7 +6,10 @@
 #include "memory.h"
 #include "ast.h"
 
-ForStatement* createForStatement() {
+ForStatement* createForStatement(CompoundName* compound_name,
+		Expression* expression,
+		LoopBody* loop_body,
+		EmptyParensRule* empty_parens_rule) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createForStatement\\n");
@@ -14,6 +17,10 @@ ForStatement* createForStatement() {
 
     ForStatement* ptr = _alloc_ds(ForStatement);
     initAst(&ptr->ast, NULL, AST_FOR_STATEMENT);
+    ptr->compound_name = compound_name;
+    ptr->expression = expression;
+    ptr->loop_body = loop_body;
+    ptr->empty_parens_rule = empty_parens_rule;
 
     return ptr;
 }

@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_LOOP_BODY_STATEMENT_LIST,
+    LOOP_BODY_STATEMENT_LIST_OK,
+    LOOP_BODY_STATEMENT_LIST_ERROR,
 } LoopBodyStatementListType;
 
-typedef struct {
+struct _loop_body_statement_list_ {
     Ast ast;
     LoopBodyStatementListType type;
-} LoopBodyStatementList;
+    LoopBodyStatement* loop_body_statement;
+    LoopBodyStatementList* loop_body_statement_list;
+};
 
-LoopBodyStatementList* createLoopBodyStatementList();
+LoopBodyStatementList* createLoopBodyStatementList(LoopBodyStatement*, LoopBodyStatementList*);
 void destroyLoopBodyStatementList(LoopBodyStatementList*);
 
 #ifdef ENABLE_DUMP

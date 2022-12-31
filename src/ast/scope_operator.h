@@ -8,15 +8,19 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_SCOPE_OPERATOR,
+    SCOPE_OPERATOR_OK,
+    SCOPE_OPERATOR_ERROR,
 } ScopeOperatorType;
 
-typedef struct {
+struct _scope_operator_ {
     Ast ast;
     ScopeOperatorType type;
-} ScopeOperator;
+    int private;
+    int public;
+    int protected;
+};
 
-ScopeOperator* createScopeOperator();
+ScopeOperator* createScopeOperator(int, int, int);
 void destroyScopeOperator(ScopeOperator*);
 
 #ifdef ENABLE_DUMP

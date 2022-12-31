@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_ELSE_CLAUSE_LIST,
+    ELSE_CLAUSE_LIST_OK,
+    ELSE_CLAUSE_LIST_ERROR,
 } ElseClauseListType;
 
-typedef struct {
+struct _else_clause_list_ {
     Ast ast;
     ElseClauseListType type;
-} ElseClauseList;
+    ElseClauseIntermediateList* else_clause_intermediate_list;
+    ElseClauseFinal* else_clause_final;
+};
 
-ElseClauseList* createElseClauseList();
+ElseClauseList* createElseClauseList(ElseClauseIntermediateList*, ElseClauseFinal*);
 void destroyElseClauseList(ElseClauseList*);
 
 #ifdef ENABLE_DUMP

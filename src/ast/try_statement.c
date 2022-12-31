@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-TryStatement* createTryStatement() {
+TryStatement* createTryStatement(FuncBodyStatementList* func_body_statement_list,
+		ExceptClauseList* except_clause_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createTryStatement\\n");
@@ -14,6 +15,8 @@ TryStatement* createTryStatement() {
 
     TryStatement* ptr = _alloc_ds(TryStatement);
     initAst(&ptr->ast, NULL, AST_TRY_STATEMENT);
+    ptr->func_body_statement_list = func_body_statement_list;
+    ptr->except_clause_list = except_clause_list;
 
     return ptr;
 }

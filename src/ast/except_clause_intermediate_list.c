@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ExceptClauseIntermediateList* createExceptClauseIntermediateList() {
+ExceptClauseIntermediateList* createExceptClauseIntermediateList(ExceptClause* except_clause,
+		ExceptClauseIntermediateList* except_clause_intermediate_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createExceptClauseIntermediateList\\n");
@@ -14,6 +15,8 @@ ExceptClauseIntermediateList* createExceptClauseIntermediateList() {
 
     ExceptClauseIntermediateList* ptr = _alloc_ds(ExceptClauseIntermediateList);
     initAst(&ptr->ast, NULL, AST_EXCEPT_CLAUSE_INTERMEDIATE_LIST);
+    ptr->except_clause = except_clause;
+    ptr->except_clause_intermediate_list = except_clause_intermediate_list;
 
     return ptr;
 }

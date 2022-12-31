@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-SymbolDeclaration* createSymbolDeclaration() {
+SymbolDeclaration* createSymbolDeclaration(SymbolType* symbol_type) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createSymbolDeclaration\\n");
@@ -14,6 +14,7 @@ SymbolDeclaration* createSymbolDeclaration() {
 
     SymbolDeclaration* ptr = _alloc_ds(SymbolDeclaration);
     initAst(&ptr->ast, NULL, AST_SYMBOL_DECLARATION);
+    ptr->symbol_type = symbol_type;
 
     return ptr;
 }

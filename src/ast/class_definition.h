@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CLASS_DEFINITION,
+    CLASS_DEFINITION_OK,
+    CLASS_DEFINITION_ERROR,
 } ClassDefinitionType;
 
-typedef struct {
+struct _class_definition_ {
     Ast ast;
     ClassDefinitionType type;
-} ClassDefinition;
+    ClassDefinitionList* class_definition_list;
+    ClassName* class_name;
+};
 
-ClassDefinition* createClassDefinition();
+ClassDefinition* createClassDefinition(ClassDefinitionList*, ClassName*);
 void destroyClassDefinition(ClassDefinition*);
 
 #ifdef ENABLE_DUMP

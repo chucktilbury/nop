@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-Module* createModule() {
+Module* createModule(ModuleList* module_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createModule\\n");
@@ -14,6 +14,7 @@ Module* createModule() {
 
     Module* ptr = _alloc_ds(Module);
     initAst(&ptr->ast, NULL, AST_MODULE);
+    ptr->module_list = module_list;
 
     return ptr;
 }

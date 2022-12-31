@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_WHILE_STATEMENT,
+    WHILE_STATEMENT_OK,
+    WHILE_STATEMENT_ERROR,
 } WhileStatementType;
 
-typedef struct {
+struct _while_statement_ {
     Ast ast;
     WhileStatementType type;
-} WhileStatement;
+    ExpressionInParensRule* expression_in_parens_rule;
+    LoopBody* loop_body;
+};
 
-WhileStatement* createWhileStatement();
+WhileStatement* createWhileStatement(ExpressionInParensRule*, LoopBody*);
 void destroyWhileStatement(WhileStatement*);
 
 #ifdef ENABLE_DUMP

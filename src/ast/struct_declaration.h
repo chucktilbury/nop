@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_STRUCT_DECLARATION,
+    STRUCT_DECLARATION_OK,
+    STRUCT_DECLARATION_ERROR,
 } StructDeclarationType;
 
-typedef struct {
+struct _struct_declaration_ {
     Ast ast;
     StructDeclarationType type;
-} StructDeclaration;
+    const char* symbol;
+    StructBody* struct_body;
+};
 
-StructDeclaration* createStructDeclaration();
+StructDeclaration* createStructDeclaration(const char*, StructBody*);
 void destroyStructDeclaration(StructDeclaration*);
 
 #ifdef ENABLE_DUMP

@@ -8,13 +8,14 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_EMPTY_PARENS_RULE,
+    EMPTY_PARENS_RULE_OK,
+    EMPTY_PARENS_RULE_ERROR,
 } EmptyParensRuleType;
 
-typedef struct {
+struct _empty_parens_rule_ {
     Ast ast;
     EmptyParensRuleType type;
-} EmptyParensRule;
+};
 
 EmptyParensRule* createEmptyParensRule();
 void destroyEmptyParensRule(EmptyParensRule*);

@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_EXCEPT_CLAUSE,
+    EXCEPT_CLAUSE_OK,
+    EXCEPT_CLAUSE_ERROR,
 } ExceptClauseType;
 
-typedef struct {
+struct _except_clause_ {
     Ast ast;
     ExceptClauseType type;
-} ExceptClause;
+    CompoundNameInParensRule* compound_name_in_parens_rule;
+    FuncBody* func_body;
+};
 
-ExceptClause* createExceptClause();
+ExceptClause* createExceptClause(CompoundNameInParensRule*, FuncBody*);
 void destroyExceptClause(ExceptClause*);
 
 #ifdef ENABLE_DUMP

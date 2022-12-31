@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-SwitchStatement* createSwitchStatement() {
+SwitchStatement* createSwitchStatement(CompoundNameInParensRule* compound_name_in_parens_rule,
+		CaseClauseList* case_clause_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createSwitchStatement\\n");
@@ -14,6 +15,8 @@ SwitchStatement* createSwitchStatement() {
 
     SwitchStatement* ptr = _alloc_ds(SwitchStatement);
     initAst(&ptr->ast, NULL, AST_SWITCH_STATEMENT);
+    ptr->compound_name_in_parens_rule = compound_name_in_parens_rule;
+    ptr->case_clause_list = case_clause_list;
 
     return ptr;
 }

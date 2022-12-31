@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ClassName* createClassName() {
+ClassName* createClassName(const char* symbol,
+		ClassNameParent* class_name_parent) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createClassName\\n");
@@ -14,6 +15,8 @@ ClassName* createClassName() {
 
     ClassName* ptr = _alloc_ds(ClassName);
     initAst(&ptr->ast, NULL, AST_CLASS_NAME);
+    ptr->symbol = symbol;
+    ptr->class_name_parent = class_name_parent;
 
     return ptr;
 }

@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_PARAMETER_DECL_LIST,
+    PARAMETER_DECL_LIST_OK,
+    PARAMETER_DECL_LIST_ERROR,
 } ParameterDeclListType;
 
-typedef struct {
+struct _parameter_decl_list_ {
     Ast ast;
     ParameterDeclListType type;
-} ParameterDeclList;
+    ParameterDeclElement* parameter_decl_element;
+    ParameterDeclList* parameter_decl_list;
+};
 
-ParameterDeclList* createParameterDeclList();
+ParameterDeclList* createParameterDeclList(ParameterDeclElement*, ParameterDeclList*);
 void destroyParameterDeclList(ParameterDeclList*);
 
 #ifdef ENABLE_DUMP

@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ElseClauseList* createElseClauseList() {
+ElseClauseList* createElseClauseList(ElseClauseIntermediateList* else_clause_intermediate_list,
+		ElseClauseFinal* else_clause_final) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createElseClauseList\\n");
@@ -14,6 +15,8 @@ ElseClauseList* createElseClauseList() {
 
     ElseClauseList* ptr = _alloc_ds(ElseClauseList);
     initAst(&ptr->ast, NULL, AST_ELSE_CLAUSE_LIST);
+    ptr->else_clause_intermediate_list = else_clause_intermediate_list;
+    ptr->else_clause_final = else_clause_final;
 
     return ptr;
 }

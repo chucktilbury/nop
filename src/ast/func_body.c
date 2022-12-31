@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-FuncBody* createFuncBody() {
+FuncBody* createFuncBody(FuncBodyStatementList* func_body_statement_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createFuncBody\\n");
@@ -14,6 +14,7 @@ FuncBody* createFuncBody() {
 
     FuncBody* ptr = _alloc_ds(FuncBody);
     initAst(&ptr->ast, NULL, AST_FUNC_BODY);
+    ptr->func_body_statement_list = func_body_statement_list;
 
     return ptr;
 }

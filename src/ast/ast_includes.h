@@ -6,10 +6,12 @@
 #ifndef _AST_INCLUDES_H_
 #define _AST_INCLUDES_H_
 
+#include "ast.h"
+#include "ast_typedefs.h"
+
 /*
  * Includes.
  */
-
 #include "module.h"
 #include "module_list.h"
 #include "compound_name.h"
@@ -24,6 +26,7 @@
 #include "expression.h"
 #include "expression_list.h"
 #include "expression_in_parens_rule.h"
+#include "expression_list_in_parens.h"
 #include "func_reference.h"
 #include "namespace_definition.h"
 #include "class_name_parent.h"
@@ -38,7 +41,6 @@
 #include "struct_declaration.h"
 #include "struct_body.h"
 #include "method_declaration.h"
-#include "func_declaration.h"
 #include "parameter_def_list.h"
 #include "parameter_decl_element.h"
 #include "parameter_decl_list.h"
@@ -49,10 +51,13 @@
 #include "dict_initializer.h"
 #include "initialzer.h"
 #include "data_definition.h"
-#include "func_definition_parameter_list.h"
+#include "func_def_parameter_list.h"
 #include "func_body_statement_list.h"
 #include "func_body.h"
 #include "func_definition.h"
+#include "break_statement.h"
+#include "continue_statement.h"
+#include "yield_statement.h"
 #include "loop_body_statement.h"
 #include "loop_body_statement_list.h"
 #include "loop_body.h"
@@ -78,7 +83,12 @@
 #include "array_parameter_list.h"
 #include "class_definition_item.h"
 #include "module_item.h"
+#include "trace_statement.h"
+#include "return_statement.h"
+#include "print_statement.h"
+#include "exit_statement.h"
+#include "raise_statement.h"
+#include "type_statement.h"
 #include "func_body_statement.h"
-
 
 #endif /* _AST_INCLUDES_H_ */

@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ExpressionInParensRule* createExpressionInParensRule() {
+ExpressionInParensRule* createExpressionInParensRule(Expression* expression,
+		EmptyParensRule* empty_parens_rule) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createExpressionInParensRule\\n");
@@ -14,6 +15,8 @@ ExpressionInParensRule* createExpressionInParensRule() {
 
     ExpressionInParensRule* ptr = _alloc_ds(ExpressionInParensRule);
     initAst(&ptr->ast, NULL, AST_EXPRESSION_IN_PARENS_RULE);
+    ptr->expression = expression;
+    ptr->empty_parens_rule = empty_parens_rule;
 
     return ptr;
 }

@@ -8,15 +8,17 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_{{lockname}},
+    {{lockname}}_OK,
+    {{lockname}}_ERROR,
 } {{typename}}Type;
 
-typedef struct {
+struct {{strucname}} {
     Ast ast;
     {{typename}}Type type;
-} {{typename}};
+{{strucdef-}}
+};
 
-{{typename}}* create{{typename}}();
+{{typename}}* create{{typename}}({{paradecl}});
 void destroy{{typename}}({{typename}}*);
 
 #ifdef ENABLE_DUMP

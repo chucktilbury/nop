@@ -26,21 +26,9 @@ add_executable(${PROJECT_NAME}
     ${BISON_PARSER_OUTPUTS}
     ${FLEX_SCANNER_OUTPUTS}
     errors.c
-    #dumper.c
     main.c
     ptrlst.c
     memory.c
-    #ast.c
-    #import.c
-    #namespace.c
-    #class.c
-    #struct.c
-    #symbol.c
-    #compound_name.c
-    #type_name.c
-    #func_declaration.c
-    #parameter_decl.c
-    #constant_expression.c
 )
 
 target_include_directories(${PROJECT_NAME}

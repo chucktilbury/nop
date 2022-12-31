@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-WhileStatement* createWhileStatement() {
+WhileStatement* createWhileStatement(ExpressionInParensRule* expression_in_parens_rule,
+		LoopBody* loop_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createWhileStatement\\n");
@@ -14,6 +15,8 @@ WhileStatement* createWhileStatement() {
 
     WhileStatement* ptr = _alloc_ds(WhileStatement);
     initAst(&ptr->ast, NULL, AST_WHILE_STATEMENT);
+    ptr->expression_in_parens_rule = expression_in_parens_rule;
+    ptr->loop_body = loop_body;
 
     return ptr;
 }

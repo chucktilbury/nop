@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ExpressionList* createExpressionList() {
+ExpressionList* createExpressionList(Expression* expression,
+		ExpressionList* expression_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createExpressionList\\n");
@@ -14,6 +15,8 @@ ExpressionList* createExpressionList() {
 
     ExpressionList* ptr = _alloc_ds(ExpressionList);
     initAst(&ptr->ast, NULL, AST_EXPRESSION_LIST);
+    ptr->expression = expression;
+    ptr->expression_list = expression_list;
 
     return ptr;
 }

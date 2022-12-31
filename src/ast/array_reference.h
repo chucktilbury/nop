@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_ARRAY_REFERENCE,
+    ARRAY_REFERENCE_OK,
+    ARRAY_REFERENCE_ERROR,
 } ArrayReferenceType;
 
-typedef struct {
+struct _array_reference_ {
     Ast ast;
     ArrayReferenceType type;
-} ArrayReference;
+    CompoundName* compound_name;
+    ArrayParameterList* array_parameter_list;
+};
 
-ArrayReference* createArrayReference();
+ArrayReference* createArrayReference(CompoundName*, ArrayParameterList*);
 void destroyArrayReference(ArrayReference*);
 
 #ifdef ENABLE_DUMP

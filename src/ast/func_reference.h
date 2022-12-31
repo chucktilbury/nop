@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_FUNC_REFERENCE,
+    FUNC_REFERENCE_OK,
+    FUNC_REFERENCE_ERROR,
 } FuncReferenceType;
 
-typedef struct {
+struct _func_reference_ {
     Ast ast;
     FuncReferenceType type;
-} FuncReference;
+    CompoundName* compound_name;
+    ExpressionListInParens* expression_list_in_parens;
+};
 
-FuncReference* createFuncReference();
+FuncReference* createFuncReference(CompoundName*, ExpressionListInParens*);
 void destroyFuncReference(FuncReference*);
 
 #ifdef ENABLE_DUMP

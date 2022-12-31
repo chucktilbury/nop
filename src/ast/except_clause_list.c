@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-ExceptClauseList* createExceptClauseList() {
+ExceptClauseList* createExceptClauseList(ExceptClauseIntermediateList* except_clause_intermediate_list,
+		ExceptClauseFinal* except_clause_final) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createExceptClauseList\\n");
@@ -14,6 +15,8 @@ ExceptClauseList* createExceptClauseList() {
 
     ExceptClauseList* ptr = _alloc_ds(ExceptClauseList);
     initAst(&ptr->ast, NULL, AST_EXCEPT_CLAUSE_LIST);
+    ptr->except_clause_intermediate_list = except_clause_intermediate_list;
+    ptr->except_clause_final = except_clause_final;
 
     return ptr;
 }

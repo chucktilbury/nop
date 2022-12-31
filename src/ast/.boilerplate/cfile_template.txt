@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-{{typename}}* create{{typename}}() {
+{{typename}}* create{{typename}}({{paradefs}}) {
 
 #ifdef ENABLE_TRACE
     printf("parser: create{{typename}}\\n");
@@ -14,7 +14,7 @@
 
     {{typename}}* ptr = _alloc_ds({{typename}});
     initAst(&ptr->ast, NULL, AST_{{lockname}});
-
+{{initdefs}}
     return ptr;
 }
 

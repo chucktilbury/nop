@@ -1,0 +1,15 @@
+/**
+ * @file ast_typedefs.h
+ *
+ * This is the group include for all of the AST modules.
+ */
+#ifndef _AST_TYPEDEFS_H_
+#define _AST_TYPEDEFS_H_
+
+/*
+ * Typedefs.
+ */
+{{ items }}
+#endif /* _AST_TYPEDEFS_H_ */
+
+

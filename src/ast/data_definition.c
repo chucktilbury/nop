@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-DataDefinition* createDataDefinition() {
+DataDefinition* createDataDefinition(SymbolDeclaration* symbol_declaration,
+		Initialzer* initialzer) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createDataDefinition\\n");
@@ -14,6 +15,8 @@ DataDefinition* createDataDefinition() {
 
     DataDefinition* ptr = _alloc_ds(DataDefinition);
     initAst(&ptr->ast, NULL, AST_DATA_DEFINITION);
+    ptr->symbol_declaration = symbol_declaration;
+    ptr->initialzer = initialzer;
 
     return ptr;
 }

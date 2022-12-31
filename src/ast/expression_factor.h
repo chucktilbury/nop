@@ -8,15 +8,20 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_EXPRESSION_FACTOR,
+    EXPRESSION_FACTOR_OK,
+    EXPRESSION_FACTOR_ERROR,
 } ExpressionFactorType;
 
-typedef struct {
+struct _expression_factor_ {
     Ast ast;
     ExpressionFactorType type;
-} ExpressionFactor;
+    ConstantExpression* constant_expression;
+    CompoundName* compound_name;
+    ArrayReference* array_reference;
+    FuncReference* func_reference;
+};
 
-ExpressionFactor* createExpressionFactor();
+ExpressionFactor* createExpressionFactor(ConstantExpression*, CompoundName*, ArrayReference*, FuncReference*);
 void destroyExpressionFactor(ExpressionFactor*);
 
 #ifdef ENABLE_DUMP

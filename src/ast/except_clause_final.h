@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_EXCEPT_CLAUSE_FINAL,
+    EXCEPT_CLAUSE_FINAL_OK,
+    EXCEPT_CLAUSE_FINAL_ERROR,
 } ExceptClauseFinalType;
 
-typedef struct {
+struct _except_clause_final_ {
     Ast ast;
     ExceptClauseFinalType type;
-} ExceptClauseFinal;
+    EmptyParensRule* empty_parens_rule;
+    FuncBody* func_body;
+};
 
-ExceptClauseFinal* createExceptClauseFinal();
+ExceptClauseFinal* createExceptClauseFinal(EmptyParensRule*, FuncBody*);
 void destroyExceptClauseFinal(ExceptClauseFinal*);
 
 #ifdef ENABLE_DUMP

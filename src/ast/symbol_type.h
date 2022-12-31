@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_SYMBOL_TYPE,
+    SYMBOL_TYPE_OK,
+    SYMBOL_TYPE_ERROR,
 } SymbolTypeType;
 
-typedef struct {
+struct _symbol_type_ {
     Ast ast;
     SymbolTypeType type;
-} SymbolType;
+    TypeDefinition* type_definition;
+    const char* symbol;
+};
 
-SymbolType* createSymbolType();
+SymbolType* createSymbolType(TypeDefinition*, const char*);
 void destroySymbolType(SymbolType*);
 
 #ifdef ENABLE_DUMP

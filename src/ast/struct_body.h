@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_STRUCT_BODY,
+    STRUCT_BODY_OK,
+    STRUCT_BODY_ERROR,
 } StructBodyType;
 
-typedef struct {
+struct _struct_body_ {
     Ast ast;
     StructBodyType type;
-} StructBody;
+    SymbolDeclaration* symbol_declaration;
+    StructBody* struct_body;
+};
 
-StructBody* createStructBody();
+StructBody* createStructBody(SymbolDeclaration*, StructBody*);
 void destroyStructBody(StructBody*);
 
 #ifdef ENABLE_DUMP

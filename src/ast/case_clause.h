@@ -8,15 +8,18 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_CASE_CLAUSE,
+    CASE_CLAUSE_OK,
+    CASE_CLAUSE_ERROR,
 } CaseClauseType;
 
-typedef struct {
+struct _case_clause_ {
     Ast ast;
     CaseClauseType type;
-} CaseClause;
+    ConstantExpression* constant_expression;
+    FuncBody* func_body;
+};
 
-CaseClause* createCaseClause();
+CaseClause* createCaseClause(ConstantExpression*, FuncBody*);
 void destroyCaseClause(CaseClause*);
 
 #ifdef ENABLE_DUMP

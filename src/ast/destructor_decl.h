@@ -8,13 +8,14 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_DESTRUCTOR_DECL,
+    DESTRUCTOR_DECL_OK,
+    DESTRUCTOR_DECL_ERROR,
 } DestructorDeclType;
 
-typedef struct {
+struct _destructor_decl_ {
     Ast ast;
     DestructorDeclType type;
-} DestructorDecl;
+};
 
 DestructorDecl* createDestructorDecl();
 void destroyDestructorDecl(DestructorDecl*);

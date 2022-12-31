@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-CaseClauseList* createCaseClauseList() {
+CaseClauseList* createCaseClauseList(CaseClauseIntermediateList* case_clause_intermediate_list,
+		FuncBody* func_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createCaseClauseList\\n");
@@ -14,6 +15,8 @@ CaseClauseList* createCaseClauseList() {
 
     CaseClauseList* ptr = _alloc_ds(CaseClauseList);
     initAst(&ptr->ast, NULL, AST_CASE_CLAUSE_LIST);
+    ptr->case_clause_intermediate_list = case_clause_intermediate_list;
+    ptr->func_body = func_body;
 
     return ptr;
 }

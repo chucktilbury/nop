@@ -6,7 +6,7 @@
 #include "memory.h"
 #include "ast.h"
 
-ParameterDeclElement* createParameterDeclElement() {
+ParameterDeclElement* createParameterDeclElement(TypeDefinition* type_definition) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createParameterDeclElement\\n");
@@ -14,6 +14,7 @@ ParameterDeclElement* createParameterDeclElement() {
 
     ParameterDeclElement* ptr = _alloc_ds(ParameterDeclElement);
     initAst(&ptr->ast, NULL, AST_PARAMETER_DECL_ELEMENT);
+    ptr->type_definition = type_definition;
 
     return ptr;
 }

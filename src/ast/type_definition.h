@@ -8,15 +8,23 @@
 #include "ast.h"
 
 typedef enum {
-    INVALID_TYPE_DEFINITION,
+    TYPE_DEFINITION_OK,
+    TYPE_DEFINITION_ERROR,
 } TypeDefinitionType;
 
-typedef struct {
+struct _type_definition_ {
     Ast ast;
     TypeDefinitionType type;
-} TypeDefinition;
+    int number;
+    int string;
+    int boolean;
+    int nothing;
+    int list;
+    int dict;
+    CompoundName* compound_name;
+};
 
-TypeDefinition* createTypeDefinition();
+TypeDefinition* createTypeDefinition(int, int, int, int, int, int, CompoundName*);
 void destroyTypeDefinition(TypeDefinition*);
 
 #ifdef ENABLE_DUMP

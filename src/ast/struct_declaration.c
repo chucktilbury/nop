@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-StructDeclaration* createStructDeclaration() {
+StructDeclaration* createStructDeclaration(const char* symbol,
+		StructBody* struct_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createStructDeclaration\\n");
@@ -14,6 +15,8 @@ StructDeclaration* createStructDeclaration() {
 
     StructDeclaration* ptr = _alloc_ds(StructDeclaration);
     initAst(&ptr->ast, NULL, AST_STRUCT_DECLARATION);
+    ptr->symbol = symbol;
+    ptr->struct_body = struct_body;
 
     return ptr;
 }

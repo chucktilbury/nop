@@ -6,7 +6,8 @@
 #include "memory.h"
 #include "ast.h"
 
-NamespaceDefinition* createNamespaceDefinition() {
+NamespaceDefinition* createNamespaceDefinition(const char* symbol,
+		ModuleList* module_list) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createNamespaceDefinition\\n");
@@ -14,6 +15,8 @@ NamespaceDefinition* createNamespaceDefinition() {
 
     NamespaceDefinition* ptr = _alloc_ds(NamespaceDefinition);
     initAst(&ptr->ast, NULL, AST_NAMESPACE_DEFINITION);
+    ptr->symbol = symbol;
+    ptr->module_list = module_list;
 
     return ptr;
 }
