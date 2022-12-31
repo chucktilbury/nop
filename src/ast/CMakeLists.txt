@@ -1,0 +1,91 @@
+project(ast)
+
+add_library(${PROJECT_NAME} STATIC
+    ast.c
+
+    module.c
+    module_list.c
+    compound_name.c
+    scope_operator.c
+    type_definition.c
+    constant_expression.c
+    symbol_type.c
+    cast_specifier.c
+    compound_name_in_parens_rule.c
+    array_reference.c
+    expression_factor.c
+    expression.c
+    expression_list.c
+    expression_in_parens_rule.c
+    func_reference.c
+    namespace_definition.c
+    class_name_parent.c
+    class_name.c
+    class_definition.c
+    class_definition_list.c
+    empty_parens_rule.c
+    func_decl_parameter_list.c
+    constructor_decl.c
+    destructor_decl.c
+    symbol_declaration.c
+    struct_declaration.c
+    struct_body.c
+    method_declaration.c
+    func_declaration.c
+    parameter_def_list.c
+    parameter_decl_element.c
+    parameter_decl_list.c
+    array_initializer.c
+    dict_init_item.c
+    dict_init_element.c
+    dict_init_list.c
+    dict_initializer.c
+    initialzer.c
+    data_definition.c
+    func_definition_parameter_list.c
+    func_body_statement_list.c
+    func_body.c
+    func_definition.c
+    loop_body_statement.c
+    loop_body_statement_list.c
+    loop_body.c
+    except_clause.c
+    except_clause_intermediate_list.c
+    except_clause_final.c
+    except_clause_list.c
+    try_statement.c
+    else_clause.c
+    else_clause_intermediate_list.c
+    else_clause_final.c
+    else_clause_list.c
+    if_clause.c
+    if_statement.c
+    for_statement.c
+    while_statement.c
+    case_clause.c
+    case_clause_intermediate_list.c
+    case_clause_list.c
+    switch_statement.c
+    do_statement.c
+    array_parameter.c
+    array_parameter_list.c
+    class_definition_item.c
+    module_item.c
+    func_body_statement.c
+
+)
+
+target_include_directories(${PROJECT_NAME}
+    PUBLIC
+        ${PROJECT_SOURCE_DIR}/..
+        ${PROJECT_SOURCE_DIR}/../import
+        ${PROJECT_BUILD_DIR}
+)
+
+target_compile_options(${PROJECT_NAME} PRIVATE
+    -Wall
+    -Wextra
+    $<$<CONFIG:DEBUG>:-g>
+    $<$<CONFIG:RELEASE>:-Ofast>
+    $<$<CONFIG:PROFILE>:-pg -O0>
+)

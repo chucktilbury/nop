@@ -1,0 +1,17 @@
+/**
+ * @file ast_includes.h
+ *
+ * This is the group include for all of the AST modules.
+ */
+#ifndef _AST_INCLUDES_H_
+#define _AST_INCLUDES_H_
+
+/*
+ * Includes.
+ */
+{% for item in lines %}
+{{ item['incls'] }}
+{%- endfor %}
+
+
+#endif /* _AST_INCLUDES_H_ */

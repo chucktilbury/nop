@@ -1,0 +1,10 @@
+/*
+ * Function declaration syntax.
+ */
+
+class the_class {
+    public
+    dict the_func(num num_param, string str_param)
+    protected
+    bool another()
+}

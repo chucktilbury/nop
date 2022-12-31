@@ -1,0 +1,27 @@
+/**
+ * @file {{filename}}
+ *
+ */
+#ifndef _{{lockname}}_H_
+#define _{{lockname}}_H_
+
+#include "ast.h"
+
+typedef enum {
+    INVALID_{{lockname}},
+} {{typename}}Type;
+
+typedef struct {
+    Ast ast;
+    {{typename}}Type type;
+} {{typename}};
+
+{{typename}}* create{{typename}}();
+void destroy{{typename}}({{typename}}*);
+
+#ifdef ENABLE_DUMP
+void dump{{typename}}({{typename}}* ptr);
+#endif
+
+#endif
+

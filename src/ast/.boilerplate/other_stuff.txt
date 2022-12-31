@@ -1,0 +1,215 @@
+
+
+    Module* _module_;
+    ModuleList* _module_list_;
+    CompoundName* _compound_name_;
+    ScopeOperator* _scope_operator_;
+    TypeDefinition* _type_definition_;
+    ConstantExpression* _constant_expression_;
+    SymbolType* _symbol_type_;
+    CastSpecifier* _cast_specifier_;
+    CompoundNameInParensRule* _compound_name_in_parens_rule_;
+    ArrayReference* _array_reference_;
+    ExpressionFactor* _expression_factor_;
+    Expression* _expression_;
+    ExpressionList* _expression_list_;
+    ExpressionInParensRule* _expression_in_parens_rule_;
+    FuncReference* _func_reference_;
+    NamespaceDefinition* _namespace_definition_;
+    ClassNameParent* _class_name_parent_;
+    ClassName* _class_name_;
+    ClassDefinition* _class_definition_;
+    ClassDefinitionList* _class_definition_list_;
+    EmptyParensRule* _empty_parens_rule_;
+    FuncDeclParameterList* _func_decl_parameter_list_;
+    ConstructorDecl* _constructor_decl_;
+    DestructorDecl* _destructor_decl_;
+    SymbolDeclaration* _symbol_declaration_;
+    StructDeclaration* _struct_declaration_;
+    StructBody* _struct_body_;
+    MethodDeclaration* _method_declaration_;
+    FuncDeclaration* _func_declaration_;
+    ParameterDefList* _parameter_def_list_;
+    ParameterDeclElement* _parameter_decl_element_;
+    ParameterDeclList* _parameter_decl_list_;
+    ArrayInitializer* _array_initializer_;
+    DictInitItem* _dict_init_item_;
+    DictInitElement* _dict_init_element_;
+    DictInitList* _dict_init_list_;
+    DictInitializer* _dict_initializer_;
+    Initialzer* _initialzer_;
+    DataDefinition* _data_definition_;
+    FuncDefinitionParameterList* _func_definition_parameter_list_;
+    FuncBodyStatementList* _func_body_statement_list_;
+    FuncBody* _func_body_;
+    FuncDefinition* _func_definition_;
+    LoopBodyStatement* _loop_body_statement_;
+    LoopBodyStatementList* _loop_body_statement_list_;
+    LoopBody* _loop_body_;
+    ExceptClause* _except_clause_;
+    ExceptClauseIntermediateList* _except_clause_intermediate_list_;
+    ExceptClauseFinal* _except_clause_final_;
+    ExceptClauseList* _except_clause_list_;
+    TryStatement* _try_statement_;
+    ElseClause* _else_clause_;
+    ElseClauseIntermediateList* _else_clause_intermediate_list_;
+    ElseClauseFinal* _else_clause_final_;
+    ElseClauseList* _else_clause_list_;
+    IfClause* _if_clause_;
+    IfStatement* _if_statement_;
+    ForStatement* _for_statement_;
+    WhileStatement* _while_statement_;
+    CaseClause* _case_clause_;
+    CaseClauseIntermediateList* _case_clause_intermediate_list_;
+    CaseClauseList* _case_clause_list_;
+    SwitchStatement* _switch_statement_;
+    DoStatement* _do_statement_;
+    ArrayParameter* _array_parameter_;
+    ArrayParameterList* _array_parameter_list_;
+    ClassDefinitionItem* _class_definition_item_;
+    ModuleItem* _module_item_;
+    FuncBodyStatement* _func_body_statement_;
+
+
+%type<_module_> module
+%type<_module_list_> module_list
+%type<_compound_name_> compound_name
+%type<_scope_operator_> scope_operator
+%type<_type_definition_> type_definition
+%type<_constant_expression_> constant_expression
+%type<_symbol_type_> symbol_type
+%type<_cast_specifier_> cast_specifier
+%type<_compound_name_in_parens_rule_> compound_name_in_parens_rule
+%type<_array_reference_> array_reference
+%type<_expression_factor_> expression_factor
+%type<_expression_> expression
+%type<_expression_list_> expression_list
+%type<_expression_in_parens_rule_> expression_in_parens_rule
+%type<_func_reference_> func_reference
+%type<_namespace_definition_> namespace_definition
+%type<_class_name_parent_> class_name_parent
+%type<_class_name_> class_name
+%type<_class_definition_> class_definition
+%type<_class_definition_list_> class_definition_list
+%type<_empty_parens_rule_> empty_parens_rule
+%type<_func_decl_parameter_list_> func_decl_parameter_list
+%type<_constructor_decl_> constructor_decl
+%type<_destructor_decl_> destructor_decl
+%type<_symbol_declaration_> symbol_declaration
+%type<_struct_declaration_> struct_declaration
+%type<_struct_body_> struct_body
+%type<_method_declaration_> method_declaration
+%type<_func_declaration_> func_declaration
+%type<_parameter_def_list_> parameter_def_list
+%type<_parameter_decl_element_> parameter_decl_element
+%type<_parameter_decl_list_> parameter_decl_list
+%type<_array_initializer_> array_initializer
+%type<_dict_init_item_> dict_init_item
+%type<_dict_init_element_> dict_init_element
+%type<_dict_init_list_> dict_init_list
+%type<_dict_initializer_> dict_initializer
+%type<_initialzer_> initialzer
+%type<_data_definition_> data_definition
+%type<_func_definition_parameter_list_> func_definition_parameter_list
+%type<_func_body_statement_list_> func_body_statement_list
+%type<_func_body_> func_body
+%type<_func_definition_> func_definition
+%type<_loop_body_statement_> loop_body_statement
+%type<_loop_body_statement_list_> loop_body_statement_list
+%type<_loop_body_> loop_body
+%type<_except_clause_> except_clause
+%type<_except_clause_intermediate_list_> except_clause_intermediate_list
+%type<_except_clause_final_> except_clause_final
+%type<_except_clause_list_> except_clause_list
+%type<_try_statement_> try_statement
+%type<_else_clause_> else_clause
+%type<_else_clause_intermediate_list_> else_clause_intermediate_list
+%type<_else_clause_final_> else_clause_final
+%type<_else_clause_list_> else_clause_list
+%type<_if_clause_> if_clause
+%type<_if_statement_> if_statement
+%type<_for_statement_> for_statement
+%type<_while_statement_> while_statement
+%type<_case_clause_> case_clause
+%type<_case_clause_intermediate_list_> case_clause_intermediate_list
+%type<_case_clause_list_> case_clause_list
+%type<_switch_statement_> switch_statement
+%type<_do_statement_> do_statement
+%type<_array_parameter_> array_parameter
+%type<_array_parameter_list_> array_parameter_list
+%type<_class_definition_item_> class_definition_item
+%type<_module_item_> module_item
+%type<_func_body_statement_> func_body_statement
+
+
+    module.c
+    module_list.c
+    compound_name.c
+    scope_operator.c
+    type_definition.c
+    constant_expression.c
+    symbol_type.c
+    cast_specifier.c
+    compound_name_in_parens_rule.c
+    array_reference.c
+    expression_factor.c
+    expression.c
+    expression_list.c
+    expression_in_parens_rule.c
+    func_reference.c
+    namespace_definition.c
+    class_name_parent.c
+    class_name.c
+    class_definition.c
+    class_definition_list.c
+    empty_parens_rule.c
+    func_decl_parameter_list.c
+    constructor_decl.c
+    destructor_decl.c
+    symbol_declaration.c
+    struct_declaration.c
+    struct_body.c
+    method_declaration.c
+    func_declaration.c
+    parameter_def_list.c
+    parameter_decl_element.c
+    parameter_decl_list.c
+    array_initializer.c
+    dict_init_item.c
+    dict_init_element.c
+    dict_init_list.c
+    dict_initializer.c
+    initialzer.c
+    data_definition.c
+    func_definition_parameter_list.c
+    func_body_statement_list.c
+    func_body.c
+    func_definition.c
+    loop_body_statement.c
+    loop_body_statement_list.c
+    loop_body.c
+    except_clause.c
+    except_clause_intermediate_list.c
+    except_clause_final.c
+    except_clause_list.c
+    try_statement.c
+    else_clause.c
+    else_clause_intermediate_list.c
+    else_clause_final.c
+    else_clause_list.c
+    if_clause.c
+    if_statement.c
+    for_statement.c
+    while_statement.c
+    case_clause.c
+    case_clause_intermediate_list.c
+    case_clause_list.c
+    switch_statement.c
+    do_statement.c
+    array_parameter.c
+    array_parameter_list.c
+    class_definition_item.c
+    module_item.c
+    func_body_statement.c
+
+

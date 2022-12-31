@@ -1,0 +1,34 @@
+/*
+ *
+ *   this is a comment
+ *
+ */
+
+
+
+// so is this...
+//num bla = asd.wer[sdf[12]][44]
+namespace ns1 {
+
+    //num sdflkj()  {df sd}
+    class theclass {
+        struct a_struct {
+            const num a_number
+            string a_string
+            user.type another_one
+        }
+        // declaration, not a definition
+        //private string meth(num name1, string name2, list name3)   //{}
+        //private number meth1()
+    }
+
+}
+
+namespace ns2 {
+    public
+    class withit (theclass) {
+        protected
+        struct lkasdkjl {}
+        dict some_data
+    }
+}

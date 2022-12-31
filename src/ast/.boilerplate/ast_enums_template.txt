@@ -1,0 +1,19 @@
+/*
+ * @file ast_enums.h
+ *
+ */
+#ifndef _AST_ENUMS_H_
+#define _AST_ENUMS_H_
+
+/*
+ * Enums for the different types of AST object.
+ */
+typedef enum {
+{% for item in lines %}
+    AST_{{ item['enum'] }},
+{%- endfor %}
+} AstType;
+
+#endif /* _AST_ENUMS_H_ */
+
+

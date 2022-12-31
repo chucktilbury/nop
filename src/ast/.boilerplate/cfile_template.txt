@@ -1,0 +1,32 @@
+/**
+ * @file {{filename}}
+ *
+ * $$ = create{{typename}}();
+ */
+#include "memory.h"
+#include "ast.h"
+
+{{typename}}* create{{typename}}() {
+
+#ifdef ENABLE_TRACE
+    printf("parser: create{{typename}}\\n");
+#endif /* ENABLE_DUMP */
+
+    {{typename}}* ptr = _alloc_ds({{typename}});
+    initAst(&ptr->ast, NULL, AST_{{lockname}});
+
+    return ptr;
+}
+
+void destroy{{typename}}({{typename}}* ptr) {
+
+    _free(ptr);
+}
+
+#ifdef ENABLE_DUMP
+void dump{{typename}}({{typename}}* ptr) {
+
+    (void)ptr;
+}
+#endif /* ENABLE_DUMP */
+
