@@ -10,3 +10,6 @@ Design goals:
 - Objects.
 - Compiled. (via LLVM)
 
+Status:
+
+The parser is tested well enough to allow development to move forward. The next step is to connect the AST boilerplate (generated from the parser) code to the actual parser to generate the abstract syntax tree.
