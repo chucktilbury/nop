@@ -467,6 +467,7 @@ loop_body_statement
     | break_statement {}
     | continue_statement {}
     | yield_statement {}
+    | error {}
     ;
 
 loop_body_statement_list
@@ -546,7 +547,7 @@ while_statement
     ;
 
 case_clause
-    : CASE constant_expression func_body {}
+    : CASE '(' constant_expression ')' func_body {}
     ;
 
 case_clause_intermediate_list
@@ -565,6 +566,7 @@ switch_statement
 
 do_statement
     : DO loop_body WHILE expression_in_parens_rule {}
+    | DO loop_body WHILE {}
     ;
 
     /* This is num for array references. Dict references have a string.
@@ -586,6 +588,7 @@ class_definition_item
     | scope_operator {}
     | constructor_decl {}
     | destructor_decl {}
+    | error {}
     ;
 
 module_item
@@ -596,10 +599,12 @@ module_item
     | struct_declaration {}
     | scope_operator {}
     | IMPORT STRG { openFile($2); }
+    | error {}
     ;
 
 trace_statement
     : TRACE {}
+    | TRACE '(' ')' {}
     | TRACE '(' STRG ')' {}
     ;
 
@@ -643,6 +648,7 @@ func_body_statement
     | exit_statement {}
     | raise_statement {}
     | type_statement {}
+    | func_body {}
     ;
 
 %%

@@ -93,13 +93,14 @@ int yycolumn = 1;
 "create"    { return CTOR; }
 "destroy"   { return DTOR; }
 
+"namespace" { return NAMESPACE; }
+"class"     { return CLASS; }
+"struct"    { return STRUCT; }
+
 "public"    { nop_lval.scope = PUBLIC; return PUBLIC; }
 "private"   { nop_lval.scope = PRIVATE; return PRIVATE; }
 "protected" { nop_lval.scope = PROTECTED; return PROTECTED; }
 
-"namespace" { return NAMESPACE; }
-"class"     { return CLASS; }
-"struct"    { return STRUCT; }
 "num"       { nop_lval.type = NUMBER; return NUMBER; }
 "number"    { nop_lval.type = NUMBER; return NUMBER; }
 "nothing"   { nop_lval.type = NOTHING; return NOTHING; }
@@ -119,7 +120,9 @@ int yycolumn = 1;
 "==" { return EQU; }
 "!=" { return NEQU; }
 "||" { return OR; }
+"or" { return OR; }
 "&&" { return AND; }
+"and" { return AND; }
 
 "+" { return '+'; }
 "-" { return '-'; }

@@ -33,6 +33,16 @@ Class qwerty {
 
     public
 
+    // if the constructor or destructor is named but not implemented then that
+    // is a semantics error.
+
+    // Multiple constructors can be defined with different parameter types.
     create(num, num, num)
+    create(string, user.defined._type)
+    // Destructor has no return type and accepts no parameters. Only one can be
+    // named.
+    destroy
+    // This is a semantic error, but not a syntax error.
     destroy
 }
+
