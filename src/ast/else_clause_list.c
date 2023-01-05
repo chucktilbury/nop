@@ -25,14 +25,19 @@ ElseClauseList* createElseClauseList(ElseClauseIntermediateList* else_clause_int
     ptr->else_clause_intermediate_list = else_clause_intermediate_list;
     ptr->else_clause_final = else_clause_final;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ElseClauseList data structure.
  *
  */
 AstResult pass1ElseClauseList(ElseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ElseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ElseClauseList(ElseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ElseClauseList data structure.
  *
  */
 AstResult pass2ElseClauseList(ElseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ElseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ElseClauseList(ElseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ElseClauseList data structure.
  *
  */
 AstResult pass3ElseClauseList(ElseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ElseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ElseClauseList(ElseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ElseClauseList data structure.
  *
  */
 AstResult emitElseClauseList(ElseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitElseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitElseClauseList(ElseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyElseClauseList(ElseClauseList* ptr)
+ * @brief Destroy a ElseClauseList data structure.
  *
  */
 AstResult destroyElseClauseList(ElseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyElseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyElseClauseList(ElseClauseList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ElseClauseList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpElseClauseList(ElseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

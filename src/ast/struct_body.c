@@ -25,14 +25,19 @@ StructBody* createStructBody(SymbolDeclaration* symbol_declaration,
     ptr->symbol_declaration = symbol_declaration;
     ptr->struct_body = struct_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for StructBody data structure.
  *
  */
 AstResult pass1StructBody(StructBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1StructBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1StructBody(StructBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for StructBody data structure.
  *
  */
 AstResult pass2StructBody(StructBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2StructBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2StructBody(StructBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for StructBody data structure.
  *
  */
 AstResult pass3StructBody(StructBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3StructBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3StructBody(StructBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for StructBody data structure.
  *
  */
 AstResult emitStructBody(StructBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitStructBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitStructBody(StructBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyStructBody(StructBody* ptr)
+ * @brief Destroy a StructBody data structure.
  *
  */
 AstResult destroyStructBody(StructBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyStructBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyStructBody(StructBody* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump StructBody data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpStructBody(StructBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

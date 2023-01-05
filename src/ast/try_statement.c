@@ -25,14 +25,19 @@ TryStatement* createTryStatement(FuncBodyStatementList* func_body_statement_list
     ptr->func_body_statement_list = func_body_statement_list;
     ptr->except_clause_list = except_clause_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for TryStatement data structure.
  *
  */
 AstResult pass1TryStatement(TryStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1TryStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1TryStatement(TryStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for TryStatement data structure.
  *
  */
 AstResult pass2TryStatement(TryStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2TryStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2TryStatement(TryStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for TryStatement data structure.
  *
  */
 AstResult pass3TryStatement(TryStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3TryStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3TryStatement(TryStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for TryStatement data structure.
  *
  */
 AstResult emitTryStatement(TryStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitTryStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitTryStatement(TryStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyTryStatement(TryStatement* ptr)
+ * @brief Destroy a TryStatement data structure.
  *
  */
 AstResult destroyTryStatement(TryStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyTryStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyTryStatement(TryStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump TryStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpTryStatement(TryStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

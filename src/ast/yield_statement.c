@@ -21,70 +21,95 @@ YieldStatement* createYieldStatement() {
     YieldStatement* ptr = _alloc_ds(YieldStatement);
     initAst(&ptr->ast, NULL, AST_YIELD_STATEMENT);
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for YieldStatement data structure.
  *
  */
 AstResult pass1YieldStatement(YieldStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1YieldStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for YieldStatement data structure.
  *
  */
 AstResult pass2YieldStatement(YieldStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2YieldStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for YieldStatement data structure.
  *
  */
 AstResult pass3YieldStatement(YieldStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3YieldStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for YieldStatement data structure.
  *
  */
 AstResult emitYieldStatement(YieldStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitYieldStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyYieldStatement(YieldStatement* ptr)
+ * @brief Destroy a YieldStatement data structure.
  *
  */
 AstResult destroyYieldStatement(YieldStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyYieldStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -92,11 +117,12 @@ AstResult destroyYieldStatement(YieldStatement* ptr) {
         // traverse the data structure items// nothing to traverse
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump YieldStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -109,6 +135,7 @@ AstResult dumpYieldStatement(YieldStatement* ptr) {
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

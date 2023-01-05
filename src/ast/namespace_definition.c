@@ -25,14 +25,19 @@ NamespaceDefinition* createNamespaceDefinition(const char* symbol,
     ptr->symbol = symbol;
     ptr->module_list = module_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for NamespaceDefinition data structure.
  *
  */
 AstResult pass1NamespaceDefinition(NamespaceDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1NamespaceDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -45,14 +50,19 @@ AstResult pass1NamespaceDefinition(NamespaceDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for NamespaceDefinition data structure.
  *
  */
 AstResult pass2NamespaceDefinition(NamespaceDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2NamespaceDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -65,14 +75,19 @@ AstResult pass2NamespaceDefinition(NamespaceDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for NamespaceDefinition data structure.
  *
  */
 AstResult pass3NamespaceDefinition(NamespaceDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3NamespaceDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -85,14 +100,19 @@ AstResult pass3NamespaceDefinition(NamespaceDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for NamespaceDefinition data structure.
  *
  */
 AstResult emitNamespaceDefinition(NamespaceDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitNamespaceDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -105,14 +125,19 @@ AstResult emitNamespaceDefinition(NamespaceDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyNamespaceDefinition(NamespaceDefinition* ptr)
+ * @brief Destroy a NamespaceDefinition data structure.
  *
  */
 AstResult destroyNamespaceDefinition(NamespaceDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyNamespaceDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -126,11 +151,12 @@ AstResult destroyNamespaceDefinition(NamespaceDefinition* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump NamespaceDefinition data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -149,6 +175,7 @@ AstResult dumpNamespaceDefinition(NamespaceDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

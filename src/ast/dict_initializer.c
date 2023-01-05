@@ -22,14 +22,19 @@ DictInitializer* createDictInitializer(DictInitList* dict_init_list) {
     initAst(&ptr->ast, NULL, AST_DICT_INITIALIZER);
     ptr->dict_init_list = dict_init_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for DictInitializer data structure.
  *
  */
 AstResult pass1DictInitializer(DictInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1DictInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1DictInitializer(DictInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for DictInitializer data structure.
  *
  */
 AstResult pass2DictInitializer(DictInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2DictInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2DictInitializer(DictInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for DictInitializer data structure.
  *
  */
 AstResult pass3DictInitializer(DictInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3DictInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3DictInitializer(DictInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for DictInitializer data structure.
  *
  */
 AstResult emitDictInitializer(DictInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitDictInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitDictInitializer(DictInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyDictInitializer(DictInitializer* ptr)
+ * @brief Destroy a DictInitializer data structure.
  *
  */
 AstResult destroyDictInitializer(DictInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyDictInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyDictInitializer(DictInitializer* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump DictInitializer data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpDictInitializer(DictInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

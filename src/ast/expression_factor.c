@@ -31,14 +31,19 @@ ExpressionFactor* createExpressionFactor(ConstantExpression* constant_expression
     ptr->array_reference = array_reference;
     ptr->func_reference = func_reference;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ExpressionFactor data structure.
  *
  */
 AstResult pass1ExpressionFactor(ExpressionFactor* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ExpressionFactor\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -69,14 +74,19 @@ AstResult pass1ExpressionFactor(ExpressionFactor* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ExpressionFactor data structure.
  *
  */
 AstResult pass2ExpressionFactor(ExpressionFactor* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ExpressionFactor\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -107,14 +117,19 @@ AstResult pass2ExpressionFactor(ExpressionFactor* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ExpressionFactor data structure.
  *
  */
 AstResult pass3ExpressionFactor(ExpressionFactor* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ExpressionFactor\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -145,14 +160,19 @@ AstResult pass3ExpressionFactor(ExpressionFactor* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ExpressionFactor data structure.
  *
  */
 AstResult emitExpressionFactor(ExpressionFactor* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExpressionFactor\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -183,14 +203,19 @@ AstResult emitExpressionFactor(ExpressionFactor* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExpressionFactor(ExpressionFactor* ptr)
+ * @brief Destroy a ExpressionFactor data structure.
  *
  */
 AstResult destroyExpressionFactor(ExpressionFactor* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExpressionFactor\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -222,11 +247,12 @@ AstResult destroyExpressionFactor(ExpressionFactor* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ExpressionFactor data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -263,6 +289,7 @@ AstResult dumpExpressionFactor(ExpressionFactor* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

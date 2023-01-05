@@ -21,70 +21,95 @@ EmptyParensRule* createEmptyParensRule() {
     EmptyParensRule* ptr = _alloc_ds(EmptyParensRule);
     initAst(&ptr->ast, NULL, AST_EMPTY_PARENS_RULE);
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for EmptyParensRule data structure.
  *
  */
 AstResult pass1EmptyParensRule(EmptyParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1EmptyParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for EmptyParensRule data structure.
  *
  */
 AstResult pass2EmptyParensRule(EmptyParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2EmptyParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for EmptyParensRule data structure.
  *
  */
 AstResult pass3EmptyParensRule(EmptyParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3EmptyParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for EmptyParensRule data structure.
  *
  */
 AstResult emitEmptyParensRule(EmptyParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitEmptyParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyEmptyParensRule(EmptyParensRule* ptr)
+ * @brief Destroy a EmptyParensRule data structure.
  *
  */
 AstResult destroyEmptyParensRule(EmptyParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyEmptyParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -92,11 +117,12 @@ AstResult destroyEmptyParensRule(EmptyParensRule* ptr) {
         // traverse the data structure items// nothing to traverse
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump EmptyParensRule data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -109,6 +135,7 @@ AstResult dumpEmptyParensRule(EmptyParensRule* ptr) {
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

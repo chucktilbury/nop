@@ -31,14 +31,19 @@ ForStatement* createForStatement(CompoundName* compound_name,
     ptr->loop_body = loop_body;
     ptr->empty_parens_rule = empty_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ForStatement data structure.
  *
  */
 AstResult pass1ForStatement(ForStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ForStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -69,14 +74,19 @@ AstResult pass1ForStatement(ForStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ForStatement data structure.
  *
  */
 AstResult pass2ForStatement(ForStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ForStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -107,14 +117,19 @@ AstResult pass2ForStatement(ForStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ForStatement data structure.
  *
  */
 AstResult pass3ForStatement(ForStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ForStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -145,14 +160,19 @@ AstResult pass3ForStatement(ForStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ForStatement data structure.
  *
  */
 AstResult emitForStatement(ForStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitForStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -183,14 +203,19 @@ AstResult emitForStatement(ForStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyForStatement(ForStatement* ptr)
+ * @brief Destroy a ForStatement data structure.
  *
  */
 AstResult destroyForStatement(ForStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyForStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -222,11 +247,12 @@ AstResult destroyForStatement(ForStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ForStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -263,6 +289,7 @@ AstResult dumpForStatement(ForStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

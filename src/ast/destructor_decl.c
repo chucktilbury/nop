@@ -21,70 +21,95 @@ DestructorDecl* createDestructorDecl() {
     DestructorDecl* ptr = _alloc_ds(DestructorDecl);
     initAst(&ptr->ast, NULL, AST_DESTRUCTOR_DECL);
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for DestructorDecl data structure.
  *
  */
 AstResult pass1DestructorDecl(DestructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1DestructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for DestructorDecl data structure.
  *
  */
 AstResult pass2DestructorDecl(DestructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2DestructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for DestructorDecl data structure.
  *
  */
 AstResult pass3DestructorDecl(DestructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3DestructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for DestructorDecl data structure.
  *
  */
 AstResult emitDestructorDecl(DestructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitDestructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyDestructorDecl(DestructorDecl* ptr)
+ * @brief Destroy a DestructorDecl data structure.
  *
  */
 AstResult destroyDestructorDecl(DestructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyDestructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -92,11 +117,12 @@ AstResult destroyDestructorDecl(DestructorDecl* ptr) {
         // traverse the data structure items// nothing to traverse
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump DestructorDecl data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -109,6 +135,7 @@ AstResult dumpDestructorDecl(DestructorDecl* ptr) {
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

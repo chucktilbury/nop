@@ -22,14 +22,19 @@ ExitStatement* createExitStatement(Expression* expression) {
     initAst(&ptr->ast, NULL, AST_EXIT_STATEMENT);
     ptr->expression = expression;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ExitStatement data structure.
  *
  */
 AstResult pass1ExitStatement(ExitStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ExitStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1ExitStatement(ExitStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ExitStatement data structure.
  *
  */
 AstResult pass2ExitStatement(ExitStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ExitStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2ExitStatement(ExitStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ExitStatement data structure.
  *
  */
 AstResult pass3ExitStatement(ExitStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ExitStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3ExitStatement(ExitStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ExitStatement data structure.
  *
  */
 AstResult emitExitStatement(ExitStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExitStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitExitStatement(ExitStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExitStatement(ExitStatement* ptr)
+ * @brief Destroy a ExitStatement data structure.
  *
  */
 AstResult destroyExitStatement(ExitStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExitStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyExitStatement(ExitStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ExitStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpExitStatement(ExitStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

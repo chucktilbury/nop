@@ -22,14 +22,19 @@ FuncBody* createFuncBody(FuncBodyStatementList* func_body_statement_list) {
     initAst(&ptr->ast, NULL, AST_FUNC_BODY);
     ptr->func_body_statement_list = func_body_statement_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for FuncBody data structure.
  *
  */
 AstResult pass1FuncBody(FuncBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1FuncBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1FuncBody(FuncBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for FuncBody data structure.
  *
  */
 AstResult pass2FuncBody(FuncBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2FuncBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2FuncBody(FuncBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for FuncBody data structure.
  *
  */
 AstResult pass3FuncBody(FuncBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3FuncBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3FuncBody(FuncBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for FuncBody data structure.
  *
  */
 AstResult emitFuncBody(FuncBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitFuncBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitFuncBody(FuncBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyFuncBody(FuncBody* ptr)
+ * @brief Destroy a FuncBody data structure.
  *
  */
 AstResult destroyFuncBody(FuncBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyFuncBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyFuncBody(FuncBody* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump FuncBody data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpFuncBody(FuncBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

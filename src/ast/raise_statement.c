@@ -22,14 +22,19 @@ RaiseStatement* createRaiseStatement(Expression* expression) {
     initAst(&ptr->ast, NULL, AST_RAISE_STATEMENT);
     ptr->expression = expression;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for RaiseStatement data structure.
  *
  */
 AstResult pass1RaiseStatement(RaiseStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1RaiseStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1RaiseStatement(RaiseStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for RaiseStatement data structure.
  *
  */
 AstResult pass2RaiseStatement(RaiseStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2RaiseStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2RaiseStatement(RaiseStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for RaiseStatement data structure.
  *
  */
 AstResult pass3RaiseStatement(RaiseStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3RaiseStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3RaiseStatement(RaiseStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for RaiseStatement data structure.
  *
  */
 AstResult emitRaiseStatement(RaiseStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitRaiseStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitRaiseStatement(RaiseStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyRaiseStatement(RaiseStatement* ptr)
+ * @brief Destroy a RaiseStatement data structure.
  *
  */
 AstResult destroyRaiseStatement(RaiseStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyRaiseStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyRaiseStatement(RaiseStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump RaiseStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpRaiseStatement(RaiseStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

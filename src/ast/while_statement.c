@@ -25,14 +25,19 @@ WhileStatement* createWhileStatement(ExpressionInParensRule* expression_in_paren
     ptr->expression_in_parens_rule = expression_in_parens_rule;
     ptr->loop_body = loop_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for WhileStatement data structure.
  *
  */
 AstResult pass1WhileStatement(WhileStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1WhileStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1WhileStatement(WhileStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for WhileStatement data structure.
  *
  */
 AstResult pass2WhileStatement(WhileStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2WhileStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2WhileStatement(WhileStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for WhileStatement data structure.
  *
  */
 AstResult pass3WhileStatement(WhileStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3WhileStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3WhileStatement(WhileStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for WhileStatement data structure.
  *
  */
 AstResult emitWhileStatement(WhileStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitWhileStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitWhileStatement(WhileStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyWhileStatement(WhileStatement* ptr)
+ * @brief Destroy a WhileStatement data structure.
  *
  */
 AstResult destroyWhileStatement(WhileStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyWhileStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyWhileStatement(WhileStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump WhileStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpWhileStatement(WhileStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

@@ -25,14 +25,19 @@ ClassName* createClassName(const char* symbol,
     ptr->symbol = symbol;
     ptr->class_name_parent = class_name_parent;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ClassName data structure.
  *
  */
 AstResult pass1ClassName(ClassName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ClassName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -45,14 +50,19 @@ AstResult pass1ClassName(ClassName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ClassName data structure.
  *
  */
 AstResult pass2ClassName(ClassName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ClassName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -65,14 +75,19 @@ AstResult pass2ClassName(ClassName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ClassName data structure.
  *
  */
 AstResult pass3ClassName(ClassName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ClassName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -85,14 +100,19 @@ AstResult pass3ClassName(ClassName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ClassName data structure.
  *
  */
 AstResult emitClassName(ClassName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitClassName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -105,14 +125,19 @@ AstResult emitClassName(ClassName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyClassName(ClassName* ptr)
+ * @brief Destroy a ClassName data structure.
  *
  */
 AstResult destroyClassName(ClassName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyClassName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -126,11 +151,12 @@ AstResult destroyClassName(ClassName* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ClassName data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -149,6 +175,7 @@ AstResult dumpClassName(ClassName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

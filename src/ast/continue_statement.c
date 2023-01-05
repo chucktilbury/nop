@@ -21,70 +21,95 @@ ContinueStatement* createContinueStatement() {
     ContinueStatement* ptr = _alloc_ds(ContinueStatement);
     initAst(&ptr->ast, NULL, AST_CONTINUE_STATEMENT);
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ContinueStatement data structure.
  *
  */
 AstResult pass1ContinueStatement(ContinueStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ContinueStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ContinueStatement data structure.
  *
  */
 AstResult pass2ContinueStatement(ContinueStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ContinueStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ContinueStatement data structure.
  *
  */
 AstResult pass3ContinueStatement(ContinueStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ContinueStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ContinueStatement data structure.
  *
  */
 AstResult emitContinueStatement(ContinueStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitContinueStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyContinueStatement(ContinueStatement* ptr)
+ * @brief Destroy a ContinueStatement data structure.
  *
  */
 AstResult destroyContinueStatement(ContinueStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyContinueStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -92,11 +117,12 @@ AstResult destroyContinueStatement(ContinueStatement* ptr) {
         // traverse the data structure items// nothing to traverse
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ContinueStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -109,6 +135,7 @@ AstResult dumpContinueStatement(ContinueStatement* ptr) {
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

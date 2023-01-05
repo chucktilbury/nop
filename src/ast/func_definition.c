@@ -31,14 +31,19 @@ FuncDefinition* createFuncDefinition(TypeDefinition* type_definition,
     ptr->func_def_parameter_list = func_def_parameter_list;
     ptr->func_body = func_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for FuncDefinition data structure.
  *
  */
 AstResult pass1FuncDefinition(FuncDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1FuncDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -69,14 +74,19 @@ AstResult pass1FuncDefinition(FuncDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for FuncDefinition data structure.
  *
  */
 AstResult pass2FuncDefinition(FuncDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2FuncDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -107,14 +117,19 @@ AstResult pass2FuncDefinition(FuncDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for FuncDefinition data structure.
  *
  */
 AstResult pass3FuncDefinition(FuncDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3FuncDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -145,14 +160,19 @@ AstResult pass3FuncDefinition(FuncDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for FuncDefinition data structure.
  *
  */
 AstResult emitFuncDefinition(FuncDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitFuncDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -183,14 +203,19 @@ AstResult emitFuncDefinition(FuncDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyFuncDefinition(FuncDefinition* ptr)
+ * @brief Destroy a FuncDefinition data structure.
  *
  */
 AstResult destroyFuncDefinition(FuncDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyFuncDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -222,11 +247,12 @@ AstResult destroyFuncDefinition(FuncDefinition* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump FuncDefinition data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -263,6 +289,7 @@ AstResult dumpFuncDefinition(FuncDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

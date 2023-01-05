@@ -25,14 +25,19 @@ DoStatement* createDoStatement(LoopBody* loop_body,
     ptr->loop_body = loop_body;
     ptr->expression_in_parens_rule = expression_in_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for DoStatement data structure.
  *
  */
 AstResult pass1DoStatement(DoStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1DoStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1DoStatement(DoStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for DoStatement data structure.
  *
  */
 AstResult pass2DoStatement(DoStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2DoStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2DoStatement(DoStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for DoStatement data structure.
  *
  */
 AstResult pass3DoStatement(DoStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3DoStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3DoStatement(DoStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for DoStatement data structure.
  *
  */
 AstResult emitDoStatement(DoStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitDoStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitDoStatement(DoStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyDoStatement(DoStatement* ptr)
+ * @brief Destroy a DoStatement data structure.
  *
  */
 AstResult destroyDoStatement(DoStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyDoStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyDoStatement(DoStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump DoStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpDoStatement(DoStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

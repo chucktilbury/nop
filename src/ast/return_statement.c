@@ -22,14 +22,19 @@ ReturnStatement* createReturnStatement(ExpressionInParensRule* expression_in_par
     initAst(&ptr->ast, NULL, AST_RETURN_STATEMENT);
     ptr->expression_in_parens_rule = expression_in_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ReturnStatement data structure.
  *
  */
 AstResult pass1ReturnStatement(ReturnStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ReturnStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1ReturnStatement(ReturnStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ReturnStatement data structure.
  *
  */
 AstResult pass2ReturnStatement(ReturnStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ReturnStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2ReturnStatement(ReturnStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ReturnStatement data structure.
  *
  */
 AstResult pass3ReturnStatement(ReturnStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ReturnStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3ReturnStatement(ReturnStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ReturnStatement data structure.
  *
  */
 AstResult emitReturnStatement(ReturnStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitReturnStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitReturnStatement(ReturnStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyReturnStatement(ReturnStatement* ptr)
+ * @brief Destroy a ReturnStatement data structure.
  *
  */
 AstResult destroyReturnStatement(ReturnStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyReturnStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyReturnStatement(ReturnStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ReturnStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpReturnStatement(ReturnStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

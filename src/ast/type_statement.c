@@ -22,14 +22,19 @@ TypeStatement* createTypeStatement(Expression* expression) {
     initAst(&ptr->ast, NULL, AST_TYPE_STATEMENT);
     ptr->expression = expression;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for TypeStatement data structure.
  *
  */
 AstResult pass1TypeStatement(TypeStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1TypeStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1TypeStatement(TypeStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for TypeStatement data structure.
  *
  */
 AstResult pass2TypeStatement(TypeStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2TypeStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2TypeStatement(TypeStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for TypeStatement data structure.
  *
  */
 AstResult pass3TypeStatement(TypeStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3TypeStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3TypeStatement(TypeStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for TypeStatement data structure.
  *
  */
 AstResult emitTypeStatement(TypeStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitTypeStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitTypeStatement(TypeStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyTypeStatement(TypeStatement* ptr)
+ * @brief Destroy a TypeStatement data structure.
  *
  */
 AstResult destroyTypeStatement(TypeStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyTypeStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyTypeStatement(TypeStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump TypeStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpTypeStatement(TypeStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

@@ -37,14 +37,19 @@ ClassDefinitionItem* createClassDefinitionItem(SymbolDeclaration* symbol_declara
     ptr->constructor_decl = constructor_decl;
     ptr->destructor_decl = destructor_decl;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ClassDefinitionItem data structure.
  *
  */
 AstResult pass1ClassDefinitionItem(ClassDefinitionItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ClassDefinitionItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -87,14 +92,19 @@ AstResult pass1ClassDefinitionItem(ClassDefinitionItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ClassDefinitionItem data structure.
  *
  */
 AstResult pass2ClassDefinitionItem(ClassDefinitionItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ClassDefinitionItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -137,14 +147,19 @@ AstResult pass2ClassDefinitionItem(ClassDefinitionItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ClassDefinitionItem data structure.
  *
  */
 AstResult pass3ClassDefinitionItem(ClassDefinitionItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ClassDefinitionItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -187,14 +202,19 @@ AstResult pass3ClassDefinitionItem(ClassDefinitionItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ClassDefinitionItem data structure.
  *
  */
 AstResult emitClassDefinitionItem(ClassDefinitionItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitClassDefinitionItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -237,14 +257,19 @@ AstResult emitClassDefinitionItem(ClassDefinitionItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyClassDefinitionItem(ClassDefinitionItem* ptr)
+ * @brief Destroy a ClassDefinitionItem data structure.
  *
  */
 AstResult destroyClassDefinitionItem(ClassDefinitionItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyClassDefinitionItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -288,11 +313,12 @@ AstResult destroyClassDefinitionItem(ClassDefinitionItem* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ClassDefinitionItem data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -341,6 +367,7 @@ AstResult dumpClassDefinitionItem(ClassDefinitionItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

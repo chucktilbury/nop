@@ -22,70 +22,95 @@ TraceStatement* createTraceStatement(const char* strg) {
     initAst(&ptr->ast, NULL, AST_TRACE_STATEMENT);
     ptr->strg = strg;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for TraceStatement data structure.
  *
  */
 AstResult pass1TraceStatement(TraceStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1TraceStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for TraceStatement data structure.
  *
  */
 AstResult pass2TraceStatement(TraceStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2TraceStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for TraceStatement data structure.
  *
  */
 AstResult pass3TraceStatement(TraceStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3TraceStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for TraceStatement data structure.
  *
  */
 AstResult emitTraceStatement(TraceStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitTraceStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyTraceStatement(TraceStatement* ptr)
+ * @brief Destroy a TraceStatement data structure.
  *
  */
 AstResult destroyTraceStatement(TraceStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyTraceStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -93,11 +118,12 @@ AstResult destroyTraceStatement(TraceStatement* ptr) {
         // traverse the data structure items// nothing to traverse
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump TraceStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -110,6 +136,7 @@ AstResult dumpTraceStatement(TraceStatement* ptr) {
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

@@ -25,14 +25,19 @@ ElseClause* createElseClause(Expression* expression,
     ptr->expression = expression;
     ptr->func_body = func_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ElseClause data structure.
  *
  */
 AstResult pass1ElseClause(ElseClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ElseClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ElseClause(ElseClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ElseClause data structure.
  *
  */
 AstResult pass2ElseClause(ElseClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ElseClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ElseClause(ElseClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ElseClause data structure.
  *
  */
 AstResult pass3ElseClause(ElseClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ElseClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ElseClause(ElseClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ElseClause data structure.
  *
  */
 AstResult emitElseClause(ElseClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitElseClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitElseClause(ElseClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyElseClause(ElseClause* ptr)
+ * @brief Destroy a ElseClause data structure.
  *
  */
 AstResult destroyElseClause(ElseClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyElseClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyElseClause(ElseClause* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ElseClause data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpElseClause(ElseClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

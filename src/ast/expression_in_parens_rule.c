@@ -25,14 +25,19 @@ ExpressionInParensRule* createExpressionInParensRule(Expression* expression,
     ptr->expression = expression;
     ptr->empty_parens_rule = empty_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ExpressionInParensRule data structure.
  *
  */
 AstResult pass1ExpressionInParensRule(ExpressionInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ExpressionInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ExpressionInParensRule(ExpressionInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ExpressionInParensRule data structure.
  *
  */
 AstResult pass2ExpressionInParensRule(ExpressionInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ExpressionInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ExpressionInParensRule(ExpressionInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ExpressionInParensRule data structure.
  *
  */
 AstResult pass3ExpressionInParensRule(ExpressionInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ExpressionInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ExpressionInParensRule(ExpressionInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ExpressionInParensRule data structure.
  *
  */
 AstResult emitExpressionInParensRule(ExpressionInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExpressionInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitExpressionInParensRule(ExpressionInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExpressionInParensRule(ExpressionInParensRule* ptr)
+ * @brief Destroy a ExpressionInParensRule data structure.
  *
  */
 AstResult destroyExpressionInParensRule(ExpressionInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExpressionInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyExpressionInParensRule(ExpressionInParensRule* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ExpressionInParensRule data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpExpressionInParensRule(ExpressionInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

@@ -25,14 +25,19 @@ ElseClauseIntermediateList* createElseClauseIntermediateList(ElseClause* else_cl
     ptr->else_clause = else_clause;
     ptr->else_clause_intermediate_list = else_clause_intermediate_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ElseClauseIntermediateList data structure.
  *
  */
 AstResult pass1ElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ElseClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ElseClauseIntermediateList data structure.
  *
  */
 AstResult pass2ElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ElseClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ElseClauseIntermediateList data structure.
  *
  */
 AstResult pass3ElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ElseClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ElseClauseIntermediateList data structure.
  *
  */
 AstResult emitElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitElseClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyElseClauseIntermediateList(ElseClauseIntermediateList* ptr)
+ * @brief Destroy a ElseClauseIntermediateList data structure.
  *
  */
 AstResult destroyElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyElseClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ElseClauseIntermediateList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpElseClauseIntermediateList(ElseClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

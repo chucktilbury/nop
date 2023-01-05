@@ -22,14 +22,19 @@ CompoundNameInParensRule* createCompoundNameInParensRule(CompoundName* compound_
     initAst(&ptr->ast, NULL, AST_COMPOUND_NAME_IN_PARENS_RULE);
     ptr->compound_name = compound_name;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for CompoundNameInParensRule data structure.
  *
  */
 AstResult pass1CompoundNameInParensRule(CompoundNameInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1CompoundNameInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1CompoundNameInParensRule(CompoundNameInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for CompoundNameInParensRule data structure.
  *
  */
 AstResult pass2CompoundNameInParensRule(CompoundNameInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2CompoundNameInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2CompoundNameInParensRule(CompoundNameInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for CompoundNameInParensRule data structure.
  *
  */
 AstResult pass3CompoundNameInParensRule(CompoundNameInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3CompoundNameInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3CompoundNameInParensRule(CompoundNameInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for CompoundNameInParensRule data structure.
  *
  */
 AstResult emitCompoundNameInParensRule(CompoundNameInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitCompoundNameInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitCompoundNameInParensRule(CompoundNameInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyCompoundNameInParensRule(CompoundNameInParensRule* ptr)
+ * @brief Destroy a CompoundNameInParensRule data structure.
  *
  */
 AstResult destroyCompoundNameInParensRule(CompoundNameInParensRule* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyCompoundNameInParensRule\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyCompoundNameInParensRule(CompoundNameInParensRule* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump CompoundNameInParensRule data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpCompoundNameInParensRule(CompoundNameInParensRule* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

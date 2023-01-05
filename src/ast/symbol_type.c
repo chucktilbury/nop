@@ -25,14 +25,19 @@ SymbolType* createSymbolType(TypeDefinition* type_definition,
     ptr->type_definition = type_definition;
     ptr->symbol = symbol;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for SymbolType data structure.
  *
  */
 AstResult pass1SymbolType(SymbolType* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1SymbolType\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -45,14 +50,19 @@ AstResult pass1SymbolType(SymbolType* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for SymbolType data structure.
  *
  */
 AstResult pass2SymbolType(SymbolType* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2SymbolType\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -65,14 +75,19 @@ AstResult pass2SymbolType(SymbolType* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for SymbolType data structure.
  *
  */
 AstResult pass3SymbolType(SymbolType* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3SymbolType\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -85,14 +100,19 @@ AstResult pass3SymbolType(SymbolType* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for SymbolType data structure.
  *
  */
 AstResult emitSymbolType(SymbolType* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitSymbolType\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -105,14 +125,19 @@ AstResult emitSymbolType(SymbolType* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroySymbolType(SymbolType* ptr)
+ * @brief Destroy a SymbolType data structure.
  *
  */
 AstResult destroySymbolType(SymbolType* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroySymbolType\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -126,11 +151,12 @@ AstResult destroySymbolType(SymbolType* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump SymbolType data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -149,6 +175,7 @@ AstResult dumpSymbolType(SymbolType* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

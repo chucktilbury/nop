@@ -25,14 +25,19 @@ StructDeclaration* createStructDeclaration(const char* symbol,
     ptr->symbol = symbol;
     ptr->struct_body = struct_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for StructDeclaration data structure.
  *
  */
 AstResult pass1StructDeclaration(StructDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1StructDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -45,14 +50,19 @@ AstResult pass1StructDeclaration(StructDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for StructDeclaration data structure.
  *
  */
 AstResult pass2StructDeclaration(StructDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2StructDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -65,14 +75,19 @@ AstResult pass2StructDeclaration(StructDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for StructDeclaration data structure.
  *
  */
 AstResult pass3StructDeclaration(StructDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3StructDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -85,14 +100,19 @@ AstResult pass3StructDeclaration(StructDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for StructDeclaration data structure.
  *
  */
 AstResult emitStructDeclaration(StructDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitStructDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -105,14 +125,19 @@ AstResult emitStructDeclaration(StructDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyStructDeclaration(StructDeclaration* ptr)
+ * @brief Destroy a StructDeclaration data structure.
  *
  */
 AstResult destroyStructDeclaration(StructDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyStructDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -126,11 +151,12 @@ AstResult destroyStructDeclaration(StructDeclaration* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump StructDeclaration data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -149,6 +175,7 @@ AstResult dumpStructDeclaration(StructDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

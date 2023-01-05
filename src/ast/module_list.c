@@ -25,14 +25,19 @@ ModuleList* createModuleList(ModuleItem* module_item,
     ptr->module_item = module_item;
     ptr->module_list = module_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ModuleList data structure.
  *
  */
 AstResult pass1ModuleList(ModuleList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ModuleList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ModuleList(ModuleList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ModuleList data structure.
  *
  */
 AstResult pass2ModuleList(ModuleList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ModuleList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ModuleList(ModuleList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ModuleList data structure.
  *
  */
 AstResult pass3ModuleList(ModuleList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ModuleList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ModuleList(ModuleList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ModuleList data structure.
  *
  */
 AstResult emitModuleList(ModuleList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitModuleList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitModuleList(ModuleList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyModuleList(ModuleList* ptr)
+ * @brief Destroy a ModuleList data structure.
  *
  */
 AstResult destroyModuleList(ModuleList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyModuleList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyModuleList(ModuleList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ModuleList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpModuleList(ModuleList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

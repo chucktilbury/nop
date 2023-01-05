@@ -25,14 +25,19 @@ CompoundName* createCompoundName(const char* symbol,
     ptr->symbol = symbol;
     ptr->compound_name = compound_name;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for CompoundName data structure.
  *
  */
 AstResult pass1CompoundName(CompoundName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1CompoundName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -45,14 +50,19 @@ AstResult pass1CompoundName(CompoundName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for CompoundName data structure.
  *
  */
 AstResult pass2CompoundName(CompoundName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2CompoundName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -65,14 +75,19 @@ AstResult pass2CompoundName(CompoundName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for CompoundName data structure.
  *
  */
 AstResult pass3CompoundName(CompoundName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3CompoundName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -85,14 +100,19 @@ AstResult pass3CompoundName(CompoundName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for CompoundName data structure.
  *
  */
 AstResult emitCompoundName(CompoundName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitCompoundName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -105,14 +125,19 @@ AstResult emitCompoundName(CompoundName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyCompoundName(CompoundName* ptr)
+ * @brief Destroy a CompoundName data structure.
  *
  */
 AstResult destroyCompoundName(CompoundName* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyCompoundName\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -126,11 +151,12 @@ AstResult destroyCompoundName(CompoundName* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump CompoundName data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -149,6 +175,7 @@ AstResult dumpCompoundName(CompoundName* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

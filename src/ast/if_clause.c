@@ -25,14 +25,19 @@ IfClause* createIfClause(ExpressionInParensRule* expression_in_parens_rule,
     ptr->expression_in_parens_rule = expression_in_parens_rule;
     ptr->func_body = func_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for IfClause data structure.
  *
  */
 AstResult pass1IfClause(IfClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1IfClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1IfClause(IfClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for IfClause data structure.
  *
  */
 AstResult pass2IfClause(IfClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2IfClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2IfClause(IfClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for IfClause data structure.
  *
  */
 AstResult pass3IfClause(IfClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3IfClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3IfClause(IfClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for IfClause data structure.
  *
  */
 AstResult emitIfClause(IfClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitIfClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitIfClause(IfClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyIfClause(IfClause* ptr)
+ * @brief Destroy a IfClause data structure.
  *
  */
 AstResult destroyIfClause(IfClause* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyIfClause\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyIfClause(IfClause* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump IfClause data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpIfClause(IfClause* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

@@ -21,70 +21,95 @@
     {{typename}}* ptr = _alloc_ds({{typename}});
     initAst(&ptr->ast, NULL, AST_{{lockname}});
 {{initdefs}}
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for {{typename}} data structure.
  *
  */
 AstResult pass1{{typename}}({{typename}}* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1{{typename}}\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         {{pass1}}
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for {{typename}} data structure.
  *
  */
 AstResult pass2{{typename}}({{typename}}* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2{{typename}}\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         {{pass2}}
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for {{typename}} data structure.
  *
  */
 AstResult pass3{{typename}}({{typename}}* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3{{typename}}\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         {{pass3}}
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for {{typename}} data structure.
  *
  */
 AstResult emit{{typename}}({{typename}}* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emit{{typename}}\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         {{emitter}}
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroy{{typename}}({{typename}}* ptr)
+ * @brief Destroy a {{typename}} data structure.
  *
  */
 AstResult destroy{{typename}}({{typename}}* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroy{{typename}}\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -92,11 +117,12 @@ AstResult destroy{{typename}}({{typename}}* ptr) {
         {{destroy}}
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump {{typename}} data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -109,6 +135,7 @@ AstResult dump{{typename}}({{typename}}* ptr) {
 
         {{dumper}}
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

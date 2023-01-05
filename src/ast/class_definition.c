@@ -25,14 +25,19 @@ ClassDefinition* createClassDefinition(ClassDefinitionList* class_definition_lis
     ptr->class_definition_list = class_definition_list;
     ptr->class_name = class_name;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ClassDefinition data structure.
  *
  */
 AstResult pass1ClassDefinition(ClassDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ClassDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ClassDefinition(ClassDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ClassDefinition data structure.
  *
  */
 AstResult pass2ClassDefinition(ClassDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ClassDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ClassDefinition(ClassDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ClassDefinition data structure.
  *
  */
 AstResult pass3ClassDefinition(ClassDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ClassDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ClassDefinition(ClassDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ClassDefinition data structure.
  *
  */
 AstResult emitClassDefinition(ClassDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitClassDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitClassDefinition(ClassDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyClassDefinition(ClassDefinition* ptr)
+ * @brief Destroy a ClassDefinition data structure.
  *
  */
 AstResult destroyClassDefinition(ClassDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyClassDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyClassDefinition(ClassDefinition* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ClassDefinition data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpClassDefinition(ClassDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

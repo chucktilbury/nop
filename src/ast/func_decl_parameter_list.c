@@ -25,14 +25,19 @@ FuncDeclParameterList* createFuncDeclParameterList(ParameterDeclList* parameter_
     ptr->parameter_decl_list = parameter_decl_list;
     ptr->empty_parens_rule = empty_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for FuncDeclParameterList data structure.
  *
  */
 AstResult pass1FuncDeclParameterList(FuncDeclParameterList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1FuncDeclParameterList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1FuncDeclParameterList(FuncDeclParameterList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for FuncDeclParameterList data structure.
  *
  */
 AstResult pass2FuncDeclParameterList(FuncDeclParameterList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2FuncDeclParameterList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2FuncDeclParameterList(FuncDeclParameterList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for FuncDeclParameterList data structure.
  *
  */
 AstResult pass3FuncDeclParameterList(FuncDeclParameterList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3FuncDeclParameterList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3FuncDeclParameterList(FuncDeclParameterList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for FuncDeclParameterList data structure.
  *
  */
 AstResult emitFuncDeclParameterList(FuncDeclParameterList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitFuncDeclParameterList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitFuncDeclParameterList(FuncDeclParameterList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyFuncDeclParameterList(FuncDeclParameterList* ptr)
+ * @brief Destroy a FuncDeclParameterList data structure.
  *
  */
 AstResult destroyFuncDeclParameterList(FuncDeclParameterList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyFuncDeclParameterList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyFuncDeclParameterList(FuncDeclParameterList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump FuncDeclParameterList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpFuncDeclParameterList(FuncDeclParameterList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

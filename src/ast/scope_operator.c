@@ -28,70 +28,95 @@ ScopeOperator* createScopeOperator(int private,
     ptr->public = public;
     ptr->protected = protected;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ScopeOperator data structure.
  *
  */
 AstResult pass1ScopeOperator(ScopeOperator* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ScopeOperator\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ScopeOperator data structure.
  *
  */
 AstResult pass2ScopeOperator(ScopeOperator* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ScopeOperator\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ScopeOperator data structure.
  *
  */
 AstResult pass3ScopeOperator(ScopeOperator* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ScopeOperator\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ScopeOperator data structure.
  *
  */
 AstResult emitScopeOperator(ScopeOperator* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitScopeOperator\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyScopeOperator(ScopeOperator* ptr)
+ * @brief Destroy a ScopeOperator data structure.
  *
  */
 AstResult destroyScopeOperator(ScopeOperator* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyScopeOperator\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -99,11 +124,12 @@ AstResult destroyScopeOperator(ScopeOperator* ptr) {
         // traverse the data structure items// nothing to traverse
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ScopeOperator data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -116,6 +142,7 @@ AstResult dumpScopeOperator(ScopeOperator* ptr) {
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

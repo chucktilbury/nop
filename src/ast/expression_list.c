@@ -25,14 +25,19 @@ ExpressionList* createExpressionList(Expression* expression,
     ptr->expression = expression;
     ptr->expression_list = expression_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ExpressionList data structure.
  *
  */
 AstResult pass1ExpressionList(ExpressionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ExpressionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ExpressionList(ExpressionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ExpressionList data structure.
  *
  */
 AstResult pass2ExpressionList(ExpressionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ExpressionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ExpressionList(ExpressionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ExpressionList data structure.
  *
  */
 AstResult pass3ExpressionList(ExpressionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ExpressionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ExpressionList(ExpressionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ExpressionList data structure.
  *
  */
 AstResult emitExpressionList(ExpressionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExpressionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitExpressionList(ExpressionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExpressionList(ExpressionList* ptr)
+ * @brief Destroy a ExpressionList data structure.
  *
  */
 AstResult destroyExpressionList(ExpressionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExpressionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyExpressionList(ExpressionList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ExpressionList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpExpressionList(ExpressionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

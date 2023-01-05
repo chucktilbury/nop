@@ -28,14 +28,19 @@ DictInitElement* createDictInitElement(const char* strg,
     ptr->dict_init_item = dict_init_item;
     ptr->compound_name = compound_name;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for DictInitElement data structure.
  *
  */
 AstResult pass1DictInitElement(DictInitElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1DictInitElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -54,14 +59,19 @@ AstResult pass1DictInitElement(DictInitElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for DictInitElement data structure.
  *
  */
 AstResult pass2DictInitElement(DictInitElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2DictInitElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -80,14 +90,19 @@ AstResult pass2DictInitElement(DictInitElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for DictInitElement data structure.
  *
  */
 AstResult pass3DictInitElement(DictInitElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3DictInitElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -106,14 +121,19 @@ AstResult pass3DictInitElement(DictInitElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for DictInitElement data structure.
  *
  */
 AstResult emitDictInitElement(DictInitElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitDictInitElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -132,14 +152,19 @@ AstResult emitDictInitElement(DictInitElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyDictInitElement(DictInitElement* ptr)
+ * @brief Destroy a DictInitElement data structure.
  *
  */
 AstResult destroyDictInitElement(DictInitElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyDictInitElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -159,11 +184,12 @@ AstResult destroyDictInitElement(DictInitElement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump DictInitElement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -188,6 +214,7 @@ AstResult dumpDictInitElement(DictInitElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

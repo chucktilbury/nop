@@ -25,14 +25,19 @@ SwitchStatement* createSwitchStatement(CompoundNameInParensRule* compound_name_i
     ptr->compound_name_in_parens_rule = compound_name_in_parens_rule;
     ptr->case_clause_list = case_clause_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for SwitchStatement data structure.
  *
  */
 AstResult pass1SwitchStatement(SwitchStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1SwitchStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1SwitchStatement(SwitchStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for SwitchStatement data structure.
  *
  */
 AstResult pass2SwitchStatement(SwitchStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2SwitchStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2SwitchStatement(SwitchStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for SwitchStatement data structure.
  *
  */
 AstResult pass3SwitchStatement(SwitchStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3SwitchStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3SwitchStatement(SwitchStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for SwitchStatement data structure.
  *
  */
 AstResult emitSwitchStatement(SwitchStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitSwitchStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitSwitchStatement(SwitchStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroySwitchStatement(SwitchStatement* ptr)
+ * @brief Destroy a SwitchStatement data structure.
  *
  */
 AstResult destroySwitchStatement(SwitchStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroySwitchStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroySwitchStatement(SwitchStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump SwitchStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpSwitchStatement(SwitchStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

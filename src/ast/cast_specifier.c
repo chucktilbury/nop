@@ -22,14 +22,19 @@ CastSpecifier* createCastSpecifier(TypeDefinition* type_definition) {
     initAst(&ptr->ast, NULL, AST_CAST_SPECIFIER);
     ptr->type_definition = type_definition;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for CastSpecifier data structure.
  *
  */
 AstResult pass1CastSpecifier(CastSpecifier* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1CastSpecifier\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1CastSpecifier(CastSpecifier* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for CastSpecifier data structure.
  *
  */
 AstResult pass2CastSpecifier(CastSpecifier* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2CastSpecifier\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2CastSpecifier(CastSpecifier* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for CastSpecifier data structure.
  *
  */
 AstResult pass3CastSpecifier(CastSpecifier* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3CastSpecifier\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3CastSpecifier(CastSpecifier* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for CastSpecifier data structure.
  *
  */
 AstResult emitCastSpecifier(CastSpecifier* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitCastSpecifier\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitCastSpecifier(CastSpecifier* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyCastSpecifier(CastSpecifier* ptr)
+ * @brief Destroy a CastSpecifier data structure.
  *
  */
 AstResult destroyCastSpecifier(CastSpecifier* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyCastSpecifier\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyCastSpecifier(CastSpecifier* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump CastSpecifier data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpCastSpecifier(CastSpecifier* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

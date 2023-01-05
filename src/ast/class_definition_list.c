@@ -25,14 +25,19 @@ ClassDefinitionList* createClassDefinitionList(ClassDefinitionItem* class_defini
     ptr->class_definition_item = class_definition_item;
     ptr->class_definition_list = class_definition_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ClassDefinitionList data structure.
  *
  */
 AstResult pass1ClassDefinitionList(ClassDefinitionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ClassDefinitionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ClassDefinitionList(ClassDefinitionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ClassDefinitionList data structure.
  *
  */
 AstResult pass2ClassDefinitionList(ClassDefinitionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ClassDefinitionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ClassDefinitionList(ClassDefinitionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ClassDefinitionList data structure.
  *
  */
 AstResult pass3ClassDefinitionList(ClassDefinitionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ClassDefinitionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ClassDefinitionList(ClassDefinitionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ClassDefinitionList data structure.
  *
  */
 AstResult emitClassDefinitionList(ClassDefinitionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitClassDefinitionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitClassDefinitionList(ClassDefinitionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyClassDefinitionList(ClassDefinitionList* ptr)
+ * @brief Destroy a ClassDefinitionList data structure.
  *
  */
 AstResult destroyClassDefinitionList(ClassDefinitionList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyClassDefinitionList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyClassDefinitionList(ClassDefinitionList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ClassDefinitionList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpClassDefinitionList(ClassDefinitionList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

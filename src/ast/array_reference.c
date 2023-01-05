@@ -25,14 +25,19 @@ ArrayReference* createArrayReference(CompoundName* compound_name,
     ptr->compound_name = compound_name;
     ptr->array_parameter_list = array_parameter_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ArrayReference data structure.
  *
  */
 AstResult pass1ArrayReference(ArrayReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ArrayReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ArrayReference(ArrayReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ArrayReference data structure.
  *
  */
 AstResult pass2ArrayReference(ArrayReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ArrayReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ArrayReference(ArrayReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ArrayReference data structure.
  *
  */
 AstResult pass3ArrayReference(ArrayReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ArrayReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ArrayReference(ArrayReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ArrayReference data structure.
  *
  */
 AstResult emitArrayReference(ArrayReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitArrayReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitArrayReference(ArrayReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyArrayReference(ArrayReference* ptr)
+ * @brief Destroy a ArrayReference data structure.
  *
  */
 AstResult destroyArrayReference(ArrayReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyArrayReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyArrayReference(ArrayReference* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ArrayReference data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpArrayReference(ArrayReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

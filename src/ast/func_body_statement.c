@@ -70,14 +70,19 @@ FuncBodyStatement* createFuncBodyStatement(DataDefinition* data_definition,
     ptr->type_statement = type_statement;
     ptr->func_body = func_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for FuncBodyStatement data structure.
  *
  */
 AstResult pass1FuncBodyStatement(FuncBodyStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1FuncBodyStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -186,14 +191,19 @@ AstResult pass1FuncBodyStatement(FuncBodyStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for FuncBodyStatement data structure.
  *
  */
 AstResult pass2FuncBodyStatement(FuncBodyStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2FuncBodyStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -302,14 +312,19 @@ AstResult pass2FuncBodyStatement(FuncBodyStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for FuncBodyStatement data structure.
  *
  */
 AstResult pass3FuncBodyStatement(FuncBodyStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3FuncBodyStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -418,14 +433,19 @@ AstResult pass3FuncBodyStatement(FuncBodyStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for FuncBodyStatement data structure.
  *
  */
 AstResult emitFuncBodyStatement(FuncBodyStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitFuncBodyStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -534,14 +554,19 @@ AstResult emitFuncBodyStatement(FuncBodyStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyFuncBodyStatement(FuncBodyStatement* ptr)
+ * @brief Destroy a FuncBodyStatement data structure.
  *
  */
 AstResult destroyFuncBodyStatement(FuncBodyStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyFuncBodyStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -651,11 +676,12 @@ AstResult destroyFuncBodyStatement(FuncBodyStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump FuncBodyStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -770,6 +796,7 @@ AstResult dumpFuncBodyStatement(FuncBodyStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

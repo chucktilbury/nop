@@ -25,14 +25,19 @@ DataDefinition* createDataDefinition(SymbolDeclaration* symbol_declaration,
     ptr->symbol_declaration = symbol_declaration;
     ptr->initialzer = initialzer;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for DataDefinition data structure.
  *
  */
 AstResult pass1DataDefinition(DataDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1DataDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1DataDefinition(DataDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for DataDefinition data structure.
  *
  */
 AstResult pass2DataDefinition(DataDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2DataDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2DataDefinition(DataDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for DataDefinition data structure.
  *
  */
 AstResult pass3DataDefinition(DataDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3DataDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3DataDefinition(DataDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for DataDefinition data structure.
  *
  */
 AstResult emitDataDefinition(DataDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitDataDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitDataDefinition(DataDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyDataDefinition(DataDefinition* ptr)
+ * @brief Destroy a DataDefinition data structure.
  *
  */
 AstResult destroyDataDefinition(DataDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyDataDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyDataDefinition(DataDefinition* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump DataDefinition data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpDataDefinition(DataDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

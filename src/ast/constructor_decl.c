@@ -22,14 +22,19 @@ ConstructorDecl* createConstructorDecl(FuncDeclParameterList* func_decl_paramete
     initAst(&ptr->ast, NULL, AST_CONSTRUCTOR_DECL);
     ptr->func_decl_parameter_list = func_decl_parameter_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ConstructorDecl data structure.
  *
  */
 AstResult pass1ConstructorDecl(ConstructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ConstructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1ConstructorDecl(ConstructorDecl* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ConstructorDecl data structure.
  *
  */
 AstResult pass2ConstructorDecl(ConstructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ConstructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2ConstructorDecl(ConstructorDecl* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ConstructorDecl data structure.
  *
  */
 AstResult pass3ConstructorDecl(ConstructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ConstructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3ConstructorDecl(ConstructorDecl* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ConstructorDecl data structure.
  *
  */
 AstResult emitConstructorDecl(ConstructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitConstructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitConstructorDecl(ConstructorDecl* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyConstructorDecl(ConstructorDecl* ptr)
+ * @brief Destroy a ConstructorDecl data structure.
  *
  */
 AstResult destroyConstructorDecl(ConstructorDecl* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyConstructorDecl\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyConstructorDecl(ConstructorDecl* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ConstructorDecl data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpConstructorDecl(ConstructorDecl* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

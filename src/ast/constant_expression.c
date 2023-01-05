@@ -25,70 +25,95 @@ ConstantExpression* createConstantExpression(double num,
     ptr->num = num;
     ptr->strg = strg;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ConstantExpression data structure.
  *
  */
 AstResult pass1ConstantExpression(ConstantExpression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ConstantExpression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ConstantExpression data structure.
  *
  */
 AstResult pass2ConstantExpression(ConstantExpression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ConstantExpression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ConstantExpression data structure.
  *
  */
 AstResult pass3ConstantExpression(ConstantExpression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ConstantExpression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ConstantExpression data structure.
  *
  */
 AstResult emitConstantExpression(ConstantExpression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitConstantExpression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyConstantExpression(ConstantExpression* ptr)
+ * @brief Destroy a ConstantExpression data structure.
  *
  */
 AstResult destroyConstantExpression(ConstantExpression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyConstantExpression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -96,11 +121,12 @@ AstResult destroyConstantExpression(ConstantExpression* ptr) {
         // traverse the data structure items// nothing to traverse
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ConstantExpression data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -113,6 +139,7 @@ AstResult dumpConstantExpression(ConstantExpression* ptr) {
 
         // traverse the data structure items// nothing to traverse
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

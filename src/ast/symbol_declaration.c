@@ -22,14 +22,19 @@ SymbolDeclaration* createSymbolDeclaration(SymbolType* symbol_type) {
     initAst(&ptr->ast, NULL, AST_SYMBOL_DECLARATION);
     ptr->symbol_type = symbol_type;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for SymbolDeclaration data structure.
  *
  */
 AstResult pass1SymbolDeclaration(SymbolDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1SymbolDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1SymbolDeclaration(SymbolDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for SymbolDeclaration data structure.
  *
  */
 AstResult pass2SymbolDeclaration(SymbolDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2SymbolDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2SymbolDeclaration(SymbolDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for SymbolDeclaration data structure.
  *
  */
 AstResult pass3SymbolDeclaration(SymbolDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3SymbolDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3SymbolDeclaration(SymbolDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for SymbolDeclaration data structure.
  *
  */
 AstResult emitSymbolDeclaration(SymbolDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitSymbolDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitSymbolDeclaration(SymbolDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroySymbolDeclaration(SymbolDeclaration* ptr)
+ * @brief Destroy a SymbolDeclaration data structure.
  *
  */
 AstResult destroySymbolDeclaration(SymbolDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroySymbolDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroySymbolDeclaration(SymbolDeclaration* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump SymbolDeclaration data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpSymbolDeclaration(SymbolDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

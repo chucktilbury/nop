@@ -40,14 +40,19 @@ ModuleItem* createModuleItem(ClassDefinition* class_definition,
     ptr->scope_operator = scope_operator;
     ptr->strg = strg;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ModuleItem data structure.
  *
  */
 AstResult pass1ModuleItem(ModuleItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ModuleItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -90,14 +95,19 @@ AstResult pass1ModuleItem(ModuleItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ModuleItem data structure.
  *
  */
 AstResult pass2ModuleItem(ModuleItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ModuleItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -140,14 +150,19 @@ AstResult pass2ModuleItem(ModuleItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ModuleItem data structure.
  *
  */
 AstResult pass3ModuleItem(ModuleItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ModuleItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -190,14 +205,19 @@ AstResult pass3ModuleItem(ModuleItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ModuleItem data structure.
  *
  */
 AstResult emitModuleItem(ModuleItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitModuleItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -240,14 +260,19 @@ AstResult emitModuleItem(ModuleItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyModuleItem(ModuleItem* ptr)
+ * @brief Destroy a ModuleItem data structure.
  *
  */
 AstResult destroyModuleItem(ModuleItem* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyModuleItem\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -291,11 +316,12 @@ AstResult destroyModuleItem(ModuleItem* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ModuleItem data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -344,6 +370,7 @@ AstResult dumpModuleItem(ModuleItem* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

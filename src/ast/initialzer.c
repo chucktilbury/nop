@@ -28,14 +28,19 @@ Initialzer* createInitialzer(Expression* expression,
     ptr->array_initializer = array_initializer;
     ptr->dict_initializer = dict_initializer;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for Initialzer data structure.
  *
  */
 AstResult pass1Initialzer(Initialzer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1Initialzer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -60,14 +65,19 @@ AstResult pass1Initialzer(Initialzer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for Initialzer data structure.
  *
  */
 AstResult pass2Initialzer(Initialzer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2Initialzer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -92,14 +102,19 @@ AstResult pass2Initialzer(Initialzer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for Initialzer data structure.
  *
  */
 AstResult pass3Initialzer(Initialzer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3Initialzer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -124,14 +139,19 @@ AstResult pass3Initialzer(Initialzer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for Initialzer data structure.
  *
  */
 AstResult emitInitialzer(Initialzer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitInitialzer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -156,14 +176,19 @@ AstResult emitInitialzer(Initialzer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyInitialzer(Initialzer* ptr)
+ * @brief Destroy a Initialzer data structure.
  *
  */
 AstResult destroyInitialzer(Initialzer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyInitialzer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -189,11 +214,12 @@ AstResult destroyInitialzer(Initialzer* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump Initialzer data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -224,6 +250,7 @@ AstResult dumpInitialzer(Initialzer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

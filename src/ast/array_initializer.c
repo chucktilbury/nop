@@ -22,14 +22,19 @@ ArrayInitializer* createArrayInitializer(ExpressionList* expression_list) {
     initAst(&ptr->ast, NULL, AST_ARRAY_INITIALIZER);
     ptr->expression_list = expression_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ArrayInitializer data structure.
  *
  */
 AstResult pass1ArrayInitializer(ArrayInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ArrayInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1ArrayInitializer(ArrayInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ArrayInitializer data structure.
  *
  */
 AstResult pass2ArrayInitializer(ArrayInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ArrayInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2ArrayInitializer(ArrayInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ArrayInitializer data structure.
  *
  */
 AstResult pass3ArrayInitializer(ArrayInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ArrayInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3ArrayInitializer(ArrayInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ArrayInitializer data structure.
  *
  */
 AstResult emitArrayInitializer(ArrayInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitArrayInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitArrayInitializer(ArrayInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyArrayInitializer(ArrayInitializer* ptr)
+ * @brief Destroy a ArrayInitializer data structure.
  *
  */
 AstResult destroyArrayInitializer(ArrayInitializer* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyArrayInitializer\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyArrayInitializer(ArrayInitializer* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ArrayInitializer data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpArrayInitializer(ArrayInitializer* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

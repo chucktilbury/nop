@@ -31,14 +31,19 @@ Expression* createExpression(ExpressionFactor* expression_factor,
     ptr->cast_specifier = cast_specifier;
     ptr->expression_in_parens_rule = expression_in_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for Expression data structure.
  *
  */
 AstResult pass1Expression(Expression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1Expression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -69,14 +74,19 @@ AstResult pass1Expression(Expression* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for Expression data structure.
  *
  */
 AstResult pass2Expression(Expression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2Expression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -107,14 +117,19 @@ AstResult pass2Expression(Expression* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for Expression data structure.
  *
  */
 AstResult pass3Expression(Expression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3Expression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -145,14 +160,19 @@ AstResult pass3Expression(Expression* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for Expression data structure.
  *
  */
 AstResult emitExpression(Expression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExpression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -183,14 +203,19 @@ AstResult emitExpression(Expression* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExpression(Expression* ptr)
+ * @brief Destroy a Expression data structure.
  *
  */
 AstResult destroyExpression(Expression* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExpression\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -222,11 +247,12 @@ AstResult destroyExpression(Expression* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump Expression data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -263,6 +289,7 @@ AstResult dumpExpression(Expression* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

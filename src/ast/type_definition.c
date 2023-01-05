@@ -40,14 +40,19 @@ TypeDefinition* createTypeDefinition(int number,
     ptr->dict = dict;
     ptr->compound_name = compound_name;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for TypeDefinition data structure.
  *
  */
 AstResult pass1TypeDefinition(TypeDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1TypeDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -60,14 +65,19 @@ AstResult pass1TypeDefinition(TypeDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for TypeDefinition data structure.
  *
  */
 AstResult pass2TypeDefinition(TypeDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2TypeDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -80,14 +90,19 @@ AstResult pass2TypeDefinition(TypeDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for TypeDefinition data structure.
  *
  */
 AstResult pass3TypeDefinition(TypeDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3TypeDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -100,14 +115,19 @@ AstResult pass3TypeDefinition(TypeDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for TypeDefinition data structure.
  *
  */
 AstResult emitTypeDefinition(TypeDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitTypeDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -120,14 +140,19 @@ AstResult emitTypeDefinition(TypeDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyTypeDefinition(TypeDefinition* ptr)
+ * @brief Destroy a TypeDefinition data structure.
  *
  */
 AstResult destroyTypeDefinition(TypeDefinition* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyTypeDefinition\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -141,11 +166,12 @@ AstResult destroyTypeDefinition(TypeDefinition* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump TypeDefinition data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -164,6 +190,7 @@ AstResult dumpTypeDefinition(TypeDefinition* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

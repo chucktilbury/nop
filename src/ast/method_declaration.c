@@ -28,14 +28,19 @@ MethodDeclaration* createMethodDeclaration(TypeDefinition* type_definition,
     ptr->symbol = symbol;
     ptr->func_decl_parameter_list = func_decl_parameter_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for MethodDeclaration data structure.
  *
  */
 AstResult pass1MethodDeclaration(MethodDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1MethodDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -54,14 +59,19 @@ AstResult pass1MethodDeclaration(MethodDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for MethodDeclaration data structure.
  *
  */
 AstResult pass2MethodDeclaration(MethodDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2MethodDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -80,14 +90,19 @@ AstResult pass2MethodDeclaration(MethodDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for MethodDeclaration data structure.
  *
  */
 AstResult pass3MethodDeclaration(MethodDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3MethodDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -106,14 +121,19 @@ AstResult pass3MethodDeclaration(MethodDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for MethodDeclaration data structure.
  *
  */
 AstResult emitMethodDeclaration(MethodDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitMethodDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -132,14 +152,19 @@ AstResult emitMethodDeclaration(MethodDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyMethodDeclaration(MethodDeclaration* ptr)
+ * @brief Destroy a MethodDeclaration data structure.
  *
  */
 AstResult destroyMethodDeclaration(MethodDeclaration* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyMethodDeclaration\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -159,11 +184,12 @@ AstResult destroyMethodDeclaration(MethodDeclaration* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump MethodDeclaration data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -188,6 +214,7 @@ AstResult dumpMethodDeclaration(MethodDeclaration* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

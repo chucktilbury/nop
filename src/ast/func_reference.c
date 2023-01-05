@@ -25,14 +25,19 @@ FuncReference* createFuncReference(CompoundName* compound_name,
     ptr->compound_name = compound_name;
     ptr->expression_list_in_parens = expression_list_in_parens;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for FuncReference data structure.
  *
  */
 AstResult pass1FuncReference(FuncReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1FuncReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1FuncReference(FuncReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for FuncReference data structure.
  *
  */
 AstResult pass2FuncReference(FuncReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2FuncReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2FuncReference(FuncReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for FuncReference data structure.
  *
  */
 AstResult pass3FuncReference(FuncReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3FuncReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3FuncReference(FuncReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for FuncReference data structure.
  *
  */
 AstResult emitFuncReference(FuncReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitFuncReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitFuncReference(FuncReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyFuncReference(FuncReference* ptr)
+ * @brief Destroy a FuncReference data structure.
  *
  */
 AstResult destroyFuncReference(FuncReference* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyFuncReference\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyFuncReference(FuncReference* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump FuncReference data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpFuncReference(FuncReference* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

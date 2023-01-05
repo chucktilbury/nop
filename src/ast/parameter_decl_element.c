@@ -22,14 +22,19 @@ ParameterDeclElement* createParameterDeclElement(TypeDefinition* type_definition
     initAst(&ptr->ast, NULL, AST_PARAMETER_DECL_ELEMENT);
     ptr->type_definition = type_definition;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ParameterDeclElement data structure.
  *
  */
 AstResult pass1ParameterDeclElement(ParameterDeclElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ParameterDeclElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1ParameterDeclElement(ParameterDeclElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ParameterDeclElement data structure.
  *
  */
 AstResult pass2ParameterDeclElement(ParameterDeclElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ParameterDeclElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2ParameterDeclElement(ParameterDeclElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ParameterDeclElement data structure.
  *
  */
 AstResult pass3ParameterDeclElement(ParameterDeclElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ParameterDeclElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3ParameterDeclElement(ParameterDeclElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ParameterDeclElement data structure.
  *
  */
 AstResult emitParameterDeclElement(ParameterDeclElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitParameterDeclElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitParameterDeclElement(ParameterDeclElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyParameterDeclElement(ParameterDeclElement* ptr)
+ * @brief Destroy a ParameterDeclElement data structure.
  *
  */
 AstResult destroyParameterDeclElement(ParameterDeclElement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyParameterDeclElement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyParameterDeclElement(ParameterDeclElement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ParameterDeclElement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpParameterDeclElement(ParameterDeclElement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

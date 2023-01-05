@@ -25,14 +25,19 @@ ClassNameParent* createClassNameParent(CompoundNameInParensRule* compound_name_i
     ptr->compound_name_in_parens_rule = compound_name_in_parens_rule;
     ptr->empty_parens_rule = empty_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ClassNameParent data structure.
  *
  */
 AstResult pass1ClassNameParent(ClassNameParent* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ClassNameParent\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ClassNameParent(ClassNameParent* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ClassNameParent data structure.
  *
  */
 AstResult pass2ClassNameParent(ClassNameParent* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ClassNameParent\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ClassNameParent(ClassNameParent* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ClassNameParent data structure.
  *
  */
 AstResult pass3ClassNameParent(ClassNameParent* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ClassNameParent\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ClassNameParent(ClassNameParent* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ClassNameParent data structure.
  *
  */
 AstResult emitClassNameParent(ClassNameParent* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitClassNameParent\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitClassNameParent(ClassNameParent* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyClassNameParent(ClassNameParent* ptr)
+ * @brief Destroy a ClassNameParent data structure.
  *
  */
 AstResult destroyClassNameParent(ClassNameParent* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyClassNameParent\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyClassNameParent(ClassNameParent* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ClassNameParent data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpClassNameParent(ClassNameParent* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

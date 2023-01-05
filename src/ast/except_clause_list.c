@@ -25,14 +25,19 @@ ExceptClauseList* createExceptClauseList(ExceptClauseIntermediateList* except_cl
     ptr->except_clause_intermediate_list = except_clause_intermediate_list;
     ptr->except_clause_final = except_clause_final;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ExceptClauseList data structure.
  *
  */
 AstResult pass1ExceptClauseList(ExceptClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ExceptClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ExceptClauseList(ExceptClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ExceptClauseList data structure.
  *
  */
 AstResult pass2ExceptClauseList(ExceptClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ExceptClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ExceptClauseList(ExceptClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ExceptClauseList data structure.
  *
  */
 AstResult pass3ExceptClauseList(ExceptClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ExceptClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ExceptClauseList(ExceptClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ExceptClauseList data structure.
  *
  */
 AstResult emitExceptClauseList(ExceptClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExceptClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitExceptClauseList(ExceptClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExceptClauseList(ExceptClauseList* ptr)
+ * @brief Destroy a ExceptClauseList data structure.
  *
  */
 AstResult destroyExceptClauseList(ExceptClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExceptClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyExceptClauseList(ExceptClauseList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ExceptClauseList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpExceptClauseList(ExceptClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

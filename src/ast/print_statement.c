@@ -22,14 +22,19 @@ PrintStatement* createPrintStatement(ExpressionInParensRule* expression_in_paren
     initAst(&ptr->ast, NULL, AST_PRINT_STATEMENT);
     ptr->expression_in_parens_rule = expression_in_parens_rule;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for PrintStatement data structure.
  *
  */
 AstResult pass1PrintStatement(PrintStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1PrintStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1PrintStatement(PrintStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for PrintStatement data structure.
  *
  */
 AstResult pass2PrintStatement(PrintStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2PrintStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2PrintStatement(PrintStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for PrintStatement data structure.
  *
  */
 AstResult pass3PrintStatement(PrintStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3PrintStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3PrintStatement(PrintStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for PrintStatement data structure.
  *
  */
 AstResult emitPrintStatement(PrintStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitPrintStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitPrintStatement(PrintStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyPrintStatement(PrintStatement* ptr)
+ * @brief Destroy a PrintStatement data structure.
  *
  */
 AstResult destroyPrintStatement(PrintStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyPrintStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyPrintStatement(PrintStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump PrintStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpPrintStatement(PrintStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

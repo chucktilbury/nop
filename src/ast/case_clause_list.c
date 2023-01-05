@@ -25,14 +25,19 @@ CaseClauseList* createCaseClauseList(CaseClauseIntermediateList* case_clause_int
     ptr->case_clause_intermediate_list = case_clause_intermediate_list;
     ptr->func_body = func_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for CaseClauseList data structure.
  *
  */
 AstResult pass1CaseClauseList(CaseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1CaseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1CaseClauseList(CaseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for CaseClauseList data structure.
  *
  */
 AstResult pass2CaseClauseList(CaseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2CaseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2CaseClauseList(CaseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for CaseClauseList data structure.
  *
  */
 AstResult pass3CaseClauseList(CaseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3CaseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3CaseClauseList(CaseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for CaseClauseList data structure.
  *
  */
 AstResult emitCaseClauseList(CaseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitCaseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitCaseClauseList(CaseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyCaseClauseList(CaseClauseList* ptr)
+ * @brief Destroy a CaseClauseList data structure.
  *
  */
 AstResult destroyCaseClauseList(CaseClauseList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyCaseClauseList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyCaseClauseList(CaseClauseList* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump CaseClauseList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpCaseClauseList(CaseClauseList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

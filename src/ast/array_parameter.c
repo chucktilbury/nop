@@ -25,14 +25,19 @@ ArrayParameter* createArrayParameter(ExpressionFactor* expression_factor,
     ptr->expression_factor = expression_factor;
     ptr->array_parameter = array_parameter;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ArrayParameter data structure.
  *
  */
 AstResult pass1ArrayParameter(ArrayParameter* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ArrayParameter\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ArrayParameter(ArrayParameter* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ArrayParameter data structure.
  *
  */
 AstResult pass2ArrayParameter(ArrayParameter* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ArrayParameter\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ArrayParameter(ArrayParameter* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ArrayParameter data structure.
  *
  */
 AstResult pass3ArrayParameter(ArrayParameter* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ArrayParameter\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ArrayParameter(ArrayParameter* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ArrayParameter data structure.
  *
  */
 AstResult emitArrayParameter(ArrayParameter* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitArrayParameter\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitArrayParameter(ArrayParameter* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyArrayParameter(ArrayParameter* ptr)
+ * @brief Destroy a ArrayParameter data structure.
  *
  */
 AstResult destroyArrayParameter(ArrayParameter* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyArrayParameter\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyArrayParameter(ArrayParameter* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ArrayParameter data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpArrayParameter(ArrayParameter* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

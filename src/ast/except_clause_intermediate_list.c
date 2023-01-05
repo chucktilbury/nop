@@ -25,14 +25,19 @@ ExceptClauseIntermediateList* createExceptClauseIntermediateList(ExceptClause* e
     ptr->except_clause = except_clause;
     ptr->except_clause_intermediate_list = except_clause_intermediate_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ExceptClauseIntermediateList data structure.
  *
  */
 AstResult pass1ExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ExceptClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ExceptClauseIntermediateList data structure.
  *
  */
 AstResult pass2ExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ExceptClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ExceptClauseIntermediateList data structure.
  *
  */
 AstResult pass3ExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ExceptClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ExceptClauseIntermediateList data structure.
  *
  */
 AstResult emitExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExceptClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr)
+ * @brief Destroy a ExceptClauseIntermediateList data structure.
  *
  */
 AstResult destroyExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExceptClauseIntermediateList\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr)
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ExceptClauseIntermediateList data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpExceptClauseIntermediateList(ExceptClauseIntermediateList* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

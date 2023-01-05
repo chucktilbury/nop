@@ -25,14 +25,19 @@ ExceptClauseFinal* createExceptClauseFinal(EmptyParensRule* empty_parens_rule,
     ptr->empty_parens_rule = empty_parens_rule;
     ptr->func_body = func_body;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for ExceptClauseFinal data structure.
  *
  */
 AstResult pass1ExceptClauseFinal(ExceptClauseFinal* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1ExceptClauseFinal\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1ExceptClauseFinal(ExceptClauseFinal* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for ExceptClauseFinal data structure.
  *
  */
 AstResult pass2ExceptClauseFinal(ExceptClauseFinal* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2ExceptClauseFinal\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2ExceptClauseFinal(ExceptClauseFinal* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for ExceptClauseFinal data structure.
  *
  */
 AstResult pass3ExceptClauseFinal(ExceptClauseFinal* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3ExceptClauseFinal\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3ExceptClauseFinal(ExceptClauseFinal* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for ExceptClauseFinal data structure.
  *
  */
 AstResult emitExceptClauseFinal(ExceptClauseFinal* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitExceptClauseFinal\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitExceptClauseFinal(ExceptClauseFinal* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyExceptClauseFinal(ExceptClauseFinal* ptr)
+ * @brief Destroy a ExceptClauseFinal data structure.
  *
  */
 AstResult destroyExceptClauseFinal(ExceptClauseFinal* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyExceptClauseFinal\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyExceptClauseFinal(ExceptClauseFinal* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump ExceptClauseFinal data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpExceptClauseFinal(ExceptClauseFinal* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

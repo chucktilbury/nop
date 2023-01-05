@@ -22,14 +22,19 @@ LoopBody* createLoopBody(LoopBodyStatementList* loop_body_statement_list) {
     initAst(&ptr->ast, NULL, AST_LOOP_BODY);
     ptr->loop_body_statement_list = loop_body_statement_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for LoopBody data structure.
  *
  */
 AstResult pass1LoopBody(LoopBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1LoopBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -42,14 +47,19 @@ AstResult pass1LoopBody(LoopBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for LoopBody data structure.
  *
  */
 AstResult pass2LoopBody(LoopBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2LoopBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -62,14 +72,19 @@ AstResult pass2LoopBody(LoopBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for LoopBody data structure.
  *
  */
 AstResult pass3LoopBody(LoopBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3LoopBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -82,14 +97,19 @@ AstResult pass3LoopBody(LoopBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for LoopBody data structure.
  *
  */
 AstResult emitLoopBody(LoopBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitLoopBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -102,14 +122,19 @@ AstResult emitLoopBody(LoopBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyLoopBody(LoopBody* ptr)
+ * @brief Destroy a LoopBody data structure.
  *
  */
 AstResult destroyLoopBody(LoopBody* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyLoopBody\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -123,11 +148,12 @@ AstResult destroyLoopBody(LoopBody* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump LoopBody data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -146,6 +172,7 @@ AstResult dumpLoopBody(LoopBody* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */

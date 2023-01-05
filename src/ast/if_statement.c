@@ -25,14 +25,19 @@ IfStatement* createIfStatement(IfClause* if_clause,
     ptr->if_clause = if_clause;
     ptr->else_clause_list = else_clause_list;
 
+
     return ptr;
 }
 
 /**
- * @brief Execute pass 1 analysis for this data structure.
+ * @brief Execute pass 1 analysis for IfStatement data structure.
  *
  */
 AstResult pass1IfStatement(IfStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass1IfStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 1 routines
@@ -51,14 +56,19 @@ AstResult pass1IfStatement(IfStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 2 analysis for this data structure.
+ * @brief Execute pass 2 analysis for IfStatement data structure.
  *
  */
 AstResult pass2IfStatement(IfStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass2IfStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 2 routines
@@ -77,14 +87,19 @@ AstResult pass2IfStatement(IfStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Execute pass 3 analysis for this data structure.
+ * @brief Execute pass 3 analysis for IfStatement data structure.
  *
  */
 AstResult pass3IfStatement(IfStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: pass3IfStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the pass 3 routines
@@ -103,14 +118,19 @@ AstResult pass3IfStatement(IfStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Emit final output for this data structure.
+ * @brief Emit final output for IfStatement data structure.
  *
  */
 AstResult emitIfStatement(IfStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: emitIfStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // perform the emitter routines
@@ -129,14 +149,19 @@ AstResult emitIfStatement(IfStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief void destroyIfStatement(IfStatement* ptr)
+ * @brief Destroy a IfStatement data structure.
  *
  */
 AstResult destroyIfStatement(IfStatement* ptr) {
+
+#ifdef ENABLE_TRACE
+    printf("parser: destroyIfStatement\\n");
+#endif /* ENABLE_DUMP */
 
     if(ptr != NULL) {
         // destroy these data elements
@@ -156,11 +181,12 @@ AstResult destroyIfStatement(IfStatement* ptr) {
 
         _free(ptr);
     }
+
     return AST_RES_OK;
 }
 
 /**
- * @brief Dump the data type and progress the tree.
+ * @brief Dump IfStatement data type and progress the tree.
  *
  */
 #ifdef ENABLE_DUMP
@@ -185,6 +211,7 @@ AstResult dumpIfStatement(IfStatement* ptr) {
         }
 
     }
+
     return AST_RES_OK;
 }
 #endif /* ENABLE_DUMP */
