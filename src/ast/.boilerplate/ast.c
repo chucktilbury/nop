@@ -32,9 +32,10 @@ void* findAst(const char* name, int* type) {
     return NULL;
 }
 
-void dumpAst(Ast* ptr) {
+AstResult dumpAst(Ast* ptr) {
 
     printf("\"%s\":%s:%d:%d\n", ptr->name, ptr->fname, ptr->line, ptr->col);
+    return AST_RES_OK;
 }
 
 #include <stdio.h>

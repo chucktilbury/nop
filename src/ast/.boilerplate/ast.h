@@ -13,6 +13,17 @@
 #include "ast_enums.h"
 
 /**
+ *
+ * @brief These symbols are returned by methods that traverse the AST.
+ */
+typedef enum {
+    AST_RES_OK,
+    AST_RES_CONTINUE,
+    AST_RES_ABORT,
+    AST_RES_ERROR,
+} AstResult;
+
+/**
  * @brief All AST tree elements have this as the first element.
  */
 typedef struct {
@@ -35,11 +46,8 @@ void ast_error(Ast* ast, const char* fmt, ...);
 
 #include "ast_includes.h"
 
-#if 0
 #ifdef ENABLE_DUMP
-#include "dumper.h"
-void dumpAst(Ast* ptr);
-#endif
+AstResult dumpAst(Ast* ptr);
 #endif
 
 // defined at the end of parser.y

@@ -36,9 +36,6 @@ type_table = {
     'LIST':'int',
     'DICT':'int',
     'BOOLEAN':'int',
-    'PRINT':'int',
-    'TRACE':'int',
-    'TYPE':'int',
 
     'PUBLIC':'int',
     'PRIVATE':'int',
@@ -92,14 +89,15 @@ def make_symbol_list(infile_name):
 
     return lines
 
+def mk_tname(name):
+    return ''.join([x.capitalize() for x in name.split('_')])
+
 def emit_typedefs(lst):
 
     print("emit typedefs header")
     tlst = []
     for item in lst:
-        tmp = item.split('_')
-        tlst.append("typedef struct _%s_ %s;\n"%(
-                    item, ''.join([x.capitalize() for x in tmp])))
+        tlst.append("typedef struct _%s_ %s;\n"%(item, mk_tname(item)))
 
     value = ''.join(tlst)
     with open('ast_typedefs_template.txt', 'r') as fh:
@@ -156,7 +154,7 @@ def emit_header_files(lst):
         fmt = {}
         fmt['filename'] = "%s.h"%(item)
         fmt['lockname'] = item.upper()
-        fmt['typename'] = ''.join([x.capitalize() for x in item.split('_')])
+        fmt['typename'] = mk_tname(item)
         fmt['strucname'] = "_%s_"%(item)
 
         tmp1 = []
@@ -177,6 +175,32 @@ def emit_header_files(lst):
         with open(os.path.join('..', "%s.h"%(item)), 'w') as fh:
             fh.write(templ.render(fmt))
 
+traverse_format = '''
+        if(ptr->{{iname}} != NULL) {
+            AstResult res = {{thing}}{{tname}}(ptr->{{iname}});
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+'''
+
+# 202-225-3121
+def mk_traverse(name, item, lst):
+
+    tlst = []
+    templ = jinja2.Template(traverse_format)
+    for x in lst[item]['deps']:
+        if x in lst:
+            s = templ.render({'thing':name, 'iname':x, 'tname':mk_tname(x)})
+            tlst.append(s)
+
+    if len(tlst) > 0:
+        outs = ''.join(tlst)
+    else:
+        outs = '// nothing to traverse'
+
+    return '// traverse the data structure items'+outs
+
 def emit_source_files(lst):
 
     print("emit all source files")
@@ -186,9 +210,15 @@ def emit_source_files(lst):
     templ = jinja2.Template(txt)
     for item in lst:
         fmt = {}
-        fmt['typename'] = ''.join([x.capitalize() for x in item.split('_')])
+        fmt['typename'] = mk_tname(item)
         fmt['lockname'] = item.upper()
         fmt['filename'] = "%s.c"%(item)
+        fmt['pass1'] = mk_traverse("pass1", item, lst)
+        fmt['pass2'] = mk_traverse("pass2", item, lst)
+        fmt['pass3'] = mk_traverse("pass3", item, lst)
+        fmt['emitter'] = mk_traverse("emit", item, lst)
+        fmt['destroy'] = mk_traverse("destroy", item, lst)
+        fmt['dumper'] = mk_traverse("dump", item, lst)
 
         tmp1 = [] # inits = 'ptr->%s = %s'
         tmp2 = [] # paras = 'type* type,'
@@ -218,7 +248,7 @@ def emit_other_file(lst):
         fh.write("    /* non-terminal types for %%union{} */\n")
         for item in lst:
             fh.write("    %s* _%s_;\n"%(
-                      ''.join([x.capitalize() for x in item.split('_')]),
+                      mk_tname(item),
                       ''.join([x[:3] for x in item.split('_')])))
         fh.write('\n\n')
 
