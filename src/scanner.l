@@ -115,14 +115,22 @@ int yycolumn = 1;
 "print"     { nop_lval.type = PRINT; return PRINT; }
 "type"      { nop_lval.type = TYPE; return TYPE; }
 
-"<=" { return LORE; }
-">=" { return GORE; }
-"==" { return EQU; }
-"!=" { return NEQU; }
-"||" { return OR; }
-"or" { return OR; }
-"&&" { return AND; }
-"and" { return AND; }
+"<="    { return LORE; }
+">="    { return GORE; }
+"=="    { return EQU; }
+"!="    { return NEQU; }
+"||"    { return OR; }
+"or"    { return OR; }
+"&&"    { return AND; }
+"and"   { return AND; }
+"+="    { return ADD_ASSIGN; }
+"-="    { return SUB_ASSIGN; }
+"*="    { return MUL_ASSIGN; }
+"/="    { return DIV_ASSIGN; }
+"%="    { return MOD_ASSIGN; }
+"++"    { return INCREMENT; }
+"--"    { return DECREMENT; }
+"not"   { return NOT; }
 
 "+" { return '+'; }
 "-" { return '-'; }
@@ -147,7 +155,7 @@ int yycolumn = 1;
 "$" { return '$'; }
 "&" { return '&'; }
 "~" { return '~'; }
-"!" { return '!'; }
+"!" { return NOT; }
 
 [a-zA-Z_][a-zA-Z_0-9]* {
         nop_lval.symbol = (char*)strdup(yytext);
