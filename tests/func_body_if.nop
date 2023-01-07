@@ -1,6 +1,6 @@
-/*
- * Test the if() {} else() {} clause
- */
+;---------------------------------------
+; Test the if() {} else() {} clause
+;--------------------------------------
 
 nothing func () {
 
@@ -13,21 +13,21 @@ nothing func () {
         }
     }
     else {
-        // Semantically this makes no sense. blank expressions are always true.
-        // However, syntactically, it's fine because blank expressions are
-        // acceptable.
+        ; Semantically this makes no sense. blank expressions are always true.
+        ; However, syntactically, it's fine because blank expressions are
+        ; acceptable.
         if () {}
         else(10 == 12) {}
 
-        // a hanging block is acceptable (used to isolate symbol scopes)
+        ; a hanging block is acceptable (used to isolate symbol scopes)
         {}
 
-        // semantically, this make no sense because blank expressions are
-        // always true
+        ; semantically, this make no sense because blank expressions are
+        ; always true
         if () {}
         else {}
     }
 
-    // another hanging block
+    ; another hanging block
     {}
 }

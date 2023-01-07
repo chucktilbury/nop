@@ -17,8 +17,7 @@ struct _func_body_statement_ {
     Ast ast;
     FuncBodyStatementType type;
     DataDefinition* data_definition;
-    CompoundName* compound_name;
-    Initialzer* initialzer;
+    Assignment* assignment;
     IfStatement* if_statement;
     ForStatement* for_statement;
     WhileStatement* while_statement;
@@ -32,10 +31,13 @@ struct _func_body_statement_ {
     ExitStatement* exit_statement;
     RaiseStatement* raise_statement;
     TypeStatement* type_statement;
+    BreakStatement* break_statement;
+    ContinueStatement* continue_statement;
+    YieldStatement* yield_statement;
     FuncBody* func_body;
 };
 
-FuncBodyStatement* createFuncBodyStatement(DataDefinition*, CompoundName*, Initialzer*, IfStatement*, ForStatement*, WhileStatement*, SwitchStatement*, DoStatement*, TryStatement*, FuncReference*, TraceStatement*, ReturnStatement*, PrintStatement*, ExitStatement*, RaiseStatement*, TypeStatement*, FuncBody*);
+FuncBodyStatement* createFuncBodyStatement(DataDefinition*, Assignment*, IfStatement*, ForStatement*, WhileStatement*, SwitchStatement*, DoStatement*, TryStatement*, FuncReference*, TraceStatement*, ReturnStatement*, PrintStatement*, ExitStatement*, RaiseStatement*, TypeStatement*, BreakStatement*, ContinueStatement*, YieldStatement*, FuncBody*);
 AstResult pass1FuncBodyStatement(FuncBodyStatement*);
 AstResult pass2FuncBodyStatement(FuncBodyStatement*);
 AstResult pass3FuncBodyStatement(FuncBodyStatement*);

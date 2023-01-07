@@ -10,11 +10,11 @@
 
 /**
  * @brief WhileStatement* createWhileStatement(ExpressionInParensRule* expression_in_parens_rule,
-		LoopBody* loop_body)
+		FuncBody* func_body)
  *
  */
 WhileStatement* createWhileStatement(ExpressionInParensRule* expression_in_parens_rule,
-		LoopBody* loop_body) {
+		FuncBody* func_body) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createWhileStatement\\n");
@@ -23,7 +23,7 @@ WhileStatement* createWhileStatement(ExpressionInParensRule* expression_in_paren
     WhileStatement* ptr = _alloc_ds(WhileStatement);
     initAst(&ptr->ast, NULL, AST_WHILE_STATEMENT);
     ptr->expression_in_parens_rule = expression_in_parens_rule;
-    ptr->loop_body = loop_body;
+    ptr->func_body = func_body;
 
 
     return ptr;
@@ -49,8 +49,8 @@ AstResult pass1WhileStatement(WhileStatement* ptr) {
                 return res;
         }
 
-        if(ptr->loop_body != NULL) {
-            AstResult res = pass1LoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = pass1FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -80,8 +80,8 @@ AstResult pass2WhileStatement(WhileStatement* ptr) {
                 return res;
         }
 
-        if(ptr->loop_body != NULL) {
-            AstResult res = pass2LoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = pass2FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -111,8 +111,8 @@ AstResult pass3WhileStatement(WhileStatement* ptr) {
                 return res;
         }
 
-        if(ptr->loop_body != NULL) {
-            AstResult res = pass3LoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = pass3FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -142,8 +142,8 @@ AstResult emitWhileStatement(WhileStatement* ptr) {
                 return res;
         }
 
-        if(ptr->loop_body != NULL) {
-            AstResult res = emitLoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = emitFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -173,8 +173,8 @@ AstResult destroyWhileStatement(WhileStatement* ptr) {
                 return res;
         }
 
-        if(ptr->loop_body != NULL) {
-            AstResult res = destroyLoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = destroyFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -204,8 +204,8 @@ AstResult dumpWhileStatement(WhileStatement* ptr) {
                 return res;
         }
 
-        if(ptr->loop_body != NULL) {
-            AstResult res = dumpLoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = dumpFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }

@@ -9,10 +9,12 @@
 #include "ast.h"
 
 /**
- * @brief Module* createModule(ModuleList* module_list)
+ * @brief Module* createModule(ModuleList* module_list,
+		Module* module)
  *
  */
-Module* createModule(ModuleList* module_list) {
+Module* createModule(ModuleList* module_list,
+		Module* module) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createModule\\n");
@@ -21,6 +23,7 @@ Module* createModule(ModuleList* module_list) {
     Module* ptr = _alloc_ds(Module);
     initAst(&ptr->ast, NULL, AST_MODULE);
     ptr->module_list = module_list;
+    ptr->module = module;
 
 
     return ptr;
@@ -42,6 +45,12 @@ AstResult pass1Module(Module* ptr) {
         // traverse the data structure items
         if(ptr->module_list != NULL) {
             AstResult res = pass1ModuleList(ptr->module_list);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->module != NULL) {
+            AstResult res = pass1Module(ptr->module);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -71,6 +80,12 @@ AstResult pass2Module(Module* ptr) {
                 return res;
         }
 
+        if(ptr->module != NULL) {
+            AstResult res = pass2Module(ptr->module);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
     }
 
     return AST_RES_OK;
@@ -92,6 +107,12 @@ AstResult pass3Module(Module* ptr) {
         // traverse the data structure items
         if(ptr->module_list != NULL) {
             AstResult res = pass3ModuleList(ptr->module_list);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->module != NULL) {
+            AstResult res = pass3Module(ptr->module);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -121,6 +142,12 @@ AstResult emitModule(Module* ptr) {
                 return res;
         }
 
+        if(ptr->module != NULL) {
+            AstResult res = emitModule(ptr->module);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
     }
 
     return AST_RES_OK;
@@ -146,6 +173,12 @@ AstResult destroyModule(Module* ptr) {
                 return res;
         }
 
+        if(ptr->module != NULL) {
+            AstResult res = destroyModule(ptr->module);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
         _free(ptr);
     }
 
@@ -167,6 +200,12 @@ AstResult dumpModule(Module* ptr) {
         // traverse the data structure items
         if(ptr->module_list != NULL) {
             AstResult res = dumpModuleList(ptr->module_list);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->module != NULL) {
+            AstResult res = dumpModule(ptr->module);
             if(res != AST_RES_OK)
                 return res;
         }

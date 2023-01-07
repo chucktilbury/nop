@@ -1,6 +1,6 @@
-/*
- * Function declaration syntax.
- */
+;-----------------------
+; Function declaration syntax.
+;
 
 class the_class {
     public
@@ -11,8 +11,8 @@ class the_class {
 
 string func.name.asd(num poo, string asd) {}
 
-// constructor definition
+; constructor definition
 obj.name.create(num poo) {}
 
-// destructor definition
+; destructor definition
 obj.name.destroy {}

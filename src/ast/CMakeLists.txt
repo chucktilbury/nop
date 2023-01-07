@@ -50,9 +50,6 @@ add_library(${PROJECT_NAME} STATIC
     break_statement.c
     continue_statement.c
     yield_statement.c
-    loop_body_statement.c
-    loop_body_statement_list.c
-    loop_body.c
     except_clause.c
     except_clause_intermediate_list.c
     except_clause_final.c
@@ -81,6 +78,7 @@ add_library(${PROJECT_NAME} STATIC
     exit_statement.c
     raise_statement.c
     type_statement.c
+    assignment.c
     func_body_statement.c
 )
 

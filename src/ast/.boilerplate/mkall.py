@@ -184,7 +184,6 @@ traverse_format = '''
 
 '''
 
-# 202-225-3121
 def mk_traverse(name, item, lst):
 
     tlst = []

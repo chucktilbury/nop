@@ -10,8 +10,7 @@
 
 /**
  * @brief FuncBodyStatement* createFuncBodyStatement(DataDefinition* data_definition,
-		CompoundName* compound_name,
-		Initialzer* initialzer,
+		Assignment* assignment,
 		IfStatement* if_statement,
 		ForStatement* for_statement,
 		WhileStatement* while_statement,
@@ -25,12 +24,14 @@
 		ExitStatement* exit_statement,
 		RaiseStatement* raise_statement,
 		TypeStatement* type_statement,
+		BreakStatement* break_statement,
+		ContinueStatement* continue_statement,
+		YieldStatement* yield_statement,
 		FuncBody* func_body)
  *
  */
 FuncBodyStatement* createFuncBodyStatement(DataDefinition* data_definition,
-		CompoundName* compound_name,
-		Initialzer* initialzer,
+		Assignment* assignment,
 		IfStatement* if_statement,
 		ForStatement* for_statement,
 		WhileStatement* while_statement,
@@ -44,6 +45,9 @@ FuncBodyStatement* createFuncBodyStatement(DataDefinition* data_definition,
 		ExitStatement* exit_statement,
 		RaiseStatement* raise_statement,
 		TypeStatement* type_statement,
+		BreakStatement* break_statement,
+		ContinueStatement* continue_statement,
+		YieldStatement* yield_statement,
 		FuncBody* func_body) {
 
 #ifdef ENABLE_TRACE
@@ -53,8 +57,7 @@ FuncBodyStatement* createFuncBodyStatement(DataDefinition* data_definition,
     FuncBodyStatement* ptr = _alloc_ds(FuncBodyStatement);
     initAst(&ptr->ast, NULL, AST_FUNC_BODY_STATEMENT);
     ptr->data_definition = data_definition;
-    ptr->compound_name = compound_name;
-    ptr->initialzer = initialzer;
+    ptr->assignment = assignment;
     ptr->if_statement = if_statement;
     ptr->for_statement = for_statement;
     ptr->while_statement = while_statement;
@@ -68,6 +71,9 @@ FuncBodyStatement* createFuncBodyStatement(DataDefinition* data_definition,
     ptr->exit_statement = exit_statement;
     ptr->raise_statement = raise_statement;
     ptr->type_statement = type_statement;
+    ptr->break_statement = break_statement;
+    ptr->continue_statement = continue_statement;
+    ptr->yield_statement = yield_statement;
     ptr->func_body = func_body;
 
 
@@ -94,14 +100,8 @@ AstResult pass1FuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
-        if(ptr->compound_name != NULL) {
-            AstResult res = pass1CompoundName(ptr->compound_name);
-            if(res != AST_RES_OK)
-                return res;
-        }
-
-        if(ptr->initialzer != NULL) {
-            AstResult res = pass1Initialzer(ptr->initialzer);
+        if(ptr->assignment != NULL) {
+            AstResult res = pass1Assignment(ptr->assignment);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -184,6 +184,24 @@ AstResult pass1FuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
+        if(ptr->break_statement != NULL) {
+            AstResult res = pass1BreakStatement(ptr->break_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->continue_statement != NULL) {
+            AstResult res = pass1ContinueStatement(ptr->continue_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->yield_statement != NULL) {
+            AstResult res = pass1YieldStatement(ptr->yield_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
         if(ptr->func_body != NULL) {
             AstResult res = pass1FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
@@ -215,14 +233,8 @@ AstResult pass2FuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
-        if(ptr->compound_name != NULL) {
-            AstResult res = pass2CompoundName(ptr->compound_name);
-            if(res != AST_RES_OK)
-                return res;
-        }
-
-        if(ptr->initialzer != NULL) {
-            AstResult res = pass2Initialzer(ptr->initialzer);
+        if(ptr->assignment != NULL) {
+            AstResult res = pass2Assignment(ptr->assignment);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -305,6 +317,24 @@ AstResult pass2FuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
+        if(ptr->break_statement != NULL) {
+            AstResult res = pass2BreakStatement(ptr->break_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->continue_statement != NULL) {
+            AstResult res = pass2ContinueStatement(ptr->continue_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->yield_statement != NULL) {
+            AstResult res = pass2YieldStatement(ptr->yield_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
         if(ptr->func_body != NULL) {
             AstResult res = pass2FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
@@ -336,14 +366,8 @@ AstResult pass3FuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
-        if(ptr->compound_name != NULL) {
-            AstResult res = pass3CompoundName(ptr->compound_name);
-            if(res != AST_RES_OK)
-                return res;
-        }
-
-        if(ptr->initialzer != NULL) {
-            AstResult res = pass3Initialzer(ptr->initialzer);
+        if(ptr->assignment != NULL) {
+            AstResult res = pass3Assignment(ptr->assignment);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -426,6 +450,24 @@ AstResult pass3FuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
+        if(ptr->break_statement != NULL) {
+            AstResult res = pass3BreakStatement(ptr->break_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->continue_statement != NULL) {
+            AstResult res = pass3ContinueStatement(ptr->continue_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->yield_statement != NULL) {
+            AstResult res = pass3YieldStatement(ptr->yield_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
         if(ptr->func_body != NULL) {
             AstResult res = pass3FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
@@ -457,14 +499,8 @@ AstResult emitFuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
-        if(ptr->compound_name != NULL) {
-            AstResult res = emitCompoundName(ptr->compound_name);
-            if(res != AST_RES_OK)
-                return res;
-        }
-
-        if(ptr->initialzer != NULL) {
-            AstResult res = emitInitialzer(ptr->initialzer);
+        if(ptr->assignment != NULL) {
+            AstResult res = emitAssignment(ptr->assignment);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -547,6 +583,24 @@ AstResult emitFuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
+        if(ptr->break_statement != NULL) {
+            AstResult res = emitBreakStatement(ptr->break_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->continue_statement != NULL) {
+            AstResult res = emitContinueStatement(ptr->continue_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->yield_statement != NULL) {
+            AstResult res = emitYieldStatement(ptr->yield_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
         if(ptr->func_body != NULL) {
             AstResult res = emitFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
@@ -578,14 +632,8 @@ AstResult destroyFuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
-        if(ptr->compound_name != NULL) {
-            AstResult res = destroyCompoundName(ptr->compound_name);
-            if(res != AST_RES_OK)
-                return res;
-        }
-
-        if(ptr->initialzer != NULL) {
-            AstResult res = destroyInitialzer(ptr->initialzer);
+        if(ptr->assignment != NULL) {
+            AstResult res = destroyAssignment(ptr->assignment);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -668,6 +716,24 @@ AstResult destroyFuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
+        if(ptr->break_statement != NULL) {
+            AstResult res = destroyBreakStatement(ptr->break_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->continue_statement != NULL) {
+            AstResult res = destroyContinueStatement(ptr->continue_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->yield_statement != NULL) {
+            AstResult res = destroyYieldStatement(ptr->yield_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
         if(ptr->func_body != NULL) {
             AstResult res = destroyFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
@@ -699,14 +765,8 @@ AstResult dumpFuncBodyStatement(FuncBodyStatement* ptr) {
                 return res;
         }
 
-        if(ptr->compound_name != NULL) {
-            AstResult res = dumpCompoundName(ptr->compound_name);
-            if(res != AST_RES_OK)
-                return res;
-        }
-
-        if(ptr->initialzer != NULL) {
-            AstResult res = dumpInitialzer(ptr->initialzer);
+        if(ptr->assignment != NULL) {
+            AstResult res = dumpAssignment(ptr->assignment);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -785,6 +845,24 @@ AstResult dumpFuncBodyStatement(FuncBodyStatement* ptr) {
 
         if(ptr->type_statement != NULL) {
             AstResult res = dumpTypeStatement(ptr->type_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->break_statement != NULL) {
+            AstResult res = dumpBreakStatement(ptr->break_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->continue_statement != NULL) {
+            AstResult res = dumpContinueStatement(ptr->continue_statement);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->yield_statement != NULL) {
+            AstResult res = dumpYieldStatement(ptr->yield_statement);
             if(res != AST_RES_OK)
                 return res;
         }

@@ -17,9 +17,10 @@ struct _module_ {
     Ast ast;
     ModuleType type;
     ModuleList* module_list;
+    Module* module;
 };
 
-Module* createModule(ModuleList*);
+Module* createModule(ModuleList*, Module*);
 AstResult pass1Module(Module*);
 AstResult pass2Module(Module*);
 AstResult pass3Module(Module*);

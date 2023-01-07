@@ -16,11 +16,11 @@ typedef enum {
 struct _do_statement_ {
     Ast ast;
     DoStatementType type;
-    LoopBody* loop_body;
+    FuncBody* func_body;
     ExpressionInParensRule* expression_in_parens_rule;
 };
 
-DoStatement* createDoStatement(LoopBody*, ExpressionInParensRule*);
+DoStatement* createDoStatement(FuncBody*, ExpressionInParensRule*);
 AstResult pass1DoStatement(DoStatement*);
 AstResult pass2DoStatement(DoStatement*);
 AstResult pass3DoStatement(DoStatement*);

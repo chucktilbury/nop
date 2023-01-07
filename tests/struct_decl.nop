@@ -1,6 +1,8 @@
-/*
- * Test for structure declarations.
- */
+;-----------------------
+;
+; Test for structure declarations.
+;
+;-----------------------
 
 struct struct_name {
     num a_number

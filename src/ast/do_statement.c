@@ -9,11 +9,11 @@
 #include "ast.h"
 
 /**
- * @brief DoStatement* createDoStatement(LoopBody* loop_body,
+ * @brief DoStatement* createDoStatement(FuncBody* func_body,
 		ExpressionInParensRule* expression_in_parens_rule)
  *
  */
-DoStatement* createDoStatement(LoopBody* loop_body,
+DoStatement* createDoStatement(FuncBody* func_body,
 		ExpressionInParensRule* expression_in_parens_rule) {
 
 #ifdef ENABLE_TRACE
@@ -22,7 +22,7 @@ DoStatement* createDoStatement(LoopBody* loop_body,
 
     DoStatement* ptr = _alloc_ds(DoStatement);
     initAst(&ptr->ast, NULL, AST_DO_STATEMENT);
-    ptr->loop_body = loop_body;
+    ptr->func_body = func_body;
     ptr->expression_in_parens_rule = expression_in_parens_rule;
 
 
@@ -43,8 +43,8 @@ AstResult pass1DoStatement(DoStatement* ptr) {
         // perform the pass 1 routines
 
         // traverse the data structure items
-        if(ptr->loop_body != NULL) {
-            AstResult res = pass1LoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = pass1FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -74,8 +74,8 @@ AstResult pass2DoStatement(DoStatement* ptr) {
         // perform the pass 2 routines
 
         // traverse the data structure items
-        if(ptr->loop_body != NULL) {
-            AstResult res = pass2LoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = pass2FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -105,8 +105,8 @@ AstResult pass3DoStatement(DoStatement* ptr) {
         // perform the pass 3 routines
 
         // traverse the data structure items
-        if(ptr->loop_body != NULL) {
-            AstResult res = pass3LoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = pass3FuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -136,8 +136,8 @@ AstResult emitDoStatement(DoStatement* ptr) {
         // perform the emitter routines
 
         // traverse the data structure items
-        if(ptr->loop_body != NULL) {
-            AstResult res = emitLoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = emitFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -167,8 +167,8 @@ AstResult destroyDoStatement(DoStatement* ptr) {
         // destroy these data elements
 
         // traverse the data structure items
-        if(ptr->loop_body != NULL) {
-            AstResult res = destroyLoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = destroyFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -198,8 +198,8 @@ AstResult dumpDoStatement(DoStatement* ptr) {
         // dump this item
 
         // traverse the data structure items
-        if(ptr->loop_body != NULL) {
-            AstResult res = dumpLoopBody(ptr->loop_body);
+        if(ptr->func_body != NULL) {
+            AstResult res = dumpFuncBody(ptr->func_body);
             if(res != AST_RES_OK)
                 return res;
         }

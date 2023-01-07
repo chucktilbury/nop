@@ -1,5 +1,5 @@
 # NOP
-The NOP programming lanuage. This a self-deprecating programming language that is intended to be as simple as possible but no simpler. 
+The NOP programming lanuage. This a self-deprecating programming language that is intended to be as simple as possible but no simpler.
 
 Design goals:
 - As few keywords as possible.

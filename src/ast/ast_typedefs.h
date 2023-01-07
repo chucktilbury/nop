@@ -55,9 +55,6 @@ typedef struct _func_definition_ FuncDefinition;
 typedef struct _break_statement_ BreakStatement;
 typedef struct _continue_statement_ ContinueStatement;
 typedef struct _yield_statement_ YieldStatement;
-typedef struct _loop_body_statement_ LoopBodyStatement;
-typedef struct _loop_body_statement_list_ LoopBodyStatementList;
-typedef struct _loop_body_ LoopBody;
 typedef struct _except_clause_ ExceptClause;
 typedef struct _except_clause_intermediate_list_ ExceptClauseIntermediateList;
 typedef struct _except_clause_final_ ExceptClauseFinal;
@@ -86,6 +83,7 @@ typedef struct _print_statement_ PrintStatement;
 typedef struct _exit_statement_ ExitStatement;
 typedef struct _raise_statement_ RaiseStatement;
 typedef struct _type_statement_ TypeStatement;
+typedef struct _assignment_ Assignment;
 typedef struct _func_body_statement_ FuncBodyStatement;
 
 #endif /* _AST_TYPEDEFS_H_ */

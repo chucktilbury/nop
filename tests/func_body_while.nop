@@ -1,13 +1,16 @@
-/*
- * Test the while() {} clause
- */
+
+;-----------------------
+;
+;  Test the while() {} clause
+;
+;-------------------------
 
 nothing func() {
 
-    // loop forever
+    ; loop forever
     while() { while() { while() {break continue yield}}}
 
-    // while with no expression is legal
+    ; while with no expression is legal
     while {}
 
     while(x != y and p == 0) {
@@ -19,7 +22,7 @@ nothing func() {
     }
 
     do {
-    } while // looping forever
+    } while ; looping forever
 
     do { do { do { }while(0) }while(false) } while(99 == 100)
 }

@@ -1,6 +1,8 @@
-/*
- * Test that various expressions can assign to various variables.
- */
+;*******************************
+;
+; Test that various expressions can assign to various variables.
+;
+; ===============================
 
 num some_func() {
     num asd1 = 10

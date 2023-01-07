@@ -11,12 +11,16 @@
 /**
  * @brief Initialzer* createInitialzer(Expression* expression,
 		ArrayInitializer* array_initializer,
-		DictInitializer* dict_initializer)
+		DictInitializer* dict_initializer,
+		CastSpecifier* cast_specifier,
+		Initialzer* initialzer)
  *
  */
 Initialzer* createInitialzer(Expression* expression,
 		ArrayInitializer* array_initializer,
-		DictInitializer* dict_initializer) {
+		DictInitializer* dict_initializer,
+		CastSpecifier* cast_specifier,
+		Initialzer* initialzer) {
 
 #ifdef ENABLE_TRACE
     printf("parser: createInitialzer\\n");
@@ -27,6 +31,8 @@ Initialzer* createInitialzer(Expression* expression,
     ptr->expression = expression;
     ptr->array_initializer = array_initializer;
     ptr->dict_initializer = dict_initializer;
+    ptr->cast_specifier = cast_specifier;
+    ptr->initialzer = initialzer;
 
 
     return ptr;
@@ -60,6 +66,18 @@ AstResult pass1Initialzer(Initialzer* ptr) {
 
         if(ptr->dict_initializer != NULL) {
             AstResult res = pass1DictInitializer(ptr->dict_initializer);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->cast_specifier != NULL) {
+            AstResult res = pass1CastSpecifier(ptr->cast_specifier);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->initialzer != NULL) {
+            AstResult res = pass1Initialzer(ptr->initialzer);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -101,6 +119,18 @@ AstResult pass2Initialzer(Initialzer* ptr) {
                 return res;
         }
 
+        if(ptr->cast_specifier != NULL) {
+            AstResult res = pass2CastSpecifier(ptr->cast_specifier);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->initialzer != NULL) {
+            AstResult res = pass2Initialzer(ptr->initialzer);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
     }
 
     return AST_RES_OK;
@@ -134,6 +164,18 @@ AstResult pass3Initialzer(Initialzer* ptr) {
 
         if(ptr->dict_initializer != NULL) {
             AstResult res = pass3DictInitializer(ptr->dict_initializer);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->cast_specifier != NULL) {
+            AstResult res = pass3CastSpecifier(ptr->cast_specifier);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->initialzer != NULL) {
+            AstResult res = pass3Initialzer(ptr->initialzer);
             if(res != AST_RES_OK)
                 return res;
         }
@@ -175,6 +217,18 @@ AstResult emitInitialzer(Initialzer* ptr) {
                 return res;
         }
 
+        if(ptr->cast_specifier != NULL) {
+            AstResult res = emitCastSpecifier(ptr->cast_specifier);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->initialzer != NULL) {
+            AstResult res = emitInitialzer(ptr->initialzer);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
     }
 
     return AST_RES_OK;
@@ -212,6 +266,18 @@ AstResult destroyInitialzer(Initialzer* ptr) {
                 return res;
         }
 
+        if(ptr->cast_specifier != NULL) {
+            AstResult res = destroyCastSpecifier(ptr->cast_specifier);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->initialzer != NULL) {
+            AstResult res = destroyInitialzer(ptr->initialzer);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
         _free(ptr);
     }
 
@@ -245,6 +311,18 @@ AstResult dumpInitialzer(Initialzer* ptr) {
 
         if(ptr->dict_initializer != NULL) {
             AstResult res = dumpDictInitializer(ptr->dict_initializer);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->cast_specifier != NULL) {
+            AstResult res = dumpCastSpecifier(ptr->cast_specifier);
+            if(res != AST_RES_OK)
+                return res;
+        }
+
+        if(ptr->initialzer != NULL) {
+            AstResult res = dumpInitialzer(ptr->initialzer);
             if(res != AST_RES_OK)
                 return res;
         }

@@ -58,9 +58,6 @@
 #include "break_statement.h"
 #include "continue_statement.h"
 #include "yield_statement.h"
-#include "loop_body_statement.h"
-#include "loop_body_statement_list.h"
-#include "loop_body.h"
 #include "except_clause.h"
 #include "except_clause_intermediate_list.h"
 #include "except_clause_final.h"
@@ -89,6 +86,7 @@
 #include "exit_statement.h"
 #include "raise_statement.h"
 #include "type_statement.h"
+#include "assignment.h"
 #include "func_body_statement.h"
 
 #endif /* _AST_INCLUDES_H_ */

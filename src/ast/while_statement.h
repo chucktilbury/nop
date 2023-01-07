@@ -17,10 +17,10 @@ struct _while_statement_ {
     Ast ast;
     WhileStatementType type;
     ExpressionInParensRule* expression_in_parens_rule;
-    LoopBody* loop_body;
+    FuncBody* func_body;
 };
 
-WhileStatement* createWhileStatement(ExpressionInParensRule*, LoopBody*);
+WhileStatement* createWhileStatement(ExpressionInParensRule*, FuncBody*);
 AstResult pass1WhileStatement(WhileStatement*);
 AstResult pass2WhileStatement(WhileStatement*);
 AstResult pass3WhileStatement(WhileStatement*);

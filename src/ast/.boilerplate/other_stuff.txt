@@ -47,9 +47,6 @@
     BreakStatement* _bresta_;
     ContinueStatement* _consta_;
     YieldStatement* _yiesta_;
-    LoopBodyStatement* _loobodsta_;
-    LoopBodyStatementList* _loobodstalis_;
-    LoopBody* _loobod_;
     ExceptClause* _exccla_;
     ExceptClauseIntermediateList* _excclaintlis_;
     ExceptClauseFinal* _excclafin_;
@@ -78,6 +75,7 @@
     ExitStatement* _exista_;
     RaiseStatement* _raista_;
     TypeStatement* _typsta_;
+    Assignment* _ass_;
     FuncBodyStatement* _funbodsta_;
 
 
@@ -128,9 +126,6 @@
 %type<_bresta_> break_statement
 %type<_consta_> continue_statement
 %type<_yiesta_> yield_statement
-%type<_loobodsta_> loop_body_statement
-%type<_loobodstalis_> loop_body_statement_list
-%type<_loobod_> loop_body
 %type<_exccla_> except_clause
 %type<_excclaintlis_> except_clause_intermediate_list
 %type<_excclafin_> except_clause_final
@@ -159,6 +154,7 @@
 %type<_exista_> exit_statement
 %type<_raista_> raise_statement
 %type<_typsta_> type_statement
+%type<_ass_> assignment
 %type<_funbodsta_> func_body_statement
 
 
@@ -209,9 +205,6 @@
     break_statement.c
     continue_statement.c
     yield_statement.c
-    loop_body_statement.c
-    loop_body_statement_list.c
-    loop_body.c
     except_clause.c
     except_clause_intermediate_list.c
     except_clause_final.c
@@ -240,6 +233,7 @@
     exit_statement.c
     raise_statement.c
     type_statement.c
+    assignment.c
     func_body_statement.c
 
 

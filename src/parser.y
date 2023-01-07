@@ -15,6 +15,7 @@
 FILE* outfile = NULL;
 extern const char* file_name;
 
+Module* module = NULL;
 
 %}
 
@@ -74,9 +75,6 @@ extern const char* file_name;
     BreakStatement* _bresta_;
     ContinueStatement* _consta_;
     YieldStatement* _yiesta_;
-    LoopBodyStatement* _loobodsta_;
-    LoopBodyStatementList* _loobodstalis_;
-    LoopBody* _loobod_;
     ExceptClause* _exccla_;
     ExceptClauseIntermediateList* _excclaintlis_;
     ExceptClauseFinal* _excclafin_;
@@ -105,6 +103,7 @@ extern const char* file_name;
     ExitStatement* _exista_;
     RaiseStatement* _raista_;
     TypeStatement* _typsta_;
+    Assignment* _ass_;
     FuncBodyStatement* _funbodsta_;
 };
 
@@ -170,9 +169,6 @@ extern const char* file_name;
 %type<_bresta_> break_statement
 %type<_consta_> continue_statement
 %type<_yiesta_> yield_statement
-%type<_loobodsta_> loop_body_statement
-%type<_loobodstalis_> loop_body_statement_list
-%type<_loobod_> loop_body
 %type<_exccla_> except_clause
 %type<_excclaintlis_> except_clause_intermediate_list
 %type<_excclafin_> except_clause_final
@@ -201,6 +197,7 @@ extern const char* file_name;
 %type<_exista_> exit_statement
 %type<_raista_> raise_statement
 %type<_typsta_> type_statement
+%type<_ass_> assignment
 %type<_funbodsta_> func_body_statement
 
 %define parse.error verbose
@@ -243,8 +240,6 @@ type_definition
     | STRING {}
     | BOOLEAN {}
     | NOTHING {}
-    | LIST {}
-    | DICT {}
     | compound_name {}
     ;
 
@@ -255,8 +250,15 @@ constant_expression
     | STRG {}
     ;
 
+    /* Lists and dicts can be limited to a specific type. Without the cast
+       any type can be store in the list. This is a semantic distinction but
+       only lists and dicts are syntactically correct. */
 symbol_type
     : type_definition SYMBOL {}
+    | LIST SYMBOL {}
+    | DICT SYMBOL {}
+    | LIST cast_specifier SYMBOL {}
+    | DICT cast_specifier SYMBOL {}
     ;
 
 cast_specifier
@@ -271,6 +273,8 @@ array_reference
     : compound_name array_parameter_list {}
     ;
 
+    /* A generic name can have a function or an array reference in it. This is
+       not currently supported in the parser. */
 expression_factor
     : constant_expression {}
     | compound_name {}
@@ -462,24 +466,6 @@ yield_statement
     : YIELD {}
     ;
 
-loop_body_statement
-    : func_body_statement {}
-    | break_statement {}
-    | continue_statement {}
-    | yield_statement {}
-    | error {}
-    ;
-
-loop_body_statement_list
-    : loop_body_statement {}
-    | loop_body_statement_list loop_body_statement {}
-    ;
-
-loop_body
-    : '{' loop_body_statement_list '}' {}
-    | '{' '}' {}
-    ;
-
 except_clause
     : EXCEPT compound_name_in_parens_rule func_body {}
     ;
@@ -536,14 +522,14 @@ if_statement
     ;
 
 for_statement
-    : FOR '(' compound_name IN expression ')' loop_body {}
-    | FOR empty_parens_rule loop_body {}
-    | FOR loop_body {}
+    : FOR '(' compound_name IN expression ')' func_body {}
+    | FOR empty_parens_rule func_body {}
+    | FOR func_body {}
     ;
 
 while_statement
-    : WHILE expression_in_parens_rule loop_body {}
-    | WHILE loop_body {}
+    : WHILE expression_in_parens_rule func_body {}
+    | WHILE func_body {}
     ;
 
 case_clause
@@ -565,8 +551,8 @@ switch_statement
     ;
 
 do_statement
-    : DO loop_body WHILE expression_in_parens_rule {}
-    | DO loop_body WHILE {}
+    : DO func_body WHILE expression_in_parens_rule {}
+    | DO func_body WHILE {}
     ;
 
     /* This is num for array references. Dict references have a string.
@@ -632,9 +618,14 @@ type_statement
     : TYPE '(' expression ')' {}
     ;
 
+assignment
+    : compound_name '=' initialzer {}
+    | array_reference '=' initialzer {}
+    ;
+
 func_body_statement
     : data_definition {}
-    | compound_name '=' initialzer {}
+    | assignment {}
     | if_statement {}
     | for_statement {}
     | while_statement {}
@@ -648,6 +639,9 @@ func_body_statement
     | exit_statement {}
     | raise_statement {}
     | type_statement {}
+    | break_statement {}
+    | continue_statement {}
+    | yield_statement {}
     | func_body {}
     ;
 

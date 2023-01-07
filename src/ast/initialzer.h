@@ -19,9 +19,11 @@ struct _initialzer_ {
     Expression* expression;
     ArrayInitializer* array_initializer;
     DictInitializer* dict_initializer;
+    CastSpecifier* cast_specifier;
+    Initialzer* initialzer;
 };
 
-Initialzer* createInitialzer(Expression*, ArrayInitializer*, DictInitializer*);
+Initialzer* createInitialzer(Expression*, ArrayInitializer*, DictInitializer*, CastSpecifier*, Initialzer*);
 AstResult pass1Initialzer(Initialzer*);
 AstResult pass2Initialzer(Initialzer*);
 AstResult pass3Initialzer(Initialzer*);

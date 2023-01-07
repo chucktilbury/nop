@@ -18,11 +18,11 @@ struct _for_statement_ {
     ForStatementType type;
     CompoundName* compound_name;
     Expression* expression;
-    LoopBody* loop_body;
+    FuncBody* func_body;
     EmptyParensRule* empty_parens_rule;
 };
 
-ForStatement* createForStatement(CompoundName*, Expression*, LoopBody*, EmptyParensRule*);
+ForStatement* createForStatement(CompoundName*, Expression*, FuncBody*, EmptyParensRule*);
 AstResult pass1ForStatement(ForStatement*);
 AstResult pass2ForStatement(ForStatement*);
 AstResult pass3ForStatement(ForStatement*);

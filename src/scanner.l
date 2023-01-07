@@ -225,13 +225,8 @@ int yycolumn = 1;
         printf("Warning: unrecognized character: %c (0x%02X)\n", yytext[0], yytext[0]);
     }
 
-"/*"    BEGIN(COMMENT);
-<COMMENT>[^*\n]*        /* eat anything that's not a '*' */
-<COMMENT>"*"+[^*/\n]*   /* eat up '*'s not followed by '/'s */
-<COMMENT>\n             /* eat the newlines*/
-<COMMENT>"*"+"/"        BEGIN(INITIAL);
-
-"//".*\n {}
+    /* comments */
+";".*\n {}
 
 <<EOF>> {
 

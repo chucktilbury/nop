@@ -1,6 +1,10 @@
-/* This takes over a minute to run in picoC. */
+;--------------------------------
+;
+; This takes over a minute to run in picoC.
+;
+;--------------------------------
 
-// note that 'in' is a keyword
+; note that 'in' is a keyword
 num fib(num val) {
 
     if(n < 2) {

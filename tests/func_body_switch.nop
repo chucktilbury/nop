@@ -1,7 +1,8 @@
-/*
- * Test the syntax for the switch/case construct.
- *
- */
+;-----------------------------
+;
+; Test the syntax for the switch/case construct.
+;
+;----------------------
 
 compound.name func() {
 
@@ -22,8 +23,8 @@ compound.name func() {
                 handle_brokness(things.are.broken)
             }
         }
-        // uncomment this for syntax error
-        //case(12) {
-        //}
+        ; uncomment this for syntax error
+        ;case(12) {
+        ;}
     }
 }
